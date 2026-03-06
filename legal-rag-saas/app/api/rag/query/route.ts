@@ -6,6 +6,7 @@ import { PrismaClient } from '@prisma/client';
 import OpenAI from 'openai';
 import { queryCache, COMMON_QUESTIONS } from '@/lib/cache/query-cache';
 import { extractMeasurementIntent, parseNumericalQuery, findNumericalValues, scoreNumericalMatch } from '@/lib/search/numerical-search';
+import { optimizeConfidence, selectOptimalCitations, detectPracticalScenario } from '@/lib/search/confidence-optimizer';
 
 const QuerySchema = z.object({
   query: z.string().min(3, 'Query must be at least 3 characters'),
@@ -245,14 +246,55 @@ export async function POST(req: NextRequest) {
       console.log(`[RAG API] Re-ranked ${citations.length} citations with numerical enhancement`);
     }
 
-    // Calculate overall confidence
-    const avgScore = citations.reduce((sum, c) => sum + c.score, 0) / citations.length;
-    const confidence = Math.round(avgScore * 100);
+    // OPTIMIZE CONFIDENCE FOR PRACTICAL SCENARIOS
+    const scenario = detectPracticalScenario(query);
+    let finalConfidence: number;
+    let confidenceOptimization: any = null;
+    
+    if (scenario.isPractical) {
+      console.log(`[RAG API] Practical scenario detected: ${scenario.scenarioType} (complexity: ${scenario.complexity})`);
+      
+      // Use optimized citation selection
+      const optimizedCitations = selectOptimalCitations(
+        query,
+        citations.map((c, idx) => ({ ...c, originalIndex: idx })),
+        5
+      );
+      
+      // Update citations with optimized selection
+      citations.length = 0;
+      citations.push(...optimizedCitations.map((c: any) => {
+        const { combinedScore, relevanceReason, originalIndex, ...rest } = c;
+        return { ...rest, relevanceReason };
+      }));
+      
+      // Optimize confidence
+      const optimization = optimizeConfidence({
+        query,
+        citations,
+        queryType: scenario.scenarioType,
+      });
+      
+      finalConfidence = optimization.optimizedConfidence;
+      confidenceOptimization = {
+        original: optimization.originalConfidence,
+        optimized: optimization.optimizedConfidence,
+        reason: optimization.adjustmentReason,
+        coverageScore: optimization.coverageScore,
+        semanticScore: optimization.semanticMatchScore,
+      };
+      
+      console.log(`[RAG API] Confidence optimized: ${optimization.originalConfidence}% → ${optimization.optimizedConfidence}%`);
+    } else {
+      // Calculate standard confidence
+      const avgScore = citations.reduce((sum, c) => sum + c.score, 0) / citations.length;
+      finalConfidence = Math.round(avgScore * 100);
+    }
 
-    console.log(`[RAG API] Confidence: ${confidence}%`);
+    console.log(`[RAG API] Final Confidence: ${finalConfidence}%`);
 
     // STRICT: If confidence is below threshold, DO NOT ANSWER
-    if (confidence < MIN_CONFIDENCE_THRESHOLD) {
+    if (finalConfidence < MIN_CONFIDENCE_THRESHOLD) {
       const clarifyingQuestion = generateClarifyingQuestion(query, citations);
       return NextResponse.json({
         success: true,
@@ -266,11 +308,11 @@ export async function POST(req: NextRequest) {
             text: c.text.substring(0, 200) + '...',
             confidence: c.confidence,
           })),
-          confidence,
+          confidence: finalConfidence,
           queryIntent: detectIntent(query),
           resultsCount: citations.length,
           needsClarification: true,
-          reason: `Confidence ${confidence}% is below threshold ${MIN_CONFIDENCE_THRESHOLD}%`,
+          reason: `Confidence ${finalConfidence}% is below threshold ${MIN_CONFIDENCE_THRESHOLD}%`,
         },
       });
     }
@@ -291,7 +333,7 @@ export async function POST(req: NextRequest) {
           confidence: Math.round(r.score * 100),
         }))
       : citations;
-    const answer = await buildStrictAnswer(query, allResultsForAnswer, confidence);
+    const answer = await buildStrictAnswer(query, allResultsForAnswer, finalConfidence);
 
     await prisma.$disconnect();
 
@@ -311,7 +353,7 @@ export async function POST(req: NextRequest) {
     queryCache.set(query, workspaceId, {
       answer: answer || '',
       citations: responseCitations,
-      confidence,
+      confidence: finalConfidence,
     });
 
     console.log(`[RAG API] Response cached. Cache stats:`, queryCache.getStats());
@@ -321,12 +363,17 @@ export async function POST(req: NextRequest) {
       data: {
         answer,
         citations: responseCitations,
-        confidence,
+        confidence: finalConfidence,
         queryIntent: detectIntent(query),
         resultsCount: citations.length,
         disclaimer: 'Text citat ad-literam din documente. Verificați sursa pentru informații complete.',
         needsClarification: false,
         fromCache: false,
+        scenario: scenario.isPractical ? {
+          type: scenario.scenarioType,
+          complexity: scenario.complexity,
+          optimization: confidenceOptimization,
+        } : undefined,
       },
     });
 
