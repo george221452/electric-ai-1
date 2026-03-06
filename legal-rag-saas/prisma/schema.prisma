@@ -1,0 +1,305 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  
+  ownedWorkspaces Workspace[]
+  workspaceUsers  WorkspaceUser[]
+  documents       Document[]
+  apiKeys         ApiKey[]
+  subscriptions   Subscription[]
+  tokenBalance    TokenBalance?
+  
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+model Workspace {
+  id          String          @id @default(uuid())
+  name        String
+  description String?
+  slug        String          @unique
+  ownerId     String          @map("owner_id")
+  owner       User            @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  users       WorkspaceUser[]
+  documents   Document[]
+  ragConfigId String          @default("generic-document") @map("rag_config_id")
+  isPublic    Boolean         @default(false) @map("is_public")
+  settings    Json            @default("{}")
+  createdAt   DateTime        @default(now()) @map("created_at")
+  updatedAt   DateTime        @updatedAt @map("updated_at")
+
+  @@index([ownerId])
+  @@map("workspaces")
+}
+
+model WorkspaceUser {
+  id          String        @id @default(uuid())
+  workspaceId String        @map("workspace_id")
+  workspace   Workspace     @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  userId      String        @map("user_id")
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role        WorkspaceRole @default(MEMBER)
+  joinedAt    DateTime      @default(now()) @map("joined_at")
+
+  @@unique([workspaceId, userId])
+  @@index([userId])
+  @@map("workspace_users")
+}
+
+enum WorkspaceRole {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+}
+
+model Document {
+  id            String       @id @default(uuid())
+  workspaceId   String       @map("workspace_id")
+  workspace     Workspace    @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  userId        String       @map("user_id")
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name          String
+  fileType      String       @map("file_type")
+  fileSize      Int          @map("file_size")
+  storageKey    String       @unique @map("storage_key")
+  status        DocumentStatus @default(PENDING)
+  pageCount     Int?         @map("page_count")
+  ragConfigId   String       @map("rag_config_id")
+  paragraphs    Paragraph[]
+  citations     Citation[]
+  processingError String?    @map("processing_error")
+  metadata      Json         @default("{}")
+  createdAt     DateTime     @default(now()) @map("created_at")
+  updatedAt     DateTime     @updatedAt @map("updated_at")
+
+  @@index([workspaceId])
+  @@index([status])
+  @@index([workspaceId, status])
+  @@map("documents")
+}
+
+enum DocumentStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+model Paragraph {
+  id              String     @id @default(uuid())
+  documentId      String     @map("document_id")
+  document        Document   @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  content         String     @db.Text
+  pageNumber      Int        @map("page_number")
+  paragraphNumber Int        @map("paragraph_number")
+  chapterTitle    String?    @map("chapter_title")
+  sectionTitle    String?    @map("section_title")
+  wordCount       Int        @map("word_count")
+  charCount       Int        @map("char_count")
+  keywords        String[]
+  metadata        Json       @default("{}")
+  isObligation    Boolean    @default(false) @map("is_obligation")
+  isProhibition   Boolean    @default(false) @map("is_prohibition")
+  isDefinition    Boolean    @default(false) @map("is_definition")
+  articleNumber   String?    @map("article_number")
+  paragraphLetter String?    @map("paragraph_letter")
+  citations       Citation[]
+  createdAt       DateTime   @default(now()) @map("created_at")
+
+  @@index([documentId])
+  @@index([keywords])
+  @@index([articleNumber])
+  @@map("paragraphs")
+}
+
+model Chat {
+  id          String    @id @default(uuid())
+  workspaceId String    @map("workspace_id")
+  userId      String    @map("user_id")
+  title       String    @default("New Chat")
+  documentIds String[]  @map("document_ids")
+  messages    Message[]
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@index([workspaceId])
+  @@index([userId])
+  @@map("chats")
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  chatId    String   @map("chat_id")
+  chat      Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  role      MessageRole
+  content   String   @db.Text
+  citations Citation[]
+  metadata  Json     @default("{}")
+  tokensUsed Int?    @map("tokens_used")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([chatId])
+  @@map("messages")
+}
+
+enum MessageRole {
+  USER
+  ASSISTANT
+  SYSTEM
+}
+
+model Citation {
+  id            String    @id @default(uuid())
+  messageId     String    @map("message_id")
+  message       Message   @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  paragraphId   String    @map("paragraph_id")
+  paragraph     Paragraph @relation(fields: [paragraphId], references: [id])
+  documentId    String    @map("document_id")
+  document      Document  @relation(fields: [documentId], references: [id])
+  citationIndex Int       @map("citation_index")
+  confidence    Int
+  createdAt     DateTime  @default(now()) @map("created_at")
+
+  @@index([messageId])
+  @@map("citations")
+}
+
+model ApiKey {
+  id          String    @id @default(uuid())
+  userId      String    @map("user_id")
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  keyHash     String    @unique @map("key_hash")
+  keyPrefix   String    @map("key_prefix")
+  lastUsedAt  DateTime? @map("last_used_at")
+  expiresAt   DateTime? @map("expires_at")
+  isActive    Boolean   @default(true) @map("is_active")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@map("api_keys")
+}
+
+model TokenBalance {
+  id          String   @id @default(uuid())
+  userId      String   @unique @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  balance     Int      @default(0)
+  totalUsed   Int      @default(0) @map("total_used")
+  totalPurchased Int   @default(0) @map("total_purchased")
+  lastRefillAt DateTime? @map("last_refill_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("token_balances")
+}
+
+model TokenUsage {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  amount    Int
+  operation String
+  metadata  Json?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@index([createdAt])
+  @@map("token_usage")
+}
+
+model TokenTransaction {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  amount    Int
+  type      String   // 'credit' | 'debit'
+  source    String   // 'purchase' | 'refill' | 'bonus' | 'usage'
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@index([createdAt])
+  @@map("token_transactions")
+}
+
+model Subscription {
+  id                String             @id @default(uuid())
+  userId            String             @map("user_id")
+  user              User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stripeCustomerId  String             @unique @map("stripe_customer_id")
+  stripeSubscriptionId String?         @unique @map("stripe_subscription_id")
+  stripePriceId     String?            @map("stripe_price_id")
+  status            SubscriptionStatus @default(INCOMPLETE)
+  currentPeriodStart DateTime?         @map("current_period_start")
+  currentPeriodEnd  DateTime?          @map("current_period_end")
+  cancelAtPeriodEnd Boolean            @default(false) @map("cancel_at_period_end")
+  createdAt         DateTime           @default(now()) @map("created_at")
+  updatedAt         DateTime           @updatedAt @map("updated_at")
+
+  @@index([userId])
+  @@map("subscriptions")
+}
+
+enum SubscriptionStatus {
+  INCOMPLETE
+  INCOMPLETE_EXPIRED
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  UNPAID
+  PAUSED
+}

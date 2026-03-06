@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+await page.goto('http://localhost:3000/dashboard');
+await page.waitForSelector('text=Documente');
+await page.click('text=Documente');
+await page.waitForTimeout(3000);
+await page.screenshot({ path: '/tmp/docs-fixed.png' });
+await browser.close();
+console.log('Done');
