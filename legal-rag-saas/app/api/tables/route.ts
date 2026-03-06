@@ -197,7 +197,7 @@ async function extractTablesFromDocument(documentId: string): Promise<NormativeT
   } catch (e) {
     // Try to extract from storage path
     try {
-      const storagePath = path.join(uploadsDir, document.workspaceId, document.storagePath || documentId);
+      const storagePath = path.join(uploadsDir, document.workspaceId, document.storageKey || documentId);
       const text = await fs.readFile(storagePath, 'utf-8');
       return extractTablesFromText(text, documentId, document.name);
     } catch (e2) {

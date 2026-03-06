@@ -25,7 +25,7 @@ const TEST_QUESTIONS = [
   "Cum se realizează selectivitatea între siguranțe?",
 ];
 
-interface TestResult {
+interface QuickTestResult {
   question: string;
   answer: string;
   citations: number;
@@ -36,7 +36,7 @@ interface TestResult {
 }
 
 async function runQuickTest() {
-  const results: TestResult[] = [];
+  const results: QuickTestResult[] = [];
   
   console.log('=== TEST RAPID - 20 ÎNTREBĂRI ===\n');
   
@@ -63,7 +63,7 @@ async function runQuickTest() {
       const data = await response.json();
       const time = Date.now() - startTime;
       
-      const result: TestResult = {
+      const result: QuickTestResult = {
         question,
         answer: data.data.answer?.substring(0, 200) || 'NO ANSWER',
         citations: data.data.citations?.length || 0,
