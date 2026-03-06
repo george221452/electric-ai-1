@@ -4,9 +4,11 @@ import { QdrantClient } from '@qdrant/js-client-rest';
 import { OpenAIEmbeddingService } from '@/src/infrastructure/adapters/embedding/embedding-service';
 import { PrismaClient } from '@prisma/client';
 import OpenAI from 'openai';
-import { queryCache, COMMON_QUESTIONS } from '@/lib/cache/query-cache';
+import { unifiedCache as queryCache } from '@/lib/cache/redis-cache';
+import { COMMON_QUESTIONS } from '@/lib/cache/query-cache';
 import { extractMeasurementIntent, parseNumericalQuery, findNumericalValues, scoreNumericalMatch } from '@/lib/search/numerical-search';
 import { optimizeConfidence, selectOptimalCitations, detectPracticalScenario } from '@/lib/search/confidence-optimizer';
+import { createSearchVariants, hasExpandableTerms } from '@/lib/search/synonyms';
 
 const QuerySchema = z.object({
   query: z.string().min(3, 'Query must be at least 3 characters'),
@@ -44,7 +46,7 @@ export async function POST(req: NextRequest) {
     console.log(`[RAG API] WorkspaceId: ${workspaceId}`);
 
     // CHECK CACHE FIRST
-    const cached = queryCache.get(query, workspaceId);
+    const cached = await queryCache.get(query, workspaceId);
     if (cached) {
       console.log(`[RAG API] CACHE HIT! Returning cached answer (hits: ${cached.hitCount})`);
       return NextResponse.json({
@@ -100,8 +102,23 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Generate query embedding
-    const queryEmbedding = await embeddingService.embed(query);
+    // SYNONYM EXPANSION - Create search variants
+    let searchQueries = [query];
+    let usedSynonyms = false;
+    
+    if (hasExpandableTerms(query)) {
+      const variants = createSearchVariants(query);
+      if (variants.length > 1) {
+        searchQueries = variants;
+        usedSynonyms = true;
+        console.log(`[RAG API] Query expanded with synonyms: ${variants.join(' | ')}`);
+      }
+    }
+
+    // Generate embeddings for all query variants
+    const queryEmbeddings = await Promise.all(
+      searchQueries.map(q => embeddingService.embed(q))
+    );
     
     // Detect if query is about prohibitions/obligations - need more results
     const queryNormalized = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -111,18 +128,39 @@ export async function POST(req: NextRequest) {
     // Use more results for prohibition/obligation queries
     const searchLimit = isProhibitionQuery ? 30 : 10;
 
-    // Search in Qdrant (vector search)
-    const searchResults = await qdrant.search('legal_paragraphs', {
-      vector: queryEmbedding,
-      limit: searchLimit,
-      with_payload: true,
-      score_threshold: MIN_SCORE_THRESHOLD,
-      filter: {
-        must: [
-          { key: 'workspaceId', match: { value: workspaceId } },
-        ],
-      },
-    }) as any[];
+    // Search in Qdrant with all query variants
+    const allSearchResults: any[] = [];
+    
+    for (const embedding of queryEmbeddings) {
+      const results = await qdrant.search('legal_paragraphs', {
+        vector: embedding,
+        limit: searchLimit,
+        with_payload: true,
+        score_threshold: MIN_SCORE_THRESHOLD - 0.05, // Slightly lower threshold for synonyms
+        filter: {
+          must: [
+            { key: 'workspaceId', match: { value: workspaceId } },
+          ],
+        },
+      }) as any[];
+      
+      allSearchResults.push(...results);
+    }
+    
+    // Deduplicate and sort results by score
+    const seenIds = new Set<string>();
+    const searchResults = allSearchResults
+      .filter((r: any) => {
+        if (seenIds.has(r.id)) return false;
+        seenIds.add(r.id);
+        return true;
+      })
+      .sort((a: any, b: any) => b.score - a.score)
+      .slice(0, searchLimit);
+    
+    if (usedSynonyms) {
+      console.log(`[RAG API] Synonym search: ${allSearchResults.length} raw results → ${searchResults.length} unique`);
+    }
 
     // For prohibition queries, also do keyword search to find more matches
     let keywordResults: any[] = [];
@@ -350,13 +388,13 @@ export async function POST(req: NextRequest) {
       confidence: c.confidence,
     }));
 
-    queryCache.set(query, workspaceId, {
+    await queryCache.set(query, workspaceId, {
       answer: answer || '',
       citations: responseCitations,
       confidence: finalConfidence,
     });
 
-    console.log(`[RAG API] Response cached. Cache stats:`, queryCache.getStats());
+    console.log(`[RAG API] Response cached. Cache stats:`, await queryCache.getStats());
 
     return NextResponse.json({
       success: true,

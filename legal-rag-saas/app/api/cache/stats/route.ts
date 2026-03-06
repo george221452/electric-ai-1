@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { queryCache } from '@/lib/cache/query-cache';
+import { unifiedCache as queryCache } from '@/lib/cache/redis-cache';
 
 /**
  * GET /api/cache/stats
@@ -7,8 +7,8 @@ import { queryCache } from '@/lib/cache/query-cache';
  */
 export async function GET(req: NextRequest) {
   try {
-    const stats = queryCache.getStats();
-    const popularQueries = queryCache.getPopularQueries(20);
+    const stats = await queryCache.getStats();
+    const popularQueries = await queryCache.getPopularQueries(20);
 
     return NextResponse.json({
       success: true,
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     const { action } = body;
 
     if (action === 'clear') {
-      queryCache.clear();
+      await queryCache.clear();
       return NextResponse.json({
         success: true,
         message: 'Cache cleared successfully',
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      queryCache.prewarm(workspaceId, questions);
+      await queryCache.prewarm(workspaceId, questions);
       return NextResponse.json({
         success: true,
         message: `Cache pre-warmed with ${questions.length} questions`,

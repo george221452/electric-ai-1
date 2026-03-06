@@ -303,3 +303,22 @@ enum SubscriptionStatus {
   UNPAID
   PAUSED
 }
+
+model Feedback {
+  id          String   @id @default(uuid())
+  query       String   @db.Text
+  answer      String   @db.Text
+  rating      Int      // 1 = thumbs down, 2 = thumbs up
+  reason      String?  // Optional reason for the rating
+  confidence  Int      // Confidence score at the time of feedback
+  citations   Json?    // Citations included in the answer
+  metadata    Json?    // Additional metadata (scenario type, etc.)
+  userId      String?  @map("user_id")
+  workspaceId String   @map("workspace_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([workspaceId])
+  @@index([rating])
+  @@index([createdAt])
+  @@map("feedback")
+}

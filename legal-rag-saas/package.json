@@ -39,7 +39,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "fast-xml-parser": "^5.4.1",
-    "ioredis": "^5.4.1",
+    "ioredis": "^5.10.0",
     "lucide-react": "^0.400.0",
     "mammoth": "^1.8.0",
     "minio": "^8.0.1",
