@@ -4,6 +4,7 @@ import { QdrantClient } from '@qdrant/js-client-rest';
 import { OpenAIEmbeddingService } from '@/src/infrastructure/adapters/embedding/embedding-service';
 import { PrismaClient } from '@prisma/client';
 import OpenAI from 'openai';
+import { queryCache, COMMON_QUESTIONS } from '@/lib/cache/query-cache';
 
 const QuerySchema = z.object({
   query: z.string().min(3, 'Query must be at least 3 characters'),
@@ -39,6 +40,27 @@ export async function POST(req: NextRequest) {
 
     console.log(`[RAG API] Query: "${query}"`);
     console.log(`[RAG API] WorkspaceId: ${workspaceId}`);
+
+    // CHECK CACHE FIRST
+    const cached = queryCache.get(query, workspaceId);
+    if (cached) {
+      console.log(`[RAG API] CACHE HIT! Returning cached answer (hits: ${cached.hitCount})`);
+      return NextResponse.json({
+        success: true,
+        data: {
+          answer: cached.answer,
+          citations: cached.citations,
+          confidence: cached.confidence,
+          queryIntent: detectIntent(query),
+          resultsCount: cached.citations.length,
+          disclaimer: 'Răspuns din cache (întrebare frecventă). Text citat ad-literam din documente.',
+          needsClarification: false,
+          fromCache: true,
+          cacheHits: cached.hitCount,
+        },
+      });
+    }
+    console.log(`[RAG API] Cache miss - processing query...`);
 
     // Check if collection exists and has data
     let pointsCount = 0;
@@ -232,26 +254,38 @@ export async function POST(req: NextRequest) {
 
     await prisma.$disconnect();
 
+    // STORE IN CACHE
+    const responseCitations = citations.map(c => ({
+      index: c.index,
+      paragraphId: c.paragraphId,
+      documentId: c.documentId,
+      documentName: c.documentName,
+      pageNumber: c.pageNumber,
+      articleNumber: c.articleNumber,
+      paragraphLetter: c.paragraphLetter,
+      text: c.text,
+      confidence: c.confidence,
+    }));
+
+    queryCache.set(query, workspaceId, {
+      answer: answer || '',
+      citations: responseCitations,
+      confidence,
+    });
+
+    console.log(`[RAG API] Response cached. Cache stats:`, queryCache.getStats());
+
     return NextResponse.json({
       success: true,
       data: {
         answer,
-        citations: citations.map(c => ({
-          index: c.index,
-          paragraphId: c.paragraphId,
-          documentId: c.documentId,
-          documentName: c.documentName,
-          pageNumber: c.pageNumber,
-          articleNumber: c.articleNumber,
-          paragraphLetter: c.paragraphLetter,
-          text: c.text,
-          confidence: c.confidence,
-        })),
+        citations: responseCitations,
         confidence,
         queryIntent: detectIntent(query),
         resultsCount: citations.length,
         disclaimer: 'Text citat ad-literam din documente. Verificați sursa pentru informații complete.',
         needsClarification: false,
+        fromCache: false,
       },
     });
 
