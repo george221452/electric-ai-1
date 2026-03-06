@@ -5,6 +5,7 @@ import { OpenAIEmbeddingService } from '@/src/infrastructure/adapters/embedding/
 import { PrismaClient } from '@prisma/client';
 import OpenAI from 'openai';
 import { queryCache, COMMON_QUESTIONS } from '@/lib/cache/query-cache';
+import { extractMeasurementIntent, parseNumericalQuery, findNumericalValues, scoreNumericalMatch } from '@/lib/search/numerical-search';
 
 const QuerySchema = z.object({
   query: z.string().min(3, 'Query must be at least 3 characters'),
@@ -203,6 +204,46 @@ export async function POST(req: NextRequest) {
         score: r.score,
         confidence: Math.round(r.score * 100),
       }));
+
+    // ENHANCE WITH NUMERICAL SEARCH
+    // Check if query contains numerical values and boost matching citations
+    const numericalQuery = parseNumericalQuery(query);
+    const measurementIntent = extractMeasurementIntent(query);
+    
+    if (numericalQuery || measurementIntent) {
+      console.log(`[RAG API] Numerical query detected:`, numericalQuery, measurementIntent);
+      
+      // Score and re-rank citations based on numerical matches
+      const citationsWithNumericalScores = citations.map(c => {
+        const numMatches = findNumericalValues(c.text, c.pageNumber, c.paragraphId);
+        let numericalScore = 0;
+        
+        if (numericalQuery) {
+          for (const match of numMatches) {
+            numericalScore += scoreNumericalMatch(match, numericalQuery);
+          }
+        }
+        
+        // Boost original score with numerical score
+        const boostedScore = c.score + (numericalScore / 100);
+        
+        return {
+          ...c,
+          score: Math.min(boostedScore, 1.0), // Cap at 1.0
+          confidence: Math.round(Math.min(boostedScore, 1.0) * 100),
+          numericalMatches: numMatches.slice(0, 3),
+        };
+      });
+      
+      // Re-sort by boosted score
+      citationsWithNumericalScores.sort((a, b) => b.score - a.score);
+      
+      // Replace citations with enhanced ones
+      citations.length = 0;
+      citations.push(...citationsWithNumericalScores);
+      
+      console.log(`[RAG API] Re-ranked ${citations.length} citations with numerical enhancement`);
+    }
 
     // Calculate overall confidence
     const avgScore = citations.reduce((sum, c) => sum + c.score, 0) / citations.length;
