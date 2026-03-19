@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "NEXTAUTH_URL": "@nextauth_url",
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "OPENAI_API_KEY": "@openai_api_key",
+    "QDRANT_URL": "@qdrant_url",
+    "DATABASE_URL": "@database_url",
+    "REDIS_URL": "@redis_url"
+  }
+}

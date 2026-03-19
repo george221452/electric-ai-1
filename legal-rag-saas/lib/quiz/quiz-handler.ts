@@ -1,0 +1,659 @@
+/**
+ * Handler pentru grile (întrebări cu variante de răspuns)
+ * Detectează și procesează întrebări multiple-choice din normative
+ */
+
+export interface QuizOption {
+  letter: string;
+  text: string;
+}
+
+export interface QuizQuestion {
+  question: string;
+  options: QuizOption[];
+  isQuiz: boolean;
+  rawQuery: string;
+}
+
+export interface QuizResult {
+  correctOption: string;
+  explanation: string;
+  confidence: number;
+  relevantText: string;
+  sourcePage?: number;
+  analysisDetails: {
+    whyCorrect: string;
+    whyOthersWrong: Record<string, string>;
+    keyTerms: string[];
+    wasCorrected?: boolean;
+    correctionReason?: string;
+  };
+}
+
+/**
+ * Detectează dacă o întrebare este o grilă (are variante A), B), C) etc.)
+ */
+export function detectQuizQuestion(query: string): QuizQuestion {
+  // Normalizează newline-urile
+  let normalizedQuery = query.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  
+  // IMPORTANT: Detectăm direct prezența variantelor A), B), C) în text
+  // Numărăm câte pattern-uri de tipul [A-D]) găsim
+  const optionMatches = normalizedQuery.match(/[A-D][\)\]\.]/gi);
+  const hasQuizFormat = optionMatches && optionMatches.length >= 2;
+  
+  // Dacă detectăm format de grilă, normalizăm textul să aibă newline-uri
+  if (hasQuizFormat) {
+    // Adaugă newline înainte de fiecare variantă A), B), C)
+    // Pattern: literă + )/]/. care nu e la început de linie
+    normalizedQuery = normalizedQuery
+      .replace(/([:;])\s*([A-D][\)\]\.])/gi, '$1\n$2')
+      .replace(/([^\n])\s+([A-D][\)\]\.])\s+/gi, '$1\n$2 ');
+  }
+  
+  // Pattern pentru detectarea variantelor: A), B), C) sau A., B., C. sau a), b), c)
+  const optionPatterns = [
+    /\n\s*[A-Da-d][)\.\]]\s*/g,  // A), B), C) sau A., B., C. sau A], B]
+    /^\s*[A-Da-d][)\.\]]\s*/gm,   // La început de linie
+  ];
+  
+  // Pattern pentru a curăța textul de alte variante (fără flagul 's')
+  const cleanPattern = /\n\s*[B-Db-d][)\.\]]\s*/g;
+  
+  let options: QuizOption[] = [];
+  let mainQuestion = normalizedQuery;
+  
+  // Încercăm să extragem variantele
+  for (const pattern of optionPatterns) {
+    const matches = normalizedQuery.match(pattern);
+    if (matches && matches.length >= 2) {
+      // Am găsit cel puțin 2 variante, e probabil o grilă
+      const parts = normalizedQuery.split(pattern).filter(p => p.trim());
+      
+      // Primul element este întrebarea principală
+      if (parts.length > 0) {
+        mainQuestion = parts[0].trim();
+      }
+      
+      // Extragem literele variantelor
+      const letters = matches.map(m => m.trim().charAt(0).toUpperCase());
+      
+      // Construim opțiunile
+      options = letters.map((letter, idx) => {
+        const text = parts[idx + 1] ? parts[idx + 1].trim() : '';
+        // Curățăm textul de eventuale alte litere care ar putea fi în el
+        const cleanText = text
+          .replace(/\n\s*[B-Db-d][)\.\]]\s*/g, '')
+          .replace(/\n\s*[A-Da-d][)\.\]]\s*[\s\S]*$/, '')
+          .trim();
+        return { letter, text: cleanText };
+      });
+      
+      break;
+    }
+  }
+  
+  // Dacă nu am găsit cu pattern-ul de mai sus, încercăm altă abordare
+  if (options.length === 0) {
+    // Căutăm linii care încep cu A), B), C) etc.
+    const lines = normalizedQuery.split('\n');
+    let questionLines: string[] = [];
+    let foundOptions = false;
+    
+    for (const line of lines) {
+      const trimmed = line.trim();
+      const optionMatch = trimmed.match(/^([A-Da-d])[)\.\]]\s*(.+)$/);
+      
+      if (optionMatch) {
+        foundOptions = true;
+        options.push({
+          letter: optionMatch[1].toUpperCase(),
+          text: optionMatch[2].trim()
+        });
+      } else if (!foundOptions) {
+        questionLines.push(line);
+      }
+    }
+    
+    if (foundOptions) {
+      mainQuestion = questionLines.join('\n').trim();
+    }
+  }
+  
+  return {
+    question: mainQuestion,
+    options,
+    isQuiz: options.length >= 2,
+    rawQuery: query
+  };
+}
+
+/**
+ * Extrage cuvinte cheie importante din întrebare
+ */
+export function extractKeyTerms(question: string): string[] {
+  const normalized = question.toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+  
+  const importantTerms = [
+    // Condiții importante
+    'numai', 'doar', 'exclusiv', 'strict', 'obligatoriu', 'mereu', 'totdeauna',
+    'optional', 'poate', 'se poate', 'este permis', 'este admis',
+    
+    // Cuvinte de negare
+    'nu', 'niciodata', 'interzis', 'nepermis', 'inadmisibil',
+    
+    // Elemente tehnice comune
+    'tablou', 'general', 'borna', 'bara', 'legare la pamant',
+    'impamantare', 'protectie', 'ddr', 'dispozitiv diferential',
+    'priza', 'circuit', 'conductor', 'cabluri', 'electrod',
+    'priza de pamant', 'legare echipotentiala',
+    
+    // Tipuri de sisteme
+    'tn-c', 'tn-s', 'tt', 'it',
+    
+    // Locații
+    'baie', 'bucatarie', 'exterior', 'subsol', 'pod',
+    'spatiu umed', 'spatiu uscat',
+    
+    // Verbe acțiune
+    'trebuie', 'se monteaza', 'se instaleaza', 'se realizeaza',
+    'se verifica', 'se protejeaza'
+  ];
+  
+  const foundTerms: string[] = [];
+  
+  for (const term of importantTerms) {
+    const normalizedTerm = term.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    if (normalized.includes(normalizedTerm)) {
+      foundTerms.push(term);
+    }
+  }
+  
+  return foundTerms;
+}
+
+/**
+ * Construiește prompt special pentru analiza grilelor
+ */
+export function buildQuizPrompt(
+  quiz: QuizQuestion,
+  citations: any[]
+): { systemPrompt: string; userPrompt: string } {
+  const context = citations.map((c, idx) => {
+    return `[${idx + 1}] Pagina ${c.pageNumber}:\n${c.text}`;
+  }).join('\n\n---\n\n');
+  
+  const optionsText = quiz.options.map(opt => `${opt.letter}) ${opt.text}`).join('\n');
+  
+  const systemPrompt = `Ești un expert electrician și inspector care analizează grile din normativul I7/2011.
+
+SARCINA TA:
+Analizează atent întrebarea cu variante și determină care este RĂSPUNSUL CORECT bazându-te STRICT pe textul normativului furnizat.
+
+REGULI ABSOLUTE - NU IGNORA:
+
+1. **ANALIZA LOGICĂ A STRUCTURII** (CEA MAI IMPORTANTĂ):
+   
+   Când normativul spune: "X este INTERZIS, CU EXCEPȚIA cazurilor Y"
+   → Aceasta NU înseamnă că X este complet interzis
+   → Înseamnă că: X este permis în cazurile Y (cu condiții)
+   → Deci răspunsul corect este: "se admite condiționat" (B), NU "este interzisă" (A)
+   
+   STRUCTURA LOGICĂ:
+   - "Interzis cu excepții" = admis cu condiții
+   - "Interzis absolut" (fără excepții) = interzis total
+
+2. **CUM SĂ INTERPRETEZI**:
+   - "Echipamentele nu trebuie amplasate în locuri periculoase, dacă aceasta poate fi evitată" 
+     → NU e o interdicție absolută
+     → Dacă NU poate fi evitată, SE POATE amplasa
+     → = "se admite condiționat"
+   
+   - "Interzisă, cu excepția cazurilor în care..."
+     → Excepțiile PERMIT ceva
+     → = "se admite condiționat"
+
+3. **ERORI COMUNE DE EVITAT**:
+   - NU te opri la primul cuvânt ("interzisă")
+   - Citește TOATĂ propoziția până la final
+   - Dacă vezi "cu excepția", "dacă", "atunci când" → sunt CONDIȚII
+
+4. **MAPAREA RĂSPUNSURILOR**:
+   - Condiții/excepții prezente → B (se admite condiționat)
+   - Interdicție totală, fără excepții → A (este interzisă)
+   - Permisiune liberă, fără condiții → C (se admite)
+
+5. **CAPCANA "TOATE SUNT CORECTE TEHNIC, DAR UNA E COMPLETĂ"**:
+   - Compară conținutul variantelor: au același subiect/obligație?
+   - Dacă A, B, C spun ACELAȘI lucru, dar A și B adaugă "numai", "doar", "exclusiv în cazul" → C e corectă
+   - Dacă normativul NU folosește "numai", orice variantă care îl adaugă e GREȘITĂ
+   - Caută pattern-ul: 2 variante identice + "numai" vs 1 variantă fără restricții
+
+4. **Formatarea răspunsului**:
+   - Răspuns corect: litera (A, B, C, etc.)
+   - Explicație clară de ce această variantă e corectă
+   - Explicație SPECIFICĂ de ce celelalte variante sunt greșite (evidențiind EXACT cuvântul/concepția greșită - ex: "folosește 'numai' incorect pentru că normativul nu restricționează")
+   - Citează pagina din normativ
+
+EXEMPLE DE ANALIZĂ:
+
+Exemplul 1:
+Întrebare: Când se folosește DDR?
+A) numai în băi
+B) în toate circuitele de prize
+C) numai în bucătării
+
+Dacă normativul spune "DDR se montează la toate prizele pentru uz general", atunci:
+- Răspuns corect: B
+- A și C sunt greșite pentru că folosesc "numai" restricționând incorect
+
+Exemplul 2 (CRUCIAL - interdicție cu excepție):
+Întrebare: Amplasarea în locuri periculoase:
+A) este interzisă
+B) se admite condiționat
+C) se admite
+
+Dacă normativul spune "Amplasarea este interzisă, CU EXCEPȚIA cazurilor în care...":
+- Răspuns corect: B (se admite condiționat)
+- A este GREȘITĂ pentru că deși folosește cuvântul "interzisă" din normativ, ignoră partea "CU EXCEPȚIA" care schimbă fundamental sensul
+- C este GREȘITĂ pentru că nu e necondiționată, ci cu excepții
+
+Exemplul 3 (CAPCANĂ CLASICĂ - "numai" fals):
+Întrebare: În fiecare instalație la nivelul tabloului general trebuie prevăzută:
+A) o bornă / bară principală, numai atunci când rețeaua este TN-C
+B) o bornă / bară principală, numai atunci când rețeaua este TN-S
+C) o bornă / bară principală
+
+Dacă normativul spune "în fiecare instalație la nivelul tabloului general trebuie prevăzută o bornă / bară principală" (fără restricții):
+- Răspuns corect: C
+- A este GREȘITĂ pentru că adaugă "numai" - o restricție care NU există în normativ
+- B este GREȘITĂ pentru că adaugă "numai" - o restricție care NU există în normativ
+- ATENȚIE: Toate trei variantele au același subiect (bornă/bară), dar A și B adaugă restricții false!
+
+REGULĂ PENTRU CAPCANE "NUMAI":
+- Dacă normativul nu specifică o restricție (nu zice "numai", "doar", "exclusiv"), atunci varianta care adaugă "numai" este GREȘITĂ
+- Când vezi că 2-3 variante au același conținut dar una adaugă "numai" → varianta FĂRĂ "numai" e corectă
+
+Exemplul 4 (CRUCIAL - valori numerice):
+Întrebare: Rezistența prizei de pământ pentru protecția împotriva șocurilor electrice trebuie să fie cel mult:
+A) 4 Ω
+B) 10 Ω
+C) 1 Ω
+
+Dacă normativul spune "rezistența prizei de pământ... trebuie să fie cel mult 4 Ω pentru protecția împotriva șocurilor electrice":
+- Răspuns corect: A (4 Ω)
+- B este GREȘITĂ (10 Ω nu apare în normativ pentru acest caz)
+- C este GREȘITĂ (1 Ω e pentru protecția împotriva trăsnetelor, nu pentru șocuri electrice)
+- ATENȚIE: Citește CU ATENȚIE valoarea numerică din fiecare variantă și compară EXACT cu ce spune normativul!
+
+REGULI PENTRU CAPCANE:
+1. "NUMAI" - Dacă normativul nu specifică o restricție, varianta cu "numai" e GREȘITĂ
+2. VALORI NUMERICE - Citește EXACT valoarea din normativ și potrivește cu varianta corectă
+3. Context diferit - 4 Ω (șocuri) vs 1 Ω (trăsnete) sunt pentru cazuri DIFERITE!
+
+Răspunde în română, ca un expert tehnic, clar și precis.`;
+
+  const userPrompt = `ÎNTREBARE CU VARIANTE:
+${quiz.question}
+
+VARIANTE:
+${optionsText}
+
+PARAGRAFE RELEVANTE DIN NORMATIVUL I7/2011:
+${context}
+
+SARCINA:
+1. Citește cu atenție fiecare variantă
+2. Compară cu textul normativului
+3. Identifică RĂSPUNSUL CORECT
+4. Explică de ce e corectă varianta respectivă
+5. Explică de ce celelalte variante sunt greșite (fii specific!)
+
+ATENȚIE SPECIALĂ:
+- Dacă normativul spune că ceva se face "în toate cazurile" sau "obligatoriu", atunci orice variantă care folosește "numai" sau "doar în anumite cazuri" este GREȘITĂ
+- Invers, dacă normativul specifică o condiție restrictivă, varianta fără acea restricție e greșită
+- Fii FOARTE SPECIFIC în explicațiile pentru variante greșite:
+  * Pentru A: explică DE CE e prea strict/absolută (ex: "ignoră excepțiile permise")
+  * Pentru B: explică DE CE e prea permisivă sau prea restrictivă
+  * Pentru C: explică DE CE e prea permisivă (ex: "omite condițiile obligatorii")
+
+ATENȚIE MAXIMĂ LA VALORI NUMERICE (Ω, mm², A, V, m):
+- Compară EXACT valoarea din normativ cu valoarea din fiecare variantă
+- Dacă normativul spune "4 Ω" și variantele sunt: A) 4 Ω, B) 10 Ω, C) 1 Ω → RĂSPUNS CORECT: A
+- Nu confunda valori pentru cazuri diferite (ex: 4 Ω pentru șocuri vs 1 Ω pentru trăsnete)
+
+Răspunde în formatul:
+RĂSPUNS CORECT: [litera]
+EXPLICAȚIE: [explicație detaliată]
+DE CE CELELALTE SUNT GREȘITE:
+- [litera]: [explicație specifică - menționează exact ce e greșit: prea strict/pre permisiv/omite condiții]
+SURSĂ: Pagina [X]
+
+VERIFICARE OBLIGATORIE:
+Înainte de a da răspunsul final, verifică:
+1. Ai citit EXACT ce valoare numerică (Ω, mm², A, V) menționează normativul?
+2. Care variantă (A, B sau C) conține ACEA valoare?
+3. Dacă normativul spune "4 Ω", iar A=4 Ω, B=10 Ω, C=1 Ω → RĂSPUNSUL E A!
+4. Nu te lăsa păcălit de variantele cu valori similare sau în aceeași unitate de măsură!`;
+
+  return { systemPrompt, userPrompt };
+}
+
+/**
+ * Extrage valori numerice din text (Ω, mm², A, V, m, etc.)
+ * INCLUSIV valori fără unitate explicită în contexte specifice (ex: "cel mult 4 :")
+ */
+function extractNumericValues(text: string): Array<{value: number, unit: string, context: string}> {
+  const results: Array<{value: number, unit: string, context: string}> = [];
+  
+  // Pattern pentru valori numerice cu unități comune în normativul electric
+  // Suportă caractere Unicode pentru Ω (Ohm), text (ohmi, ohm) și alte unități
+  const numericPattern = /(\d+(?:[.,]\d+)?)\s*([ΩΩ]|[Oo]hms?|[Oo][Hh][Mm][Ii]?|[Mm]|[Mm][Mm]?[²2]|[Aa]|[Vv]|[Mm][Aa]|[Kk][Ww]|[Cc][Mm])/gi;
+  
+  let match;
+  while ((match = numericPattern.exec(text)) !== null) {
+    const value = parseFloat(match[1].replace(',', '.'));
+    let unit = match[2];
+    
+    // Normalizăm unitățile - păstrăm Ω ca atare
+    const unitLower = unit.toLowerCase();
+    if (unit === 'Ω' || unitLower === 'ohms' || unitLower === 'ohm' || unitLower === 'ohmi') {
+      unit = 'Ω';
+    } else {
+      unit = unitLower;
+    }
+    if (unit === 'mm2') unit = 'mm²';
+    if (unit === 'm²' || unit === 'm2') unit = 'm²';
+    
+    // Extragem contextul (text înainte și după valoare)
+    const start = Math.max(0, match.index - 50);
+    const end = Math.min(text.length, match.index + match[0].length + 50);
+    const context = text.substring(start, end);
+    
+    results.push({ value, unit, context });
+  }
+  
+  // CAZ SPECIAL: Detectăm pattern-ul "cel mult X :" sau "cel mult X:" 
+  // în contextul rezistenței prizei de pământ (unde simbolul Ω lipsește în textul extras)
+  const resistancePattern = /cel\s+mult\s+(\d+(?:[.,]\d+)?)\s*[:;]/gi;
+  while ((match = resistancePattern.exec(text)) !== null) {
+    const value = parseFloat(match[1].replace(',', '.'));
+    const contextStart = Math.max(0, match.index - 100);
+    const contextEnd = Math.min(text.length, match.index + match[0].length + 100);
+    const context = text.substring(contextStart, contextEnd);
+    
+    // Verificăm dacă contextul indică rezistența electrică (ohm)
+    // Suportăm text cu sau fără diacritice (extracția ODT poate pierde diacritice)
+    const isResistanceContext = 
+      /rezisten[aă]\s+prizei/i.test(context) || 
+      /priz[aă]\s+de\s+p[aă]m[aâ]nt/i.test(context) ||
+      /priza\s+de\s+pamant/i.test(context) ||
+      /protec[tț]ia\s+mpotriva\s+siocurilor/i.test(context) ||
+      /protectia\s+impotriva\s+siocurilor/i.test(context) ||
+      /protec[tț]ie\s+impotriva\s+trasnetelor/i.test(context) ||
+      /protectie\s+impotriva\s+trasnetelor/i.test(context);
+    
+    if (isResistanceContext) {
+      // Verificăm dacă nu am adăugat deja această valoare
+      const alreadyExists = results.some(r => 
+        Math.abs(r.value - value) < 0.1 && r.unit === 'Ω'
+      );
+      
+      if (!alreadyExists) {
+        results.push({ value, unit: 'Ω', context });
+        console.log(`[NumericVerify] Detected resistance value without explicit unit: ${value} Ω (from "cel mult ${value} :")`);
+      }
+    }
+  }
+  
+  return results;
+}
+
+/**
+ * Verifică dacă întrebarea conține valori numerice în opțiuni
+ */
+function detectNumericOptions(options: QuizOption[]): Array<{letter: string, value: number, unit: string}> {
+  const numericOptions: Array<{letter: string, value: number, unit: string}> = [];
+  
+  for (const opt of options) {
+    // Suportă caractere Unicode pentru Ω (Ohm) și text (ohmi, ohm)
+    const match = opt.text.match(/(\d+(?:[.,]\d+)?)\s*([ΩΩ]|[Oo]hms?|[Oo][Hh][Mm][Ii]?|[Mm]|[Mm][Mm][²2]|[Aa]|[Vv])/i);
+    if (match) {
+      const unit = match[2];
+      // Normalizăm unitatea: Ω și Ω sunt același lucru
+      const normalizedUnit = (unit === 'Ω' || unit === 'Ω') ? 'Ω' : unit.toLowerCase();
+      
+      numericOptions.push({
+        letter: opt.letter,
+        value: parseFloat(match[1].replace(',', '.')),
+        unit: normalizedUnit
+      });
+    }
+  }
+  
+  return numericOptions;
+}
+
+/**
+ * Verifică și corectează răspunsul pentru întrebări cu valori numerice
+ */
+function verifyNumericAnswer(
+  aiSelectedOption: string,
+  quiz: QuizQuestion,
+  citations: any[]
+): {correctOption: string; wasCorrected: boolean; reason: string} {
+  const numericOptions = detectNumericOptions(quiz.options);
+  
+  console.log(`[NumericVerify] Options: ${JSON.stringify(numericOptions)}`);
+  
+  // Dacă nu sunt valori numerice în opțiuni, nu facem corecție
+  if (numericOptions.length === 0) {
+    return { correctOption: aiSelectedOption, wasCorrected: false, reason: '' };
+  }
+  
+  // Extragem toate valorile numerice din textul normativului
+  const allCitationsText = citations.map(c => c.text).join(' ');
+  console.log(`[NumericVerify] Citation text sample: ${allCitationsText.substring(0, 500)}...`);
+  const valuesFromNormative = extractNumericValues(allCitationsText);
+  
+  console.log(`[NumericVerify] Found ${valuesFromNormative.length} numeric values in normative`);
+  console.log(`[NumericVerify] Values: ${JSON.stringify(valuesFromNormative.map(v => `${v.value} ${v.unit}`))}`);
+  
+  if (valuesFromNormative.length === 0) {
+    return { correctOption: aiSelectedOption, wasCorrected: false, reason: '' };
+  }
+  
+  // Verificăm fiecare opțiune numerică dacă apare în normativ
+  const optionMatches = numericOptions.map(opt => {
+    const matchingValues = valuesFromNormative.filter(v => {
+      const valueMatch = Math.abs(v.value - opt.value) < 0.1;
+      const unitMatch = v.unit === opt.unit || 
+                        (v.unit === 'Ω' && opt.unit === 'Ω'); // Ambele sunt Ω normalizat
+      console.log(`[NumericVerify] Comparing opt ${opt.letter}: ${opt.value} ${opt.unit} vs ${v.value} ${v.unit} -> valueMatch: ${valueMatch}, unitMatch: ${unitMatch}`);
+      return valueMatch && unitMatch;
+    });
+    return {
+      ...opt,
+      matches: matchingValues,
+      matchCount: matchingValues.length
+    };
+  });
+  
+  console.log(`[NumericVerify] Option matches: ${JSON.stringify(optionMatches.map(o => ({letter: o.letter, count: o.matchCount})))}`);
+  
+  // Găsim opțiunea cu cele mai multe match-uri în normativ
+  const bestMatch = optionMatches.reduce((best, current) => 
+    current.matchCount > best.matchCount ? current : best
+  , optionMatches[0]);
+  
+  // Dacă opțiunea AI-ului nu are match-uri, dar alta are, corectăm
+  const aiOptionMatch = optionMatches.find(o => o.letter === aiSelectedOption);
+  
+  console.log(`[NumericVerify] AI selected: ${aiSelectedOption}, matches: ${aiOptionMatch?.matchCount || 0}, best: ${bestMatch.letter} with ${bestMatch.matchCount}`);
+  
+  if ((!aiOptionMatch || aiOptionMatch.matchCount === 0) && bestMatch && bestMatch.matchCount > 0) {
+    console.log(`[NumericVerify] CORRECTING from ${aiSelectedOption} to ${bestMatch.letter}`);
+    return {
+      correctOption: bestMatch.letter,
+      wasCorrected: true,
+      reason: `Valoarea ${bestMatch.value} ${bestMatch.unit} apare în normativ, pe când valoarea din varianta ${aiSelectedOption} nu a fost găsită.`
+    };
+  }
+  
+  // Dacă AI-ul a ales o opțiune cu mai puține match-uri, corectăm
+  if (aiOptionMatch && bestMatch && bestMatch.matchCount > aiOptionMatch.matchCount) {
+    console.log(`[NumericVerify] CORRECTING from ${aiSelectedOption} to ${bestMatch.letter} (more matches)`);
+    return {
+      correctOption: bestMatch.letter,
+      wasCorrected: true,
+      reason: `Valoarea ${bestMatch.value} ${bestMatch.unit} apare de ${bestMatch.matchCount} ori în normativ, în timp ce valoarea din varianta ${aiSelectedOption} apare de ${aiOptionMatch.matchCount} ori.`
+    };
+  }
+  
+  return { correctOption: aiSelectedOption, wasCorrected: false, reason: '' };
+}
+
+/**
+ * Parsează răspunsul AI pentru a extrage rezultatul structurat
+ */
+export function parseQuizAnswer(
+  aiResponse: string,
+  quiz: QuizQuestion,
+  citations: any[] = []
+): QuizResult {
+  const normalized = aiResponse.toUpperCase();
+  
+  // Detectăm răspunsul corect
+  let correctOption = '';
+  
+  // Căutăm pattern-uri comune
+  const patterns = [
+    /RĂSPUNS\s*(CORECT)?\s*[:\-]?\s*([A-D])/i,
+    /VARIANTA\s*(CORECTĂ)?\s*[:\-]?\s*([A-D])/i,
+    /RĂSPUNSUL\s*(CORECT)?\s*[:\-]?\s*ESTE\s*[:\-]?\s*([A-D])/i,
+    /([A-D])\s*(ESTE)?\s*CORECT/i,
+    /^\s*([A-D])\s*[:\-\)]/m,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = aiResponse.match(pattern);
+    if (match) {
+      correctOption = (match[2] || match[1]).toUpperCase();
+      break;
+    }
+  }
+  
+  // Dacă nu am găsit, căutăm prima literă A-D care apare în context
+  if (!correctOption) {
+    const firstMention = aiResponse.match(/\b([A-D])\b/);
+    if (firstMention) {
+      correctOption = firstMention[1].toUpperCase();
+    }
+  }
+  
+  // Verificare automată pentru valori numerice
+  let wasCorrected = false;
+  let correctionReason = '';
+  if (correctOption && citations.length > 0) {
+    const verification = verifyNumericAnswer(correctOption, quiz, citations);
+    if (verification.wasCorrected) {
+      correctOption = verification.correctOption;
+      wasCorrected = true;
+      correctionReason = verification.reason;
+    }
+  }
+  
+  // Extragem explicația
+  let explanation = aiResponse;
+  
+  // Extragem pagina sursă
+  let sourcePage: number | undefined;
+  const pageMatch = aiResponse.match(/pag(?:ina)?\.?\s*(\d+)/i);
+  if (pageMatch) {
+    sourcePage = parseInt(pageMatch[1], 10);
+  }
+  
+  // Extragem de ce celelalte sunt greșite - versiune simplificată
+  const whyOthersWrong: Record<string, string> = {};
+  
+  // Extragem termenii cheie
+  const keyTerms = extractKeyTerms(quiz.question + ' ' + quiz.options.map(o => o.text).join(' '));
+  
+  // Adăugăm notă despre corecție dacă a fost cazul
+  let finalExplanation = explanation;
+  if (wasCorrected && correctionReason) {
+    finalExplanation = `NOTĂ: Răspunsul a fost corectat automat pe baza verificării numerice din textul normativului.\n${correctionReason}\n\n${explanation}`;
+  }
+  
+  return {
+    correctOption,
+    explanation: finalExplanation,
+    confidence: correctOption ? (wasCorrected ? 95 : 85) : 50,
+    relevantText: aiResponse,
+    sourcePage,
+    analysisDetails: {
+      whyCorrect: '',
+      whyOthersWrong,
+      keyTerms,
+      wasCorrected,
+      correctionReason
+    }
+  };
+}
+
+/**
+ * Formatează răspunsul pentru frontend într-un mod vizual plăcut
+ */
+export function formatQuizResponse(result: QuizResult, quiz: QuizQuestion): string {
+  const correctOptionData = quiz.options.find(o => o.letter === result.correctOption);
+  
+  let formatted = '';
+  
+  // Header cu răspunsul corect - BOLD și accentuat
+  formatted += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+  formatted += `✅ **RĂSPUNS CORECT: ${result.correctOption}**\n`;
+  formatted += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+  
+  // Textul variantei corecte
+  if (correctOptionData) {
+    formatted += `**Varianta ${result.correctOption}):** ${correctOptionData.text}\n\n`;
+  }
+  
+  // Explicația
+  formatted += `📖 **Explicație:**\n`;
+  // Folosim [\s\S] în loc de . cu flagul s pentru cross-platform compatibility
+  formatted += `${result.explanation.replace(/RĂSPUNS CORECT:.*/gi, '').replace(/DE CE CELELALTE[\s\S]*/i, '').trim()}\n\n`;
+  
+  // Analiza detaliată a variantelor greșite
+  const wrongOptions = quiz.options.filter(o => o.letter !== result.correctOption);
+  if (wrongOptions.length > 0) {
+    formatted += `❌ **De ce celelalte variante sunt greșite:**\n\n`;
+    
+    for (const opt of wrongOptions) {
+      formatted += `**Varianta ${opt.letter}):** ${opt.text}\n`;
+      
+      const whyWrong = result.analysisDetails.whyOthersWrong[opt.letter];
+      if (whyWrong) {
+        formatted += `→ ${whyWrong}\n`;
+      } else {
+        // Generăm o explicație generică bazată pe diferențe
+        formatted += `→ Această variantă este incorectă deoarece nu reflectă prevederile exacte din normativ.\n`;
+      }
+      formatted += `\n`;
+    }
+  }
+  
+  // Termeni cheie identificați
+  if (result.analysisDetails.keyTerms.length > 0) {
+    formatted += `🔍 **Termeni cheie identificați:** ${result.analysisDetails.keyTerms.join(', ')}\n\n`;
+  }
+  
+  // Sursa
+  if (result.sourcePage) {
+    formatted += `📚 **Sursă:** Normativ I7/2011, pagina ${result.sourcePage}\n`;
+  }
+  
+  return formatted;
+}

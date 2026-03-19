@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-03-18T13:51:14.194Z",
+  "config": {
+    "numQuestions": 3,
+    "jsonFile": "legislatie_anre_150_intrebari.json",
+    "apiUrl": "http://localhost:3000/api/rag/query"
+  },
+  "summary": {
+    "total": 3,
+    "successful": 0,
+    "withCitations": 0,
+    "avgConfidence": 0,
+    "avgResponseTime": 645
+  },
+  "results": [
+    {
+      "id": 110,
+      "question": "În cazul facturării întârziate, furnizorul are obligația:",
+      "aiAnswer": "",
+      "expectedAnswer": "b",
+      "citations": [],
+      "confidence": 0,
+      "responseTime": 1554,
+      "error": "HTTP 500: Internal Server Error"
+    },
+    {
+      "id": 45,
+      "question": "Energia electrică furnizată clienților finali pe piața de energie electrică și energia electrică produsă în instalațiile utilizatorilor se măsoară de către operatorii de măsurare, prin grupuri de măsurare, conform codului de măsurare elaborat de:",
+      "aiAnswer": "",
+      "expectedAnswer": "b",
+      "citations": [],
+      "confidence": 0,
+      "responseTime": 237,
+      "error": "HTTP 500: Internal Server Error"
+    },
+    {
+      "id": 72,
+      "question": "Sancțiunile contravenționale aplicate de ANRE pot fi:",
+      "aiAnswer": "",
+      "expectedAnswer": "b",
+      "citations": [],
+      "confidence": 0,
+      "responseTime": 144,
+      "error": "HTTP 500: Internal Server Error"
+    }
+  ]
+}

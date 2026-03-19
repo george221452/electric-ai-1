@@ -1,0 +1,31 @@
+╔════════════════════════════════════════════════════════════════╗
+║                    COMENZI RAPIDE                              ║
+╚════════════════════════════════════════════════════════════════╝
+
+VEZI AJUTOR:      ./help
+
+INDEXARE:
+  ./index-start     - Indexează TOATE documentele
+  ./index-status    - Vezi progresul
+  ./reindex         - Șterge tot și reindexează ⚠️
+  ./clear           - Șterge doar indexul ⚠️
+
+INFORMAȚII:
+  ./count           - Numără documentele PDF
+  ./status          - Status complet sistem
+  ./stats           - Statistici detaliate
+  ./check           - Verifică serviciile
+
+TESTARE:
+  ./test-one "text" - Testează o întrebare
+
+CĂUTARE:
+  ./search "text"   - Caută în documente
+
+═══════════════════════════════════════════════════════════════
+EXEMPLE:
+  ./count
+  ./check
+  ./index-start
+  ./search "NTE 001"
+  ./test-one "Care e tensiunea nominală?"

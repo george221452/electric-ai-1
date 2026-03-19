@@ -1,0 +1,12 @@
+#!/bin/bash
+# RAG CLI Wrapper Script
+# Usage: ./rag [command] [options]
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Change to script directory
+cd "$SCRIPT_DIR" || exit 1
+
+# Run the CLI
+npx tsx cli/index.ts "$@"

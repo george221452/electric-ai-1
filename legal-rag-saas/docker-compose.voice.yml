@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # OPENVOICE - Voice Cloning TTS
+  # ============================================
+  openvoice:
+    build:
+      context: ./voice-cloning
+      dockerfile: Dockerfile
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./voice-samples:/app/samples:ro
+      - ./voice-output:/app/output
+      - openvoice-cache:/app/cache
+    environment:
+      - OPENVOICE_PORT=7860
+      - OPENVOICE_DEVICE=cpu
+    networks:
+      - legalrag-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  openvoice-cache:
+
+networks:
+  legalrag-network:
+    external: true

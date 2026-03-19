@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+echo "🧪 Testăm grilele din normativ..."
+node --import tsx cli/test-quiz.ts "$@"

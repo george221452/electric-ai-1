@@ -115,6 +115,7 @@ export async function POST(req: NextRequest) {
         documentName: p.document.name,
         excerpt: excerpt,
         fullContent: content,
+        searchTerm: reference,
       };
     });
 
@@ -126,6 +127,7 @@ export async function POST(req: NextRequest) {
         results: processedResults,
       }
     });
+
 
   } catch (error) {
     console.error('[Search Reference] Error:', error);

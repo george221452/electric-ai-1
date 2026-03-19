@@ -1,0 +1,558 @@
+{
+  "totalQuestions": 61,
+  "correctAnswers": 43,
+  "incorrectAnswers": 18,
+  "accuracy": 70.49180327868852,
+  "results": [
+    {
+      "questionId": 1,
+      "question": "Sistem de măsurare inteligentă a energiei electrice este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, un sistem de măsurare inteligentă a energiei electrice este definit ca un sistem care permite transmiterea bidirecțională securizată a date..."
+    },
+    {
+      "questionId": 2,
+      "question": "Încadrarea punctelor de măsurare aferente locurilor de consum în una dintre categoriile A, B, C, se face în funcție de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Încadrarea punctelor de măsurare aferente locurilor de consum se face în funcție de energia electrică consumată în ultimele 12 luni pentru locurile de consum existente. ..."
+    },
+    {
+      "questionId": 3,
+      "question": "Operatorul de măsurare a energiei electrice pe piața angro de energie electrică din România:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, operatorul de măsurare a energiei electrice pe piața angro de energie electrică din România este unic, respectiv operatorul de transport și..."
+    },
+    {
+      "questionId": 4,
+      "question": "În rețelele electrice trifazate, măsurarea energiei electrice se efectuează:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, măsurarea energiei electrice în rețelele electrice trifazate se efectuează utilizând tensiunile și curenții de pe toate cele trei faze, ind..."
+    },
+    {
+      "questionId": 5,
+      "question": "Înfășurările secundare ale transformatoarelor de curent și tensiune pentru măsurare:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului, înfășurările secundare ale transformatoarelor de curent și tensiune pentru măsurare se utilizează pentru conectarea tuturor aparatelor de măsurare,..."
+    },
+    {
+      "questionId": 6,
+      "question": "Punctele de măsurare de categoria C sunt cele:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, punctele de măsurare de categoria C sunt definite ca fiind utilizate pentru măsurarea energiei electrice tranzitate prin punctele de delimi..."
+    },
+    {
+      "questionId": 7,
+      "question": "Punctele de măsurare din subcategoria C1 sunt punctele de măsurare dotate cu grupuri de măsurare:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, punctele de măsurare din subcategoria C1 sunt dotate cu grupuri de măsurare capabile să asigure date de măsurare la intervale de 60 de minu..."
+    },
+    {
+      "questionId": 8,
+      "question": "Accesul la rețeaua electrică de interes public este definit ca fiind:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, accesul la rețeaua electrică de interes public este definit ca un ansamblu de reguli prin care un terț își exercită dreptul de a se racorda..."
+    },
+    {
+      "questionId": 9,
+      "question": "ANRE este:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, ANRE se referă la \"Autoritatea Națională de Reglementare în Domeniul Energiei\". Aceasta este denumirea corectă și completă a instituției, c..."
+    },
+    {
+      "questionId": 10,
+      "question": "Asupra terenurilor aflate în proprietatea terților, cuprinse în zonele de protecție și de siguranță ale capacităților energetice, se stabilește pentru deținătorul capacităților energetice:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, asupra terenurilor aflate în proprietatea terților, cuprinse în zonele de protecție și de siguranță ale capacităților energetice, se stabil..."
+    },
+    {
+      "questionId": 11,
+      "question": "O persoană care deține o rețea electrică de distribuție proprie la data intrării în vigoare a Legii nr.123/2012:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011 și Legii nr. 123/2012, o persoană care deține o rețea electrică de distribuție proprie este obligată să asigure accesul la rețea conform reg..."
+    },
+    {
+      "questionId": 12,
+      "question": "Clientul casnic este clientul care:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, clientul casnic este definit ca fiind cel care cumpără energie electrică pentru propriul consum casnic, excluzând consumul pentru activităț..."
+    },
+    {
+      "questionId": 13,
+      "question": "Finanțarea lucrărilor de electrificare a localităților este obligația:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, finanțarea lucrărilor de electrificare a localităților este o obligație a autorităților locale. Aceasta este o responsabilitate clar defini..."
+    },
+    {
+      "questionId": 14,
+      "question": "Furnizorul este îndreptățit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, furnizorul este îndreptățit să rezilieze contractul de furnizare a energiei electrice în cazul sustragerii de energie electrică, care trebu..."
+    },
+    {
+      "questionId": 15,
+      "question": "Furnizorul este îndreptățit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, furnizorul are dreptul de a rezilia contractul de furnizare a energiei electrice în cazuri specifice, inclusiv sustragerea de energie elect..."
+    },
+    {
+      "questionId": 16,
+      "question": "În cazul sustragerii de energie prin ocolirea măsurării:",
+      "expectedAnswer": "C",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, în cazul sustragerii de energie prin ocolirea măsurării, clientul final va fi sancționat contravențional. Aceasta este o măsură standard pr..."
+    },
+    {
+      "questionId": 17,
+      "question": "Pe piața cu amănuntul, furnizorii vând energie electrică clienților finali prin:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, furnizorii vând energie electrică clienților finali prin contracte bilaterale, la prețuri negociate sau stabilite prin oferte-tip. Aceasta ..."
+    },
+    {
+      "questionId": 18,
+      "question": "Tarifele de racordare la rețea sunt:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, tarifele de racordare la rețea sunt reglementate de ANRE (Autoritatea Națională de Reglementare în Domeniul Energiei). Aceasta înseamnă că ..."
+    },
+    {
+      "questionId": 19,
+      "question": "ANRE poate aplica sancțiuni contravenționale în cazul în care un electrician:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, ANRE poate aplica sancțiuni contravenționale în cazul în care un electrician deține adeverință de electrician autorizat și comite o faptă p..."
+    },
+    {
+      "questionId": 20,
+      "question": "Autorizarea electricienilor în domeniul instalațiilor electrice se realizează:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, autorizarea electricienilor în domeniul instalațiilor electrice se realizează conform reglementărilor emise de ANRE (Autoritatea Națională ..."
+    },
+    {
+      "questionId": 21,
+      "question": "Electricianul autorizat pentru gradul III, tip A+B are următoarele competențe:",
+      "expectedAnswer": "A",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, electricianul autorizat pentru gradul III, tip A+B are competența de a proiecta și executa instalații electrice cu orice putere instalată t..."
+    },
+    {
+      "questionId": 22,
+      "question": "ANRE - Autoritatea Națională de Reglementare în domeniul Energiei este abilitată prin lege să constate și să sancționeze:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011 și legislației relevante, ANRE este abilitată să constate și să sancționeze încălcările reglementărilor tehnice și comerciale emise de aceas..."
+    },
+    {
+      "questionId": 23,
+      "question": "Electricienii care doresc să solicite autorizarea, pentru a fi acceptați la examen trebuie să îndeplinească următoarele condiții:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, electricienii care doresc să solicite autorizarea trebuie să transmită la ANRE o cerere și documentație anexată, din care să reiasă atât ca..."
+    },
+    {
+      "questionId": 24,
+      "question": "În cazul în care electricianul autorizat își pierde Legitimația/Adeverința de electrician autorizat, la solicitarea sa, ANRE poate emite un duplicat, dacă:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, ANRE poate emite un duplicat al legitimației/adeverinței de electrician autorizat dacă aceasta este declarată nulă într-un ziar local și ti..."
+    },
+    {
+      "questionId": 25,
+      "question": "Pentru a fi valabilă, adeverința de electrician autorizat:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, adeverința de electrician autorizat trebuie să fie prezentată la ANRE pentru a fi vizată la termenul prevăzut, după achitarea în prealabil ..."
+    },
+    {
+      "questionId": 26,
+      "question": "Termenul de vizare a adeverinței de electrician autorizat, de la data emiterii documentului sau, după caz, de la data ultimei vizări, este de:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, termenul de vizare a adeverinței de electrician autorizat este de 5 ani de la data emiterii documentului sau, după caz, de la data ultimei ..."
+    },
+    {
+      "questionId": 27,
+      "question": "Calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic, precum și pentru activitățile sau serviciile publice de interes național și general din domeniul energiei electrice o are:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic, prec..."
+    },
+    {
+      "questionId": 28,
+      "question": "Trecerea la un grad de autorizare superior se poate face:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Trecerea la un grad de autorizare superior se poate face pe bază de examen, conform normativului care stipulează că este necesară o evaluare a competențelor pentru a obț..."
+    },
+    {
+      "questionId": 29,
+      "question": "Pot face obiectul unei concesiuni energetice:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, concesiunea energetică se referă la activitățile și serviciile publice de interes național și general din domeniul energiei electrice. Acea..."
+    },
+    {
+      "questionId": 30,
+      "question": "Constituie contravenție:",
+      "expectedAnswer": "A",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, sustragerea de energie electrică este considerată o contravenție. Aceasta se referă la acțiuni ilegale prin care un consumator obține energ..."
+    },
+    {
+      "questionId": 31,
+      "question": "Constituie infracțiune:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, executarea de lucrări fără autorizație în zonele de protecție a instalațiilor și modificarea fără drept a componentelor instalațiilor energ..."
+    },
+    {
+      "questionId": 32,
+      "question": "Regulamentul pentru atestarea operatorilor economici care proiectează, execută și verifică instalații electrice este aprobat de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, regulamentul pentru atestarea operatorilor economici care proiectează, execută și verifică instalații electrice este aprobat de Ministerul ..."
+    },
+    {
+      "questionId": 33,
+      "question": "Se recomandă includerea în subcategoria C3 a punctelor de măsurare ale utilizatorilor rețelelor electrice de interes public:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, subcategoria C3 a punctelor de măsurare ale utilizatorilor rețelelor electrice de interes public se referă la utilizatorii racordați la joa..."
+    },
+    {
+      "questionId": 34,
+      "question": "Într-un sistem de producere distribuită:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, centralele de producere a energiei electrice în sistemele de producere distribuită sunt conectate la rețeaua de distribuție. Aceasta este o..."
+    },
+    {
+      "questionId": 35,
+      "question": "Codul tehnic al rețelelor electrice de distribuție (Codul RED), reglementare ce este parte constitutivă a legislației secundare, este aprobat de către:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, Codul tehnic al rețelelor electrice de distribuție (Codul RED) este aprobat de către ANRE (Autoritatea Națională de Reglementare în Domeniu..."
+    },
+    {
+      "questionId": 36,
+      "question": "Criteriile de promovare a energiei electrice produse în centrale electrice de cogenerare de înaltă eficiență au în vedere:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, criteriile de promovare a energiei electrice produse în centrale electrice de cogenerare de înaltă eficiență includ promovarea utilizării e..."
+    },
+    {
+      "questionId": 37,
+      "question": "Codul tehnic al rețelelor electrice de distribuție reglementează activitatea operatorilor de distribuție:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, Codul tehnic al rețelelor electrice de distribuție reglementează activitatea tuturor operatorilor de distribuție, fără a face distincție în..."
+    },
+    {
+      "questionId": 38,
+      "question": "Obligațiile de serviciu public pentru operatorii economici din sectorul energiei electrice se pot stabili:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, obligațiile de serviciu public pentru operatorii economici din sectorul energiei electrice se stabilesc prin reglementări ale ANRE (Autorit..."
+    },
+    {
+      "questionId": 39,
+      "question": "Standardul de performanță pentru serviciul de distribuție a energiei electrice stabilește indicatori de performanță privind:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, standardul de performanță pentru serviciul de distribuție a energiei electrice include indicatori de performanță care se referă la întrerup..."
+    },
+    {
+      "questionId": 40,
+      "question": "Furnizorul de energie electrică este îndreptățit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, furnizorul de energie electrică are dreptul să rezilieze contractul de furnizare a energiei electrice în cazul unei racordări ilegale la re..."
+    },
+    {
+      "questionId": 41,
+      "question": "Se integrează în sisteme de măsurare inteligentă punctele de măsurare din:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, punctele de măsurare din sistemele de măsurare inteligentă se integrează în subcategoria C4. Aceasta este specificată clar în document, ind..."
+    },
+    {
+      "questionId": 42,
+      "question": "În conformitate cu prevederile legii nr.123/2012 sunt considerate surse regenerabile de energie:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform prevederilor legii nr. 123/2012, sursele regenerabile de energie includ energia eoliană, care este o formă de energie obținută din vânt și este considerată regen..."
+    },
+    {
+      "questionId": 43,
+      "question": "Nerespectarea normelor tehnice emise de către ANRE constituie:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011 și legislației relevante, nerespectarea normelor tehnice emise de către ANRE constituie o contravenție. Aceasta se referă la încălcarea unor..."
+    },
+    {
+      "questionId": 44,
+      "question": "Actualizarea avizului tehnic de racordare atunci când se produce schimbarea titularului locului de producere sau de consum:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, actualizarea avizului tehnic de racordare este considerată o obligație în cazul schimbării titularului locului de producere sau de consum. ..."
+    },
+    {
+      "questionId": 45,
+      "question": "Energia electrică furnizată clienților finali pe piața de energie electrică și energia electrică produsă în instalațiile utilizatorilor se măsoară de către operatorii de măsurare, prin grupuri de măsurare, conform codului de măsurare elaborat de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, energia electrică furnizată clienților finali și energia electrică produsă în instalațiile utilizatorilor se măsoară de către operatorii de..."
+    },
+    {
+      "questionId": 46,
+      "question": "Operatorul de distribuție:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, operatorul de distribuție are responsabilitatea de a exploata, retehnologiza și dezvolta rețelele electrice de distribuție. Aceasta este o ..."
+    },
+    {
+      "questionId": 47,
+      "question": "Operatorul de transport și de sistem este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, operatorul de transport și de sistem este definit ca fiind orice persoană fizică sau juridică ce deține o rețea electrică de transport și e..."
+    },
+    {
+      "questionId": 48,
+      "question": "În cazul existenței mai multor puncte de delimitare, se consideră un singur loc de consum și o singură instalație de utilizare dacă:",
+      "expectedAnswer": "C",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului, pentru a considera un singur loc de consum și o singură instalație de utilizare în cazul existenței mai multor puncte de delimitare, este necesar c..."
+    },
+    {
+      "questionId": 49,
+      "question": "Pentru protejarea rețelelor electrice de distribuție, persoanelor fizice și juridice:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, persoanelor fizice și juridice li se interzice să efectueze construcții de orice fel în zona de siguranță a rețelelor electrice de distribu..."
+    },
+    {
+      "questionId": 50,
+      "question": "Printre obiectivele de bază ale Legii nr. 123/2012 se regăsesc:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Varianta A este corectă deoarece reflectă un obiectiv fundamental al Legii nr. 123/2012, care vizează asigurarea accesului nediscriminatoriu și reglementat al tuturor pa..."
+    },
+    {
+      "questionId": 51,
+      "question": "Rețea electrică de interes public este o rețea electrică la care sunt racordați cel puțin:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, o rețea electrică de interes public este definită ca fiind o rețea la care sunt racordați cel puțin 2 utilizatori. Aceasta înseamnă că pent..."
+    },
+    {
+      "questionId": 52,
+      "question": "Obținerea avizului tehnic de racordare de către un utilizator:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, obținerea avizului tehnic de racordare nu este obligatorie pentru o putere cerută sub 100 kW. Aceasta înseamnă că utilizatorii care solicit..."
+    },
+    {
+      "questionId": 53,
+      "question": "Sursele electrice de tensiune continuă, dacă nu sunt racordate prin invertoare la SEN, se supun Legii nr. 123/2012?:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, sursele electrice de tensiune continuă, chiar dacă nu sunt racordate prin invertoare la SEN, se supun Legii nr. 123/2012. Aceasta înseamnă ..."
+    },
+    {
+      "questionId": 54,
+      "question": "Executarea sau folosirea de instalații clandestine în scopul racordării directe la rețea constituie:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Normativul I7/2011 sau Legea 123/2012 stipulează că executarea sau folosirea de instalații clandestine în scopul racordării directe la rețea poate constitui fie o contra..."
+    },
+    {
+      "questionId": 55,
+      "question": "Avizul tehnic de racordare emis își încetează valabilitatea:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, avizul tehnic de racordare emis își încetează valabilitatea în termen de 6 luni de la emitere, dacă nu a fost încheiat contractul de racord..."
+    },
+    {
+      "questionId": 56,
+      "question": "În cazul unui ansamblu de blocuri de locuințe, grupurile de măsurare individuale se poziționează:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, grupurile de măsurare individuale trebuie să fie poziționate centralizat, la limita zonei de proprietate asupra terenului, în exteriorul co..."
+    },
+    {
+      "questionId": 57,
+      "question": "Soluția de racordare se stabilește printr-o fișă de soluție pentru:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, soluția de racordare se stabilește printr-o fișă de soluție pentru locurile de consum care se racordează la rețele electrice de medie sau j..."
+    },
+    {
+      "questionId": 58,
+      "question": "Soluția de racordare se stabilește printr-un studiu de soluție pentru:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, soluția de racordare se stabilește printr-un studiu de soluție pentru locurile de consum și/sau de producere care impun necesitatea unei an..."
+    },
+    {
+      "questionId": 59,
+      "question": "Autoritatea Națională de Reglementare în domeniul Energiei analizează și soluționează eventualele contestații cu privire la:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, Autoritatea Națională de Reglementare în domeniul Energiei are competența de a analiza și soluționa contestațiile referitoare la avizele te..."
+    },
+    {
+      "questionId": 60,
+      "question": "Neînțelegerile privind racordarea utilizatorilor la rețelele electrice de interes public, dintre operatorii de distribuție și solicitanți, se soluționează:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, neînțelegerile privind racordarea utilizatorilor la rețelele electrice de interes public se soluționează de autoritatea competentă conform ..."
+    },
+    {
+      "questionId": 61,
+      "question": "ANRE poate aplica sancțiuni contravenționale unui electrician autorizat pentru:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011 și legislației relevante, ANRE poate aplica sancțiuni contravenționale unui electrician autorizat pentru comiterea unor fapte prevăzute în R..."
+    }
+  ],
+  "timestamp": "2026-03-12T09:01:26.920Z"
+}

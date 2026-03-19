@@ -1,0 +1,744 @@
+{
+  "timestamp": "2026-03-18T14:06:16.147Z",
+  "config": {
+    "numQuestions": 20,
+    "jsonFile": "legislatie_anre_150_intrebari.json",
+    "apiUrl": "http://localhost:3000/api/rag/query"
+  },
+  "summary": {
+    "total": 20,
+    "successful": 20,
+    "withCitations": 20,
+    "avgConfidence": 54.8,
+    "avgResponseTime": 8502.35
+  },
+  "results": [
+    {
+      "id": 108,
+      "question": "Convenția de exploatare se încheie între:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nConvenția de exploatare se încheie între operatorul de transport și sistem (în România, C.N. TRANSELECTRICA) și utilizatorii rețelei electrice, care pot fi furnizori de energie electrică, consumatori mari sau alți operatori economici care utilizează rețeaua pentru transportul energiei electrice.\n\nConform standardului de performanță pentru serviciul de furnizare a energiei electrice la tarife reglementate, cod ANRE: 34.1.204.0.00, se stipulează că „furnizorii de energie electrică au obligația de a respecta condițiile contractuale stabilite în convențiile de exploatare”. Acest lucru sugerează că convenția de exploatare este un document esențial care reglementează relațiile dintre părțile implicate în sectorul energetic.\n\nDe asemenea, contractul-cadru pentru prestarea serviciului de transport, aprobat prin Ordinul Președintelui ANRE nr. 40, este un alt document relevant care detaliază responsabilitățile și drepturile părților implicate în exploatarea rețelei electrice. Acest contract este esențial pentru asigurarea unui cadru legal și operațional pentru transportul energiei electrice.\n\nÎn concluzie, convenția de exploatare se încheie între C.N. TRANSELECTRICA și utilizatorii rețelei electrice, iar aceste relații sunt reglementate prin normativele emise de ANRE. Dacă aveți nevoie de informații suplimentare sau detalii specifice despre un anumit tip de convenție, vă rog să specificați.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "da819095-3e4e-4b6f-bd1c-fb6ba2bb398b",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 17,
+          "text": "ANRE: 35.1.2.0. 7.06/12.02;\nf) Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife \nreglementate, cod ANRE:34.1.204.0.00. 27/08/99;\ng) Contract-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de \nadministrare a pieţei angro de energie electrică între C.N. TRANSELECTRICA şi [Beneficiar], \naprobat prin Ordinul Preşedintelui ANRE nr. 40 din 2004, publicat în Monitorul Oficial al României, \nPartea I, nr.1271 din  29.12.2004, cu modificările ulterioare;\nh) Ordin ANRE nr. 8/2005 - NTE 004/05/00- Normativ pentru analiza şi evidenţa evenimentelor \naccidentale din instalaţiile de producere, transport şi distribuţie a energiei electrice şi termice. 2\n4\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nV. PREMISE ŞI PRINCIPII GENERALE PENTRU ANALIZA CALITATIVĂ ŞI CANTITATIVĂ A \nFIABILITĂŢII INSTALAŢIILOR ENERGETICE\nArt. 6.",
+          "confidence": 51
+        },
+        {
+          "index": 2,
+          "paragraphId": "6199917b-c5ad-4b05-8cb1-d186e2773a86",
+          "documentId": "1fb204fd-59fa-4363-b21c-6a6c28579197",
+          "documentName": "Decizie  NTE 005  PE 013 .pdf",
+          "pageNumber": 1,
+          "text": "operatorii economici a prevederilor cuprinse în prezenta decizie. Art. 5. - La  data  intrării  în  vigoare  a  prezentei  decizii,    prescripţia energetică  PE  013/1994, \nîşi  încetează  valabilitatea. Preşedintele Autorităţii Naţionale de Reglementare în Domeniul Energiei–ANRE\nNicolae OPRIŞ\n----------------------------\n* Conţinutul ANEXEI este disponibil în format electronic pe pagina web a ANRE (www.anre.ro).",
+          "confidence": 51
+        },
+        {
+          "index": 3,
+          "paragraphId": "5d045d06-b2fa-4712-ba40-cf2c3611cb81",
+          "documentId": "1fb204fd-59fa-4363-b21c-6a6c28579197",
+          "documentName": "Decizie  NTE 005  PE 013 .pdf",
+          "pageNumber": 1,
+          "text": "operatorii economici a prevederilor cuprinse în prezenta decizie. Art. 5. - La  data  intrării  în  vigoare  a  prezentei  decizii,    prescripţia energetică  PE  013/1994, \nîşi  încetează  valabilitatea. Preşedintele Autorităţii Naţionale de Reglementare în Domeniul Energiei–ANRE\nNicolae OPRIŞ\n----------------------------\n* Conţinutul ANEXEI este disponibil în format electronic pe pagina web a ANRE (www.anre.ro).",
+          "confidence": 51
+        }
+      ],
+      "confidence": 51,
+      "responseTime": 7480
+    },
+    {
+      "id": 6,
+      "question": "Punctele de măsurare de categoria C sunt cele:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nPunctele de măsurare de categoria C se referă la instalațiile electrice care sunt supuse unor condiții specifice de utilizare și mediu, conform normativelor electrice românești. În general, aceste categorii sunt definite în funcție de cerințele de protecție și de condițiile de operare.\n\nConform normativului NTE 001/03/00, punctele de măsurare sunt clasificate în funcție de mai mulți parametri, inclusiv rezistența la impact și compresiunea. De exemplu, se menționează:\n\n1. **Compresiunea**: Punctele de măsurare de categoria C sunt cele care suportă o compresiune medie (750 N) sau ridicată (1250 N). Aceasta înseamnă că echipamentele de măsurare trebuie să fie capabile să reziste la o forță de compresiune care poate apărea în condiții normale de utilizare.\n\n2. **Rezistența la impact**: De asemenea, este important ca aceste puncte de măsurare să aibă o rezistență la impact corespunzătoare, care poate varia în funcție de specificațiile tehnice ale echipamentului. De exemplu, rezistența la impact medie (2 J) sau ridicată (5 J) poate fi cerută în anumite condiții.\n\n3. **Mediul de instalare**: Este esențial ca punctele de măsurare să fie instalate în conformitate cu cerințele de mediu, inclusiv protecția împotriva poluării, umidității și altor condiții adverse. Normativul NTE 001/03/00 specifică faptul că „instalațiile electrice din mediile periculoase și foarte periculoase” trebuie să respecte standarde stricte de protecție.\n\nRecomandări concrete:\n- Asigurați-vă că echipamentele de măsurare utilizate în punctele de măsurare de categoria C sunt certificate conform standardelor de rezistență la compresiune și impact.\n- Verificați periodic condițiile de mediu în care sunt amplasate punctele de măsurare pentru a preveni deteriorarea acestora.\n- Consultați normele specifice aplicabile în funcție de tipul de instalație electrică și de mediul de utilizare.\n\nDacă aveți nevoie de informații suplimentare sau detalii specifice despre un anumit tip de instalație sau condiții de operare, vă rog să specificați.",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "220e59df-794c-49c4-8709-bd889aa2957d",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 218,
+          "text": ") Compresiune foarte scazuta (125 N) 1 Compresiune scazuta (320 N) 2 Compresiune medie (750 N) 3 Compresiune ridicata (1250 N) 4 Compresiune foarte ridicata (4000 N) 5 348 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 347 5.7 - 3 A doua cifra Rezistenta la impact (6.1.2.) Rezistenta la impact foarte scazuta (0,5 J) 1 Rezistenta la impact scazuta (1 J) 2 Rezistenta la impact medie (2 J) 3 Rezistenta la impact ridicata (6 J) 4 Rezistenta la impact foarte ridicata (20,4 J) 5 A treia cifra de temperaturi scazute (6.2.1.) + 5o C 1 - 5o C 2 - 15o C 3 - 25o C 4 - 45o C 5 A patra cifra Domeniu de temperaturi ridicate (6.2.2.) + 60o C 1 + 90o C 2 +105o C 3 +120o C 4 +150o C 5 +250o C 6 +400o C 7 A cincea cifra Rezistenta la incovoiere (6.1.3.) Rigid 1 Pliabil 2 Pliabil/Elastic 3 Flexibil 4 A siasea cifra Proprietati electrice (6.3) Nedeclarate 0 Cu caracteristici de conitnuitate electrica 1 Cu caracteristici de izolatie electrica 2 Cu caracteristici atat de continuitate cat sii de izolatie electrica 3 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 349 348 5.7 - 4 A siaptea cifra Rezistenta la patrunderea corpurilor solide (6.4.1) Protejat impotriva corpurilor solide cu diametrul mai mare sau egal cu 2,5 mm 3 Protejat impotriva corpurilor solide cu diametru mai mare sau egal cu 1,0 mm 4 Protejat impotriva prafului 5 Etansi la praf 6 A opta cifra Rezistenta la patrunderea apei (6.4.",
+          "confidence": 57
+        },
+        {
+          "index": 2,
+          "paragraphId": "4b32dd33-fa96-43b9-b409-e8e0a5f78be3",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 26,
+          "text": "Masurile suplimentare insotesc intotdeauna o masura tehnica principala sii se prevad in : Vedere din fata Vedere de sus Vedere laterala 2,5 m S 1,25 m 1,25 m 2,5 m S 0,75 m 0,75 m S 1,25 m Limita zonei de accesibilitate la atingere 42 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 41 - instalatiile electrice din mediile periculoase sii foarte periculoase ; - anumite conditii de influente ale conditiilor externe sii amplasamente speciale, asia cum sunt mentionate in cap.7 ; - cazurile in care se utilizeaza conductoare din aluminiu cu sectiunea mai mica de 16 mm2 . Protectia in caz de defect poate fi omisa pentru un echipament cu parti conductoare accesibile de dimensiuni sub 50 50 mm2 sau daca sunt amplasate astfel incat nu pot veni in contact semnificativ cu o parte a corpului uman sii daca racordarea cu un conductor de protectie se realizeaza cu dificultate sau este nesigura . 4.1.3.3. Masurile de protectie diferite aplicate in aceeasii instalatie pentru protectie la defect (la atingere indirecta) nu trebuie sa se influenteze sau sa se anuleze reciproc. 4.1.3.4. Masurile tehnice de protectie la defect (impotriva atingerilor indirecte) mentionate depind de tipul retelei de alimentare sii conditiile de defect. Acestea sunt detaliate in cadrul masurilor de protectie din subcap. 4.1.4. 4.1.4. Masura de protectie Se admit, in general, urmatoarele masuri : 1 intreruperea automata a alimentarii ; 2 izolarea dubla sau intarita ;",
+          "confidence": 57
+        },
+        {
+          "index": 3,
+          "paragraphId": "aefaa64f-153b-4516-b22d-98e2a86d4f4a",
+          "documentId": "a513206a-ae42-4e55-a782-bf9a15ed683b",
+          "documentName": "Ord 02 03 P109.pdf",
+          "text": "2) Distanţele la ţărmul mării depind de topografia zonei de coastă şi de condiţiile extreme de vânt.\n\nNTE 001/03/00 - - Tabelul A.10.2 Clasificarea teritoriului în zone cu un anumit grad de poluare Nr. crt.Caracteristicile zonei Distanţa în km faţă de sursa de poluare Nivel de poluare a zonei 0123 1.Zone forestiere, montane, zone agricole, nefertilizate cu îngrăşăminte chimice, localităţi rurale şi oraşe care nu au întreprinderi cu surse de poluare -I 2.Zone agricole fertilizate cu îngrăşăminte chimice.-II 3.Zone mlăştinoase, cu ceaţă frecventă sau situate lângă cursuri de apă (râuri, fluvii) 01 km de la cursul de apă sau zona mlăştinoasă II 4.Triaje de căi ferate şi traversări de linii ferate unde se foloseşte tracţiunea cu abur Se limitează la zona considerată II 5.Oraşe mari, zone cu trafic rutier intensidemII Categoria A peste 10 km 710 km 57 km 05 km I II III IV 6.Instalaţii chimice Categoria B peste 7 km 57 km 05 km I II III Categoria Cpeste 3 km 03 km I II 7.Industria metalurgică, de construcţii de maşini, de Categoria A peste 7 km 57 km 35 km 03 km I II III IV prelucrare a metalelor şi industria materialelor de construcţiiCategoria B peste 5 km 3 5 km 0 3 km I II III Categoria C peste 3 km 0  3 km I II 8.Industria pentru prelucrarea lemnului, industria textilă, industria pentru prelucrarea produselor alimentare şi Categoria A peste 5 km 3  5 km 0  3 km I II III animaliere Categoria B peste 3 km 0  3 km I II Categoria A peste 7 km 5  7 km 3  5 km 0  3 km I II III IV 9.Extragerea minereurilor metalifere şi nemetalifere Categoria B peste 5 km 3  5 km 0  3 km I II III Categoria C peste 3 km 0  3 km I II 10.Instalaţii sanitare tehnice şi de salubritate comunală, ferme zootehnice peste 3 km 0  5 km I II Combustibil solid peste 4 km 2  4 km 0  2 km I II III 11.Centrale termoelectrice având un consum de combustibil (în etapa finală) la 150 tcc/h folosindPăcură peste 3 km 1  3 km 0  1 km I II III Gaze naturale peste 1 km 0  1 km I II Tabelul A.10.2 (continuare) 10 3",
+          "confidence": 57
+        }
+      ],
+      "confidence": 57,
+      "responseTime": 13648
+    },
+    {
+      "id": 41,
+      "question": "Se integrează în sisteme de măsurare inteligentă punctele de măsurare din:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nÎn ceea ce privește integrarea punctelor de măsurare în sisteme de măsurare inteligentă, este important să ne referim la normele și reglementările specifice care guvernează aceste sisteme în România.\n\n1. **Definiția sistemelor de măsurare inteligentă**: Acestea sunt sisteme care permit monitorizarea și gestionarea consumului de energie electrică în timp real, prin utilizarea de echipamente avansate care pot comunica datele de consum către furnizori și utilizatori.\n\n2. **Componentele sistemului**: Conform normativului, un sistem de măsurare poate include diverse componente, cum ar fi jgheaburi, fitinguri, dispozitive de prindere și accesorii. De exemplu, în secțiunea [1], se menționează: „Un sistem nu trebuie să conțină neapărat toate componentele de la a) la e). Pot fi folosite diferite combinații ale elementelor de sistem.” Aceasta sugerează că punctele de măsurare pot fi integrate în diferite configurații, în funcție de necesitățile specifice ale instalației.\n\n3. **Configurarea sistemului**: În ceea ce privește configurarea sistemului, secțiunea [2] menționează că „Configuratia S poate fi utilizată atunci când sistemele interioare sunt amplasate în zone relativ mici și toate liniile pătrund în zona numai printr-un singur punct.” Acest lucru este relevant pentru amplasarea punctelor de măsurare, care ar trebui să fie accesibile și să respecte cerințele de securitate și eficiență.\n\n4. **Legătura echipotentială**: Este esențial ca toate componentele metalice ale sistemului de măsurare să fie integrate în legătura echipotentială, conform secțiunii [3]: „...toate componentele din metal ale rețelelor interioare nu sunt izolate de sistemul de legare la pământ, dar trebuie integrate în acesta prin puncte.” Aceasta este o măsură de siguranță care previne riscurile electrice.\n\n5. **Recomandări**:\n   - Asigurați-vă că punctele de măsurare sunt amplasate conform cerințelor de accesibilitate și siguranță.\n   - Verificați integrarea corectă a componentelor metalice în sistemul de legare la pământ, pentru a respecta normele de siguranță electrică.\n   - Evaluați necesitatea unei legături echipotentiale suplimentare, mai ales în zonele umede sau în apropierea instalațiilor de apă.\n\nDacă aveți nevoie de informații suplimentare sau de clarificări privind anumite aspecte ale sistemelor de măsurare inteligentă, vă rog să specificați.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "8b4828cd-d807-4b25-939e-2fd34404d7d3",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 221,
+          "text": "Componente ale sistemului: Parte a sistemului care cuprinde: a) jgheab sau tub profilat; b) fiting; c) dispozitiv de prindere; d) dispozitiv pentru montarea aparatajului; e) accesorii Un sistem nu trebuie sa contina neaparat toate componentele de la a) la e). Pot fi folosite diferite combinatii ale elementelor de sistem 2.4. Jgheab: Element principal al unui sistem de jgheaburi format dintr-un soclu sii unul sau mai multe capace amoviabile sau care pot fi deschise. 2.5. Tub profilat: Element principal al unui sistem de tuburi profilate caracterizat de o sectiune transversala inchisa necirculara 2.6. Fiting: Element component al unui sistem de jgheaburi sau tuburi profilate cu ajutorul caruia se poate face o prelungire, o schimbare de directie sau poate fi capat terminal al sistemului 2.7. Dispozitiv de prindere: Element component al unui sistem de jgheaburi sau tuburi profilate cu ajutorul caruia alte elemente ale sistemului pot fi fixate de perete, tavan, sol sau de o alta structura MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 355 354 5.8 - 2 2.8. Dispozitiv de montare a aparatjului: Element component al sistemului care permite instalarea de aparataj electrica (comutatoare, socluri de prize de curent, intreruptoare, socluri de prize telefonice etc.) care poate fi parte integranta a aparatului electric. 2.9.",
+          "confidence": 49
+        },
+        {
+          "index": 2,
+          "paragraphId": "63674056-6e33-4463-86a7-434e6649bb2d",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 52,
+          "text": "Configuratia S poate fi utilizata atunci cand sistemele interioare sunt amplasate in zone relativ mici sii toate liniile patrund in zona numai printr-un singur punct. 4.4.4.8. Daca se utilizeaza o configuratie M, toate componentele din metal (de exemplu dulapuri, carcase, sertare) ale retelelor interioare nu sunt izolate de sistemul de legare la pamant, dar trebuie integrate in acesta prin puncte de echipotentializare multiple, rezultand un tip M. Configuratia M este de preferat pentru sistemele interioare extinse sau pentru structuri in ansamblu, cu numeroase interconexiuni intre echipamente sii unde liniile intra in structura prin mai multe puncte. 4.4.4.9. In sistemele complexe, avantajele ambelor configuratii (configuratia M sii S) pot fi combinate asia cum se prezinta in figura 4.9, rezultand configuratia 1 (Ss combinat cu M) sau configuratia 2 (Ms combinat cu M). Configuratia tip stea S Configuratia tip retea M Configuratie de baza Integrarein reteaua de echipotentializare Retea de echipotentializare Conductor de echipotentializare Echipament Punct de racordare la reteaua de echipotentializare ERP Punct de referinta de legare la pamant S Configuratie tip stea integrata printr-un punct de stea M Configuratie tip retea integrata printr-un ochi de retea S M Ms Ss ERP Fig. 4.8. Integrarea echipamentelor electrice in reteaua de echipotentializare. MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.",
+          "confidence": 49
+        },
+        {
+          "index": 3,
+          "paragraphId": "dacc8efd-d0c5-4b2e-9bbf-27c3cde810b2",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 134,
+          "text": "In cazurile in care o cladire nu are o legatura echipotentiala principala, urmatoarele elemente conductoare exterioare care intra intr-o incapere cu cada de baie sau dusi trebuie sa faca parte dintr-o legatura echipotentiala suplimentara: - parti metalice ale sistemelor de alimentare cu apa potabila sii ale sistemelor de ape uzate; - parti metalice ale sistemelor de incalzire sii ale sistemelor de conditionare a aerului; - parti metalice ale sistemelor de alimentare cu gaz. 7.1.4. Alegerea sii montarea echipamentului electric 7.1.4.1. Echipamentul electric specificat la subcap. 7.1.4.3. sii 7.1.4.4. trebuie sa aiba cel putin urmatoarele grade de protectie: - in volumul 0 : IPX7 - in volumul 1 : IPX4 - in volumul 2 : IPX4 Aceasta prevedere nu se aplica prizelor pentru aparatele de ras conform recomandarilor din SR EN 61558 2 5, instalate in volumul 2 sii unde stropirea directa de la dusiuri este putin probabila. Echipamentul electric supus jeturilor de apa (ex. la baile publice, in scop de curatat), trebuie sa aiba un grad de protectie de cel putin IPX 5. 210 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 209 7.1.4.2. Sisteme de pozare a. Sistemele de pozare care alimenteaza echipamentul electric din volumele 0, 1 sau 2 sii sunt montate pe peretii care limiteaza aceste volume trebuie sa fie montate fie pe perete, fie inglobate in perete la o adancime de minim 5 cm.",
+          "confidence": 49
+        }
+      ],
+      "confidence": 49,
+      "responseTime": 11978
+    },
+    {
+      "id": 10,
+      "question": "Asupra terenurilor aflate în proprietatea terților, cuprinse în zonele de protecție și de siguranță ale capacităților energetice, se stabilește pentru deținătorul capacităților energetice:",
+      "aiAnswer": "Am gasit informatii partiale (61% incredere).\n\n📄 **Consultati documentul la:**\n• Paginile: 72, 4, 4\n\n💡 **Sau reformulati** intrebarea cu termeni specifici din normativ.",
+      "expectedAnswer": "c",
+      "citations": [
+        {
+          "index": 3,
+          "documentName": "NTE 0030400 PE-104.pdf",
+          "pageNumber": 72,
+          "text": "precum   si   la   dezafectarea   acestora,   în   vederea \nobţinerii acordului de mediu. În documentaţie se vor trata, la solicitarea beneficiarului, şi \ncerinţele cuprinse în procedurile proprii  al...",
+          "confidence": 60
+        },
+        {
+          "index": 1,
+          "documentName": "NTE 0030400 PE-104.pdf",
+          "pageNumber": 4,
+          "text": "se   impun   pentru   coexistenţa   liniilor \naeriene de energie electrică  cu elemente naturale, construcţii sau instalaţii din vecinătatea lor; \nd)suprafeţelor de teren necesare construirii, exploat...",
+          "confidence": 63
+        },
+        {
+          "index": 2,
+          "documentName": "NTE 0030400 PE-104.pdf",
+          "pageNumber": 4,
+          "text": "pentru   coexistenţa   liniilor \naeriene de energie electrică  cu elemente naturale, construcţii sau instalaţii din vecinătatea lor; \nd)suprafeţelor de teren necesare construirii, exploatării şi mente...",
+          "confidence": 61
+        }
+      ],
+      "confidence": 37,
+      "responseTime": 430
+    },
+    {
+      "id": 34,
+      "question": "Într-un sistem de producere distribuită:",
+      "aiAnswer": "În contextul întrebării tale referitoare la sistemele de producere distribuită și la normele care reglementează cuplarea acestora la rețeaua de distribuție publică, este important să ne concentrăm pe cerințele specifice menționate în normativele electrice românești.\n\n### 1. Sincronizarea și protecția sistemului\n\nConform normativului, pentru cuplarea la rețeaua de distribuție publică prin sincronism, este esențial să se utilizeze „sisteme automate de sincronizare care să țină seama de frecvență, fază și tensiune”. Aceasta subliniază importanța asigurării unei sincronizări corecte între generatorul distribuit și rețeaua electrică, pentru a evita problemele de calitate a energiei electrice și pentru a proteja echipamentele.\n\nDe asemenea, este menționată necesitatea de a „prevăzut o protecție pentru deconectarea grupului generator de la rețeaua de distribuție publică în caz de pierdere a acestei alimentări sau de variații de tensiune sau de frecvență mai mari decât cele declanșatoare”. Aceasta indică faptul că un sistem de protecție adecvat este crucial pentru a preveni daunele atât generatorului, cât și rețelei electrice.\n\n### 2. Structura sistemului de alimentare\n\nÎn ceea ce privește structura sistemului de alimentare, se face referire la diferitele configurații posibile de alimentare, cum ar fi:\n\n- Alimentarea din două surse (S1 și S2) care asigură fiecare 50% din consumul necesar.\n- Alimentarea dintr-o singură sursă (S1) care asigură întregul consum.\n\nAceste opțiuni subliniază importanța redundanței în sistemele electrice, pentru a minimiza riscurile de întrerupere a alimentării. Este recomandat să se analizeze probabilitatea de întrerupere a alimentării și să se implementeze măsuri de mitigare adecvate, conform cerințelor normative.\n\n### 3. Componentele sistemului\n\nReferitor la componentele sistemului, normativul menționează că un sistem nu trebuie să conțină neapărat toate componentele enumerate (jgheaburi, fitinguri, dispozitive de prindere etc.), dar este important ca acestea să fie selectate corespunzător pentru a asigura funcționalitatea și siguranța sistemului.\n\n### Recomandări\n\n1. **Implementarea unui sistem de sincronizare automat**: Asigurați-vă că sistemul de producere distribuită este echipat cu un sistem de sincronizare care respectă cerințele de frecvență, fază și tensiune.\n   \n2. **Protecția adecvată**: Instalați protecții care să deconecteze generatorul în caz de variații necorespunzătoare de tensiune sau frecvență.\n\n3. **Analiza redundanței**: Evaluați opțiunile de alimentare din multiple surse pentru a asigura continuitatea alimentării și a reduce riscurile de întrerupere.\n\n4. **Verificarea componentelor**: Asigurați-vă că toate componentele sistemului sunt conforme cu normativele și că sunt selectate corespunzător pentru aplicația specifică.\n\nDacă ai nevoie de informații suplimentare sau clarificări pe un anumit aspect, te rog să specifici.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "b67fc1cc-11ef-482d-b67f-375e9b2ad1a4",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 95,
+          "text": "Pentru cuplarea la reteaua de distributie publica prin sincronism, este preferabil sa se utilizeze sisteme automate de sincronizare care sa tina seama de frecventa, faza sii tensiune. b) trebuie prevazuta o protectie pentru decontarea grupului generator de la reteaua de distributie publica in caz de pierdere a acestei alimentari sau de variatii de tensiune sau de frecventa mai mari decat cele declarate pentru alimentarea normala; MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 139 138 c) trebuie prevazute mijloace care sa permita grupului generator sa fie separat de reteaua de distributie publica; d) protectia impotriva scurtcircuitelor sii protectia impotriva atingerilor indirecte trebuie asigurata la fel daca instalatia este alimentata separat de la una din cele doua surse sau de la cele doua surse in paralel. 5.6.3.2.3 Alimentarile pentru echipamentul utilizat in comun Atunci cand echipamentul electric este alimentat din doua surse diferite, un defect produs intr- un circuit al unei surse nu trebuie sa afecteze protectia impotriva siocurilor electrice sii functionarea corecta a celuilalt circuit. Daca intr-un astfel de ehipament este necesar un conductor de protectie, acesta trebuie racordat la conductoarele de protectie ale ambelor circuite. 5.6.4. Circuite 5.6.4.1. Circuitele pentu servicii de securitate trebuie sa fie independente fata de alte circuite.",
+          "confidence": 46
+        },
+        {
+          "index": 2,
+          "paragraphId": "718c3b57-944d-4ef3-9002-6783331a29e9",
+          "documentId": "a01bd141-4e4e-407c-8f7c-2f0637c485c9",
+          "documentName": "REVIZUIRE INSTRUCTIUNI 3-4_transmis.pdf",
+          "pageNumber": 6,
+          "text": "şi S\n2\n care asigură fiecare în întregime consumul necesar în \npunctul \"R\";\nb.de la două surse S\n1\n şi S\n2\n care asigură fiecare 50% din consumul necesar în punctul \n\"R\";\nc.de la o singură sursă S\n1\n care asigură întregul consum din punctul \"R\". Pentru cele trei posibilităţi de alimentare prezentate în fig. 3.4. a, b şi c, se cere să se determine \nprobabilitatea de a se produce cel puţin o întrerupere în alimentarea consumatorului într-un interval de \ntimp (0,t) pentru t = 24 h. . Intensităţile de defectare pentru componentele schemei au următoarele valori:\n- pentru sursele de alimentare S\n1\n,S\n2\n:\n66\nFig. 3.4\n100 %\nS\n1\nS\n2\n1,2 km\nLEC\nR\n100 %\n50 %\nS\n1\nS\n2\n1,2 km\nLEC\nR\n50 %\n100 %\nS\n1\n1,2 km\nLEC\nR\na. b.c. λ\nS1\nS\n1\nS\n2\nλ\nS2\nλ\nLEC\nLEC\nd.e.f. λ\nLEC\nLEC\nλ\n S2\nS\n2\nλ\n S1\nS\n1\nλ\nLEC\nLEC\nλ\n S\nS\n1\n\nF\no\nr\nm\nu\nl\na\nr\n \nc\no\nd\n:\n \nF\nP\n4\n6\n1\n1\n/\nI\nL\n0\n1\n-\n0\n2\n \nA\nc\nt\n.",
+          "confidence": 46
+        },
+        {
+          "index": 3,
+          "paragraphId": "8b4828cd-d807-4b25-939e-2fd34404d7d3",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 221,
+          "text": "Componente ale sistemului: Parte a sistemului care cuprinde: a) jgheab sau tub profilat; b) fiting; c) dispozitiv de prindere; d) dispozitiv pentru montarea aparatajului; e) accesorii Un sistem nu trebuie sa contina neaparat toate componentele de la a) la e). Pot fi folosite diferite combinatii ale elementelor de sistem 2.4. Jgheab: Element principal al unui sistem de jgheaburi format dintr-un soclu sii unul sau mai multe capace amoviabile sau care pot fi deschise. 2.5. Tub profilat: Element principal al unui sistem de tuburi profilate caracterizat de o sectiune transversala inchisa necirculara 2.6. Fiting: Element component al unui sistem de jgheaburi sau tuburi profilate cu ajutorul caruia se poate face o prelungire, o schimbare de directie sau poate fi capat terminal al sistemului 2.7. Dispozitiv de prindere: Element component al unui sistem de jgheaburi sau tuburi profilate cu ajutorul caruia alte elemente ale sistemului pot fi fixate de perete, tavan, sol sau de o alta structura MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 355 354 5.8 - 2 2.8. Dispozitiv de montare a aparatjului: Element component al sistemului care permite instalarea de aparataj electrica (comutatoare, socluri de prize de curent, intreruptoare, socluri de prize telefonice etc.) care poate fi parte integranta a aparatului electric. 2.9.",
+          "confidence": 46
+        }
+      ],
+      "confidence": 46,
+      "responseTime": 37
+    },
+    {
+      "id": 4,
+      "question": "În rețelele electrice trifazate, măsurarea energiei electrice se efectuează:",
+      "aiAnswer": "În rețelele electrice trifazate, măsurarea energiei electrice se efectuează conform normativelor specifice care reglementează acest domeniu. De obicei, măsurarea energiei electrice în rețelele trifazate se realizează prin utilizarea unor contoare electrice care pot să măsoare atât energia activă, cât și energia reactivă, în funcție de tipul de consumator și de aplicație.\n\n### Măsurarea energiei electrice în rețele trifazate\n\n1. **Tipurile de măsurare**:\n   - Măsurarea energiei electrice se poate face prin contoare monofazate sau trifazate, în funcție de configurația rețelei. În cazul rețelelor trifazate, se utilizează contoare trifazate care pot să măsoare energia activă (kWh) și energia reactivă (kVArh).\n\n2. **Normativele aplicabile**:\n   - Conform legislației în vigoare, cum ar fi Legea energiei electrice nr. 318/2003, este esențial ca echipamentele de măsurare să respecte standardele de precizie și să fie calibrate corespunzător. De asemenea, se impune respectarea normelor tehnice specifice pentru instalarea și utilizarea contoarelor electrice.\n\n3. **Aspecte tehnice**:\n   - În rețelele trifazate, se iau în considerare cele trei faze (A, B, C) și se măsoară curentul și tensiunea în fiecare fază. Măsurarea energiei electrice se poate face prin metoda „metodă de calcul”, unde energia totală este suma energiei din fiecare fază:\n     \\[\n     E_{total} = E_A + E_B + E_C\n     \\]\n   - Este important ca măsurarea să fie efectuată în condiții de echilibru, iar eventualele dezechilibre să fie corect monitorizate, deoarece acestea pot afecta precizia măsurării.\n\n4. **Protecția și condițiile de mediu**:\n   - Este esențial să se considere „condițiile de mediu în care funcționează precum și caracteristicile dispozitivelor de protecție disponibile” (citat din contextul normativ). Acest lucru asigură că echipamentele de măsurare nu sunt afectate de factori externi care ar putea influența rezultatele.\n\n### Recomandări\n\n- **Verificarea periodică a contoarelor**: Este recomandat ca contoarele electrice să fie verificate și calibrate periodic pentru a asigura acuratețea măsurătorilor.\n- **Utilizarea echipamentelor conforme**: Asigurați-vă că echipamentele de măsurare respectă standardele naționale și internaționale, pentru a evita eventualele probleme legate de legalitate și precizie.\n- **Monitorizarea dezechilibrelor**: Implementați un sistem de monitorizare a dezechilibrelor în rețea, pentru a preveni deteriorarea echipamentelor și a asigura o măsurare corectă a energiei.\n\nDacă aveți nevoie de informații suplimentare sau de clarificări cu privire la un aspect specific al măsurării energiei electrice în rețelele trifazate, vă rog să specificați.",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "6226780c-3b73-4eff-9b6c-9edc8f9f8a10",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 4,
+          "text": "considerare   condiţiile   de   mediu   în   care   funcţionează   precum   şi   caracteristicile \ndispozitivelor   de   protecţie   disponibile. Ea   are   drept   scop   reducerea   la   un   nivel   acceptabil,   din \npunct de vedere economic şi al exploatării, a posibilităţii ca solicitările dielectrice rezultate, aplicate \nechipamentelor,  să  provoace deteriorarea  izolaţiei acestora sau  să  le  afecteze  continuitatea  de \nfuncţionare. 3.2.- Tensiune nominală a unei reţele trifazate (U\nn\n): Valoarea efectivă a tensiunii între faze, \nprin   care   este   denumită   reţeaua   şi   la   care   se   referă   unele   caracteristici   de   funcţionare   ale \nacesteia. 3.3.- Tensiune cea mai ridicată a reţelei (U\ns\n): Valoarea efectivă maximă a tensiunii între faze, \ncare poate să apară în orice moment şi în orice punct al reţelei în condiţii normale de funcţionare.",
+          "confidence": 66
+        },
+        {
+          "index": 2,
+          "paragraphId": "186867be-d19c-453d-b313-c2dd04776ddb",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 4,
+          "text": "considerare   condiţiile   de   mediu   în   care   funcţionează   precum   şi   caracteristicile \ndispozitivelor   de   protecţie   disponibile. Ea   are   drept   scop   reducerea   la   un   nivel   acceptabil,   din \npunct de vedere economic şi al exploatării, a posibilităţii ca solicitările dielectrice rezultate, aplicate \nechipamentelor,  să  provoace deteriorarea  izolaţiei acestora sau  să  le  afecteze  continuitatea  de \nfuncţionare. 3.2.- Tensiune nominală a unei reţele trifazate (U\nn\n): Valoarea efectivă a tensiunii între faze, \nprin   care   este   denumită   reţeaua   şi   la   care   se   referă   unele   caracteristici   de   funcţionare   ale \nacesteia. 3.3.- Tensiune cea mai ridicată a reţelei (U\ns\n): Valoarea efectivă maximă a tensiunii între faze, \ncare poate să apară în orice moment şi în orice punct al reţelei în condiţii normale de funcţionare.",
+          "confidence": 66
+        },
+        {
+          "index": 3,
+          "paragraphId": "2d82db26-7536-4459-a801-972b2571c181",
+          "documentId": "29a7e75e-b17c-4f80-ae8f-5ce3407ff0e1",
+          "documentName": "NTE006_final.pdf",
+          "pageNumber": 6,
+          "text": "- valoare iniţială (supratranzitorie). +\n - componenta pozitivă (directă); \n-\n - componenta negativă (inversă); \n0\n - componenta zero (homopolară); \n \nIV. DOCUMENTE DE REFERINŢĂ \n \nArt.7. Prezentul normativ se bazează pe următoarele acte normative: \n \na) Legea energiei electrice nr. 318/2003 \nb) Procedură  privind  revizuirea  prescripţiilor  energetice  în  domeniile  producerii, \ntransportului,  dispecerizării,  distribuţiei,  furnizării şi  utilizării  energiei  electrice şi \ntermice. Cod ANRE : 667.1.300.0.01.06/09/2002 \nc) Normativ  privind  metodologia  de  calcul  al  curenţilor  de  scurtcircuit  în  reţelele \nelectrice cu tensiunea peste 1 kV (PE 134/1995). d) SR  EN  60909-0:2003,  Curenţii  de  scurtcircuit  în  reţelele  trifazate  de  curent \nalternativ. Partea 0 : Calculul curenţilor. e) SR  HD  472  S1:2002  +  SR  HD  472  S1:2002/A1:2002,  Tensiuni  nominale  ale \nreţelelor electrice de distribuţie publică de joasă tensiune. Art.8.",
+          "confidence": 65
+        }
+      ],
+      "confidence": 66,
+      "responseTime": 56
+    },
+    {
+      "id": 133,
+      "question": "Clienții casnici de energie electrică:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nPentru a răspunde întrebării referitoare la clienții casnici de energie electrică, este important să ne referim la normele și reglementările specifice din domeniul energiei electrice din România.\n\n### 1. Reglementări generale\nConform **Art. 4** din normativul menționat, „Titularii de licenţă care îşi desfăşoară activitatea în sectorul energiei electrice vor respecta prevederile prezentului ordin.” Aceasta înseamnă că toți furnizorii de energie electrică au obligația de a respecta reglementările stabilite de Autoritatea Națională de Reglementare în Domeniul Energiei (ANRE).\n\n### 2. Bransiamente electrice\nReferitor la bransiamentele electrice, **secțiunea 3.1.5.1** precizează că „Bransiamentele electrice se proiectează și se execută respectându-se condițiile prevăzute în SR 234, normativul PE 106, pentru bransiamentele electrice aeriene și pentru bransiamentele electrice subterane respectându-se și condițiile prevăzute în normativul NTE 007/08/00.” Acest lucru subliniază importanța respectării standardelor tehnice în proiectarea și execuția bransiamentelor, care sunt esențiale pentru racordarea clienților casnici la rețeaua de distribuție.\n\n### 3. Racordarea la rețeaua de distribuție\n**Art. 3.1.5.2** menționează că „soluția de racordare la rețeaua de distribuție publică se stabilește de către furnizorul de energie electrică.” Aceasta implică faptul că fiecare client casnic trebuie să colaboreze cu furnizorul său pentru a determina cea mai adecvată soluție de racordare, care să respecte normele tehnice și de siguranță.\n\n### 4. Protecția instalațiilor\nDe asemenea, este important de menționat că agenții economici trebuie să respecte „prevederile cuprinse în Normativul privind alegerea izolaţiei, coordonarea izolaţiei şi protecţia instalaţiilor electroenergetice împotriva supratensiunilor.” Aceasta sugerează că, pe lângă racordare, protecția instalațiilor electrice este esențială pentru a preveni eventualele daune cauzate de supratensiuni.\n\n### Recomandări\n1. **Colaborare cu furnizorul**: Clienții casnici ar trebui să se consulte cu furnizorul de energie electrică pentru a obține informații detaliate despre procedurile de racordare și despre normele care trebuie respectate.\n2. **Verificarea standardelor**: Este recomandat ca clienții să se familiarizeze cu standardele SR 234, PE 106 și NTE 007/08/00 pentru a înțelege cerințele tehnice aplicabile.\n3. **Protecția instalațiilor**: Asigurați-vă că instalațiile electrice sunt protejate corespunzător împotriva supratensiunilor, conform normativelor în vigoare.\n\n### Informații lipsă\nDacă aveți întrebări suplimentare sau doriți detalii specifice despre un anumit aspect al reglementărilor pentru clienții casnici, vă rog să le specificați pentru a putea oferi un răspuns mai detaliat.",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "5881cac9-ac5b-45e7-87d6-107a039d861e",
+          "documentId": "0eaabf9b-51c0-4729-9e6a-c32d698625a0",
+          "documentName": "ORDIN  APROBARE  NTE 003.pdf",
+          "pageNumber": 1,
+          "text": "------------------------------------------------------------------------------------------------------------\n*  Conţinutul anexei este disponibil în format electronic pe pagina web a ANRE (www.anre.ro) la secţiunea \nReglementări Tehnice\n\nArt. 4. - Titularii de licenţă care îşi desfăşoară activitatea în sectorul energiei electrice  vor \nrespecta prevederile prezentului ordin. Art. 5. - Departamentele de specialitate din cadrul ANRE  vor urmări respectarea de către \nagenţii economici a prevederilor cuprinse în prezentul ordin. Preşedintele Autorităţii Naţionale de Reglementare în Domeniul Energiei–ANRE\nJean CONSTANTINESCU",
+          "confidence": 55
+        },
+        {
+          "index": 2,
+          "paragraphId": "a26906de-4c63-45d2-b864-f4fd9c88a615",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 19,
+          "text": "1.5. Bransiamente 3.1.5.1 Bransiamentele electrice se proiecteaza sii se executa respectandu-se conditiile prevazute in SR 234, normativul PE 106, pentru bransiamentele electrice aeriene sii pentru bransiamentele electrice subterane respectandu-se sii conditiile prevazute in normativul NTE 007/08/00. 3.1.5.2 Solutia de racordare la reteaua de distributie publica se stabilesite de catre furnizorul de energie electrica sau de alti consultanti de specialitate atestati in conditiile legii. 3.1.5.3 Consumatorii alimentati direct din reteaua furnizorului de energie electrica, pot fi (daca nu se stabilesite altfel prin contractul de furnizare): - cu bransiament monofazat pentru puteri de pana la 11 kVA sau - cu bransiament trifazat pentru puteri peste 11 kVA sii sub 30 kVA 3.1.5.4 Coloanele electrice alimentate din bransiamentele cladirilor de locuit, comerciale, social- culturale sii administrative se proiecteaza sii se executa respectandu-se pe langa conditiile din prezentul normativ sii conditiile din SR 234. 3.1.5.5 Pentru instalatiile electrice de iluminat sii putere (forta) se prevede tablou electric de distributie comun, cu urmatoarele exceptii: - daca se aplica tarife diferentiate pentru consumul de energie electrica; - daca functionarea receptoarelor de putere (forta) provoaca fenomene suparatoare in instalatiile de lumina (de ex. palpairi, scaderea fluxului luminos);",
+          "confidence": 55
+        },
+        {
+          "index": 3,
+          "paragraphId": "f33b0eb1-c3cd-4d54-88af-64266a9c0fec",
+          "documentId": "5306638d-f04c-495b-987f-a66ca3329d89",
+          "documentName": "Ord 02 03 PE 109 ordin.pdf",
+          "text": " respectarea de către agenţii economici a prevederilor cuprinse în Normativul privind alegerea izolaţiei, coordonarea izolaţiei şi protecţia instalaţiilor electroenergetice împotriva supratensiunilor.\n\n---------------------------- * Conţinutul ANEXEI este disponibil în format electronic pe pagina web a ANRE (www. anre. ro).  Preşedintele Autorităţii Naţionale de Reglementare în domeniul Energiei, ION LUNGU A N R E A u t o r i t a t e a N a ţ i o n a l ă d e R e g l e m e n t a r e î n d o m e n i ul En e r g i e i Str. Constantin Nacu nr.  3, sect.  2, cod 70219, Bucureşti, România Tel:+(4021) 311 22 44, Fax: +(4021) 312 43 65, http:// www. anre. ro, e-mail: anre@anre.",
+          "confidence": 55
+        }
+      ],
+      "confidence": 55,
+      "responseTime": 20837
+    },
+    {
+      "id": 77,
+      "question": "Client final este:",
+      "aiAnswer": "Pentru a răspunde la întrebarea referitoare la clientul final în contextul normativelor electrice românești, este important să clarificăm câteva aspecte esențiale din normativele menționate.\n\n### 1. Definirea clientului final\nClientul final este, în general, entitatea sau persoana care beneficiază de energia electrică consumată. Acesta poate fi un utilizator casnic, o instituție, o industrie sau, în cazul specificat, un spital.\n\n### 2. Aspecte tehnice și economice\nConform contextului din normative, soluția adoptată pentru alimentarea cu energie electrică a unui client final, cum ar fi un spital, trebuie să ia în considerare un „compromis între aspectele tehnice și cele economice”. Aceasta este o afirmație esențială, deoarece în cazul spitalelor, unde siguranța și continuitatea alimentării sunt critice, evaluarea riscurilor și a pierderilor este fundamentală.\n\n### 3. Pierderi și evaluări\nNormativele subliniază importanța evaluării pierderilor de vieți omenești și pierderilor economice în cazul structurilor critice, cum ar fi spitalele. Astfel, este esențial să se efectueze o analiză detaliată a impactului potențial al întreruperilor de alimentare electrică, conform secțiunii [2] din context.\n\n### 4. Calculul productibilității\nReferitor la calculul productibilității, se menționează diverse formule și condiții (ex. condiția 1/2, 1/3, 2/3) care trebuie respectate pentru a determina debitul cerut de client. Este important ca aceste calcule să fie efectuate corect pentru a asigura o alimentare adecvată și eficientă.\n\n### 5. Recomandări\n- **Evaluarea Riscurilor**: Este recomandat să se efectueze o evaluare detaliată a riscurilor asociate cu alimentarea electrică a spitalului, având în vedere pierderile de vieți omenești și economice.\n- **Studiu de Fezabilitate**: Realizarea unui studiu de fezabilitate care să includă atât aspecte tehnice cât și economice, pentru a determina cea mai bună soluție de alimentare.\n- **Consultarea cu Furnizorii**: În cazul în care nu există suficiente informații de la furnizorii de echipamente electrice, este esențial să se solicite date suplimentare pentru a asigura conformitatea cu specificațiile tehnice necesare.\n\n### 6. Informații lipsă\nPentru a oferi un răspuns complet, ar fi util să avem detalii suplimentare despre tipul de instalații electrice utilizate în spital, capacitatea necesară, precum și specificațiile tehnice ale echipamentelor electrice.\n\nDacă aveți întrebări suplimentare sau doriți să clarificați anumite aspecte, vă rog să le specificați!",
+      "expectedAnswer": "c",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "43409b01-cc3d-43c9-928c-2143f10f084a",
+          "documentId": "bfac2def-5376-4ea6-96ce-cfdc47830b47",
+          "documentName": "REVIZUIRE INSTRUCTIUNI 5-7_transmis.pdf",
+          "text": "100% din debitul cerut (condiţia 1/2). 128 For mu lar co d: FP 46 11 / IL 01- 02 Ac t.0 T MP T MP T MP 3×T MP T f = T - 3×T MP Variantele a. şi b. T MP T MP 2×T MP T f = T - 2×T MP Varianta c. Fig.7.1\n\nNTE 005/06/00 Calculul productibilităţii Varianta a. (Condiţia 1/3) Varianta b. (Condiţia 2/3) Varianta c. (Condiţia 1/2) 129 For mu lar co d: FP 46 11 / IL 01- 02 Ac t.0 p 0.90.920.940.960.981 9,5×10 5 110 6 Fig.7.2 9,6×10 5 9,7×10 5 9,8×10 5 9,9×10 5 S a (p,100) S b (p,100) S c (p,100) S a (p,400) S b (p,400)S b (p,400) S c (p,400)",
+          "confidence": 42
+        },
+        {
+          "index": 2,
+          "paragraphId": "a278ff88-2188-4159-ac72-d3a9a1060c00",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 252,
+          "text": "Solutia care se va adopta va depinde de cel mai bun compromis intre aspectele tehnice sii cele economice. III. Spital Studiul de caz care urmeaza, cuprinde instalatiile unui spital tipic, cu un bloc operator sii cu o unitate de terapie intensiva. Pierderile de vieti omenesiti (L1) sii pierderile economice (L4) sunt componentele caracteristice acestui tip de structura. Este necesar sa se evalueze necesitatea protectiei sii impactul economic al masurilor de protectie, astfel incat urmeaza sa fie evaluateriscurile R1 sii R4. MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 447 446 6.9 - 14 Date sii caracteristici importante Date sii caracteristici ale: 1) cladirii sii ale imprejurimilor sale sunt indicate in tabelul A6.9.21; 2) retelei electrice interioare sii ale liniei aferente de alimentare cu energie electrica la IT care patrunde in structura sunt indicate in tabelul A6.9.22; 3) sistemelor electronice interioare sii ale liniei aferente de telecomunicatii care patrunde in structura sunt indicate in tabelul A6.9.23. Tabelul A6.9.21 Date caracteristice ale structurii Parametru Comentariu Simbol Valoare Dimensiuni (m) Lb u Wb u Hb 50 u 150 u 10 Factor de amplasare Izolat Cd 1 SPT Fara PB 1 Ecran la frontiera structurii Fara KS1 1 Ecran in interiorul structurii Fara KS2 1 Densitate de trasnete 1/km2/an Ng 4 Persoane prezente in cladire In interiorul sii in exteriorul structurii nt 1 000 Tabelul A6.9.",
+          "confidence": 41
+        },
+        {
+          "index": 3,
+          "paragraphId": "175f511c-732a-4d6c-82d0-091e82670788",
+          "documentId": "f2d2dfe6-fb1f-432a-9018-ef99bae16718",
+          "documentName": "NTE006_final.pdf",
+          "text": "eactan ţ a lineic ă indicat ă de fabrica constructoare;\n\nI N - curent nominal; x xx - aceste rela ţ ii se vor utiliza dac ă nu se dispune de alte informa ţ ii de la furnizor. S N - puterea nominal ă ;\n\nNTE 006/06/00 53\n\nAnexa 4 (continuare)\n\nTensiunea nominal ă\n\n[kV]\n\nPierderi nominale [kW]\n\nDenumirea transforma- torului\n\nS N\n\n[kVA] Tipul constructiv\n\nIT\n\nJT\n\nReglaj [%]\n\nGrupa de conexiuni ∆ P 0\n\n(Fe) P kT\n\n(Cu)\n\nu k\n\n[%]\n\nI o\n\n[%] 6\n\n110/10 10 4\n\n35\n\nTTU NL\n\n100\n\n110/20 20 4\n\n± 5\n\nY zn 5 365\n\n2,3\n\n4\n\n3 6\n\n160/20 10\n\n0,5\n\nTTU NL\n\n160\n\n160/20 20\n\n0,4\n\n± 5\n\nY zn\n\n5 525\n\n3,1\n\n4\n\n2,9\n\n6\n\n4\n\nDyn 5\n\n6\n\n525\n\n10\n\nYyn 0\n\n250/10\n\n10 (5)\n\n0,4\n\nDyn 5\n\n0,66\n\n20\n\n525\n\nYyn 0\n\n20(15)\n\n4\n\nDyn 5\n\nTTU NL\n\n250\n\n250/20\n\n20(15)\n\n525\n\n± 5\n\nYyn 0\n\n0,68\n\n4,4\n\n6\n\n2,9 6 0,4 Dyn 5 6 525 Yyn 0 10\n\nTTU NL\n\n400\n\n400/10 10 (5)\n\n0,4\n\n± 5 Dyn 5\n\n0,94\n\n6\n\n6\n\n2,8 ANEXA4\n\nDATE CARACTERISTICE PENTRU TRANSFORMATOARE MT/JT kV\n\nNTE 006/06/00 54\n\n20\n\n525\n\nYyn 0\n\n20 (15)\n\n0,4\n\nDyn 5\n\nTTU NL\n\n400\n\n400/20\n\n20 (15)\n\n525\n\n± 5\n\nYyn 0\n\n0,98\n\n6\n\n6\n\n2,8\n\n6 0,4 Dyn 5 6 525 Yyn 0 10\n\n630/10 10 (5)\n\n0,4\n\nDun 5\n\n1,2 15\n\n20\n\n0,525\n\nTTU NL\n\n630\n\n630/20 20 (15) 0,4\n\n± 5\n\nYyn 0 Dyn 5\n\n1,25\n\n8,2\n\n6\n\n2,4 6 4 Dyn 5 6 525 10\n\nYyn 0",
+          "confidence": 41
+        }
+      ],
+      "confidence": 42,
+      "responseTime": 18
+    },
+    {
+      "id": 80,
+      "question": "ANRE poate suspenda atestatul unui operator economic dacă:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nConform normativelor electrice românești, ANRE (Autoritatea Națională de Reglementare în Domeniul Energiei) are dreptul de a suspenda atestatul unui operator economic în anumite condiții. Deși textul pe care l-ai furnizat nu detaliază explicit motivele pentru care ANRE poate suspenda atestatul, se pot deduce anumite principii din reglementările generale care guvernează activitatea operatorilor din sectorul energiei electrice.\n\n### Motive posibile pentru suspendarea atestatului\n\n1. **Nerespectarea prevederilor legale**: Articolul 4 din ordinul menționat stipulează că „Titularii de licenţă care îşi desfăşoară activitatea în sectorul energiei electrice vor respecta prevederile prezentului ordin.” Nerespectarea acestor prevederi poate constitui un motiv valid pentru suspendarea atestatului.\n\n2. **Inspecții și monitorizare**: Articolul 5 precizează că „Departamentele de specialitate din cadrul ANRE vor urmări respectarea de către agenţii economici a prevederilor cuprinse în prezentul ordin.” Dacă, în urma inspecțiilor, se constată abateri semnificative de la normele stabilite, ANRE poate decide suspendarea atestatului.\n\n3. **Standardele de performanță**: Conform standardelor de performanță pentru serviciul de furnizare a energiei electrice, operatorii trebuie să respecte anumite criterii de calitate și eficiență. Nerespectarea acestor standarde poate duce la sancțiuni, inclusiv suspendarea atestatului.\n\n### Recomandări\n\n- **Revizuirea documentației**: Operatorii economici ar trebui să revizuiască periodic documentele și reglementările ANRE pentru a se asigura că respectă toate cerințele legale.\n\n- **Implementarea unui sistem de management al calității**: Este recomandat ca operatorii să implementeze un sistem de management al calității care să includă măsuri de conformitate cu reglementările ANRE.\n\n- **Colaborarea cu ANRE**: În cazul în care un operator primește notificări sau avertismente din partea ANRE, este esențial să colaboreze activ cu autoritatea pentru a remedia problemele identificate.\n\n### Informații lipsă\n\nTextul pe care l-ai furnizat nu include detalii specifice despre procedurile de suspendare a atestatului sau despre criteriile exacte care ar putea duce la o astfel de decizie. Ar fi util să consulți reglementările complete disponibile pe site-ul ANRE sau să te adresezi direct ANRE pentru clarificări suplimentare.\n\nDacă ai nevoie de informații suplimentare sau de clarificări pe un anumit aspect, te rog să specifici.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "896770e9-c5d0-4fc3-b405-64559d928259",
+          "documentId": "f213bfd7-3684-4b70-8aac-01b7946b39d2",
+          "documentName": "Ordin NTE006.pdf",
+          "pageNumber": 1,
+          "text": "PE  134-\n2/1996 îşi încetează  valabilitatea. Art. 4. - Titularii  de  licenţă  care  îşi  desfăşoară  activitatea  în  sectorul  energiei  electrice  vor \nrespecta prevederile prezentului ordin. Art. 5. - Departamentele  de  specialitate  din  cadrul  ANRE  vor  urmări  respectarea  de  către \nagenţii economici a prevederilor cuprinse în prezentul ordin. Preşedintele Autorităţii Naţionale de Reglementare în Domeniul Energiei – ANRE \n \nNicolae OPRIŞ \n \n \n  \n \n   ANRE \nA N R E  \nA u t o r i t a t e a   N aţi o n a lă  d e   R e g l e m e n t a r e   î n   d o m e n i u l   E n e r g i e i \nS t r . C o n s t a n t i n   N a c u   3 ,   0 2 0 9 9 5   B u c u r eşt i   3 7 ,   R o m â n i a  \nTel:+(4021) 311 22 44, Fax: +(4021) 312 43 65, http:// www.anre.ro,  e-mail: anre@anre.ro",
+          "confidence": 57
+        },
+        {
+          "index": 2,
+          "paragraphId": "5881cac9-ac5b-45e7-87d6-107a039d861e",
+          "documentId": "0eaabf9b-51c0-4729-9e6a-c32d698625a0",
+          "documentName": "ORDIN  APROBARE  NTE 003.pdf",
+          "pageNumber": 1,
+          "text": "------------------------------------------------------------------------------------------------------------\n*  Conţinutul anexei este disponibil în format electronic pe pagina web a ANRE (www.anre.ro) la secţiunea \nReglementări Tehnice\n\nArt. 4. - Titularii de licenţă care îşi desfăşoară activitatea în sectorul energiei electrice  vor \nrespecta prevederile prezentului ordin. Art. 5. - Departamentele de specialitate din cadrul ANRE  vor urmări respectarea de către \nagenţii economici a prevederilor cuprinse în prezentul ordin. Preşedintele Autorităţii Naţionale de Reglementare în Domeniul Energiei–ANRE\nJean CONSTANTINESCU",
+          "confidence": 55
+        },
+        {
+          "index": 3,
+          "paragraphId": "da819095-3e4e-4b6f-bd1c-fb6ba2bb398b",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 17,
+          "text": "ANRE: 35.1.2.0. 7.06/12.02;\nf) Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife \nreglementate, cod ANRE:34.1.204.0.00. 27/08/99;\ng) Contract-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de \nadministrare a pieţei angro de energie electrică între C.N. TRANSELECTRICA şi [Beneficiar], \naprobat prin Ordinul Preşedintelui ANRE nr. 40 din 2004, publicat în Monitorul Oficial al României, \nPartea I, nr.1271 din  29.12.2004, cu modificările ulterioare;\nh) Ordin ANRE nr. 8/2005 - NTE 004/05/00- Normativ pentru analiza şi evidenţa evenimentelor \naccidentale din instalaţiile de producere, transport şi distribuţie a energiei electrice şi termice. 2\n4\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nV. PREMISE ŞI PRINCIPII GENERALE PENTRU ANALIZA CALITATIVĂ ŞI CANTITATIVĂ A \nFIABILITĂŢII INSTALAŢIILOR ENERGETICE\nArt. 6.",
+          "confidence": 54
+        }
+      ],
+      "confidence": 57,
+      "responseTime": 13848
+    },
+    {
+      "id": 97,
+      "question": "Codul tehnic al rețelelor de distribuție (Codul RED) se aplică:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nCodul tehnic al rețelelor de distribuție (Codul RED) se aplică rețelelor electrice de distribuție, conform reglementărilor stabilite de Autoritatea Națională de Reglementare în domeniul Energiei (ANRE). Acesta este reglementat prin Decizia ANRE nr. 101/2000, care definește normele tehnice necesare pentru proiectarea, execuția, exploatarea și întreținerea rețelelor electrice de distribuție.\n\n### Domeniul de aplicare\n\nConform art. 3 din normativul menționat, \"prezentul normativ se referă la calculul curenţilor de scurtcircuit în reţelele de joasă tensiune de curent alternativ, cu frecvenţa nominală - 50 Hz.\" Aceasta indică faptul că Codul RED se aplică în mod special rețelelor de distribuție de joasă tensiune, având în vedere și aspectele legate de protecția echipamentelor și siguranța utilizatorilor.\n\n### Reguli și principii\n\nCodul RED stabilește reguli clare pentru dimensionarea și protecția rețelelor de distribuție. De exemplu, în ceea ce privește protecția la scurtcircuit, se menționează că este esențial să se respecte anumite condiții de proiectare pentru a asigura funcționarea în siguranță a rețelelor electrice. Aceste condiții includ:\n\n- \"Corespunde regimului cu număr minim de elemente (surse şi reţea) care poate asigura alimentarea consumului.\" (sursa [2])\n\n### Recomandări\n\n1. **Respectarea normelor ANRE**: Este esențial ca toți operatorii din domeniul distribuției de energie electrică să respecte normele stabilite de ANRE, inclusiv cele din Codul RED, pentru a asigura o funcționare sigură și eficientă a rețelelor electrice.\n\n2. **Calculul curenților de scurtcircuit**: Operatorii ar trebui să efectueze calculul curenților de scurtcircuit conform specificațiilor din Codul RED, având în vedere diferitele niveluri ale rețelelor de distribuție (ex. nivelul 1, 2 etc., conform anexa 10 din NTE 006/06/00).\n\n3. **Formare continuă**: Este recomandat ca personalul tehnic să participe la cursuri de formare continuă pentru a fi la curent cu ultimele modificări și actualizări ale normativelor electrice.\n\n### Concluzie\n\nCodul tehnic al rețelelor de distribuție se aplică rețelelor electrice de distribuție, având ca scop asigurarea unei alimentări electrice sigure și eficiente. Este important ca toți cei implicați în acest domeniu să fie familiarizați cu reglementările ANRE și să aplice corect normele stabilite. Dacă există întrebări suplimentare sau neclarități, vă stau la dispoziție pentru clarificări.",
+      "expectedAnswer": "c",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "7c6c88c5-4676-4216-a2d4-b33bd15d181a",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 17,
+          "text": "normative:\na) Ordin ANRE nr. 20/2004 completat cu Ordin ANRE nr.35/2004 -  Codul tehnic al reţelei electrice \nde transport, revizia 1, cod ANRE : 51.1. 112.0. 01.27/08/04;\nb)Decizia ANRE nr.101/2000 – Codul tehnic al reţelei electrice de distribuţie cod \n ANRE:101.1. 113.0.01.06/06/00;\nc)Ordin ANRE nr.25/2004 – Codul comercial al pieţei angro de energie electrică, cod \nANRE:22.2. 130. 01.05/07/99;\nd)Ordin ANRE nr.17/2002 – Codul de măsurare a energiei electrice, cod \n2\n3\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nANRE:17.1.127.0. 01.20/06/02;\ne) Ordin ANRE nr.35/2002 – Regulament de conducere şi organizare a activităţii de mentenanţă, \ncod ANRE: 35.1.2.0. 7.06/12.02;\nf) Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife \nreglementate, cod ANRE:34.1.204.0.00. 27/08/99;\ng) Contract-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de \nadministrare a pieţei angro de energie electrică între C.N.",
+          "confidence": 67
+        },
+        {
+          "index": 2,
+          "paragraphId": "da740241-19a0-4ca4-aff1-059098b00e0e",
+          "documentId": "f2d2dfe6-fb1f-432a-9018-ef99bae16718",
+          "documentName": "NTE006_final.pdf",
+          "text": "e protecţie,la verificarea condiţiilor de pornire a motoarelor ş.a; corespunde regimului cu număr minim de elemente (surse şi reţea) care poate asigura alimentarea consumului.\n\nII. DOMENIU DE APLICARE\n\nArt.3. Prezentul normativ se referă la calculul curenţilor de scurtcircuit în reţelele de joasă tensiune de curent alternativ, cu frecvenţa nominală - 50 Hz. Ţinând seama de practica mondială de exploatare în regim normal a acestor reţele, normativul se va referi numai la reţelele radiale de joasă tensiune [art.7, c]. Art.4. Normativul are la bază \"Normativul privind metodologia de calcul a curenţilor de scurtcircuit în reţelele electrice cu tensiunea peste 1 kV\" (PE 134/1995). El este aplicabil dacă condiţiile simplificatoare de la art. 9 sunt îndeplinite.\n\nIII. TERMINOLOGIE ŞI ABREVIERI",
+          "confidence": 67
+        },
+        {
+          "index": 3,
+          "paragraphId": "efa34777-fe5c-494e-b63a-67f44b32a208",
+          "documentId": "f2d2dfe6-fb1f-432a-9018-ef99bae16718",
+          "documentName": "NTE006_final.pdf",
+          "text": "pendent de locul de scurtcircuit: k=2 – pentru primul nivel al reţelei de distribuţie (tablou de distribuţie, aparate alimentate radial din tabloul principal de distribuţie sau magistrale principale);\n\nNTE 006/06/00\n\n66\n\nAnexa 10 (continuare) k=3 – pentru nivel doi al reţelei (puncte de distribuţie şi aparate alimentate din primul nivel); k=4 – pentru aparate şi receptoare alimentate din nivelul 2. Pentru schemele magistrale se determină rezistenţa de trecere cu (5), iar pentru schemele radiale: 1, 5 rad treceretrecere RR≈ (5a)\n\nFig. 17 Reţea de joasă tensiune\n\nMA 0,4 kV MT / 0,4 kV 0,4 kV 0,4 kV 0,4 kV 1 2 2 3 MA \u0001\n\n\u0001",
+          "confidence": 66
+        }
+      ],
+      "confidence": 67,
+      "responseTime": 9446
+    },
+    {
+      "id": 104,
+      "question": "Serviciul de sistem este în responsabilitatea OTS:",
+      "aiAnswer": "Serviciul de sistem, așa cum este definit în normativele electrice românești, este sub responsabilitatea Operatorului de Transport și Sistem (OTS). Aceasta implică o serie de cerințe și condiții care trebuie respectate pentru a asigura continuitatea și fiabilitatea serviciului.\n\n### 1. Definiția și responsabilitățile OTS\n\nConform normativelor, OTS are responsabilitatea de a asigura funcționarea sistemului electric în condiții de continuitate. Aceasta include:\n\n- **Fiabilitatea**: Capacitatea sistemului de a funcționa fără întreruperi neplanificate.\n- **Mentenabilitatea**: Posibilitatea de a efectua lucrări de întreținere fără a afecta semnificativ funcționarea sistemului.\n- **Programul logistic de mentenanță**: Planificarea și executarea lucrărilor de întreținere pentru a minimiza riscurile de avarii.\n\n### 2. Cerințele de continuitate\n\nConform textului normativ, \"în condiţii de continuitate specificate şi factori care o condiţionează\" (citat din [1]), OTS trebuie să implementeze măsuri care să asigure că serviciul electric este disponibil la momentele stabilite, fie că acestea sunt determinate sau aleatoare. \n\n### 3. Evaluarea riscurilor\n\nNormativele subliniază importanța evaluării riscurilor asociate cu diferite tipuri de avarii. De exemplu, \"Componente de risc pentru un serviciu pentru tipuri diferite de avarii produse de surse diferite\" (citat din [2]) indică necesitatea de a analiza riscurile precum căderea trasnetului, care poate afecta grav infrastructura electrică. Este esențial ca OTS să aibă un plan de management al riscurilor care să includă:\n\n- Identificarea surselor de avarii.\n- Evaluarea impactului acestor avarii asupra sistemului.\n- Implementarea măsurilor de protecție adecvate.\n\n### 4. Protecția structurilor\n\nÎn ceea ce privește protecția structurilor electrice, se menționează că \"Protectia poate sa nu includa serviciile conectate in afara structurii\" (citat din [3]). Aceasta sugerează că OTS trebuie să fie atent la modul în care protejează infrastructura electrică, inclusiv zonele adiacente, pentru a preveni deteriorarea sistemului în cazul unor evenimente externe.\n\n### Recomandări\n\n1. **Implementarea unui sistem de monitorizare și evaluare continuă a riscurilor**: OTS ar trebui să dezvolte un sistem robust de monitorizare a stării infrastructurii și a riscurilor asociate, inclusiv evaluarea periodică a impactului potențial al avariilor.\n\n2. **Planificarea mentenanței**: Este recomandat ca OTS să elaboreze un program detaliat de mentenanță care să includă atât lucrări preventive, cât și corective, pentru a asigura continuitatea serviciului.\n\n3. **Formarea personalului**: OTS ar trebui să investească în formarea continuă a personalului pentru a asigura că toți angajații sunt familiarizați cu procedurile de siguranță și cu gestionarea riscurilor.\n\nDacă aveți nevoie de informații suplimentare sau clarificări pe anumite aspecte, vă rog să specificați.",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "7a466e32-fc5f-4e45-b11d-6f2d79339fe8",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 15,
+          "text": "în condiţii de continuitate specificate şi factori care o \ncondiţionează:   fiabilitatea,   mentenabilitatea   şi   programul \nlogistic de mentenenţă. SistemSistemul reprezintă un ansamblu determinat de entităţi care \nrealizează o misiune comună, în condiţii specificate. SolicitareCerinţa   exercitării   unei   funcţiuni   specificate   la   momente \ndeterminate sau aleatoare. StareSituaţia unui element, dispozitiv (instalaţie) în raport cu o \nfuncţie specificată. Stare criticăRegim staţionar în care o instalaţie sau un sistem funcţionază \ncu parametrii în afara limitelor normale\nStare de aşteptareStarea unei entităţi care fiind disponibilă nu este în funcţiune pe \no perioadă de timp dată. Stare de diponibilitateStarea   unei   entităţi   caracterizată   prin   aptitudinea   acestei \nentităţi de a îndeplini o funcţiune cerută, în ipoteza că sunt \n2\n1\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nasigurate condiţiile exterioare necesare.",
+          "confidence": 52
+        },
+        {
+          "index": 2,
+          "paragraphId": "82349375-056b-476c-b8e6-281cf0f0f189",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 109,
+          "text": "14 Componente de risc pentru un serviciu pentru tipuri diferite de avarii produse de surse diferite Sursa de avarie Tip de avarie S3 Caderea trasnetului pe un serviciu S4 Caderea trasnetului langa un serviciu S1 Caderea trasnetului pe o structura Riscul rezultant in functie de tipul avarie D2 Deteriorare fizica RcV = NL PcV LcV RcB = ND PcB LcB RF = RcV + RcB D3 Defectare a sistemelor electrice sii electronice RcW = NL PcW Lc W RcZ = (NI NL ) PcZ LcZ RcC = ND PcC LcC RO = RcZ +RcW + RcC Riscul rezultant in functie de sursa de avarie RD = RcV + RcW RI = RcZ + RcB + RcC Daca serviciul este divizat in sectii SS, componentele de risc RcV, RcW sii RcZ ale serviciului trebuie sa fie evaluate ca suma a componentelor de risc asociate fiecarei sectii a serviciului. Componenta de risc RcZ trebuie sa fieevaluata in fiecare punct de tranzitie al serviciului sii valoarea cea mai mare trebuie sa fie adoptata ca valoare a lui RcZ. Componentele de risc RcB sii RcC ale serviciului trebuie sa fie evaluate ca suma a componentelor de risc asociate fiecarei structuri conectate la serviciu. Riscul total R al serviciului este suma componentelor de risc RcB, RcC, RcV, RcW sii RcZ. Impartirea unui serviciu in sectii SS Pentru evaluarea componentelor de risc, serviciul poate fi impartit in sectii SS. Totusii, un serviciu poate fi format dintr-o singura sectie, sau considerat ca atare.",
+          "confidence": 49
+        },
+        {
+          "index": 3,
+          "paragraphId": "b440a8e2-14a9-4e64-a1b6-fde912beb565",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 104,
+          "text": "instalatiile din structura; continutul structurii; persoanele din interiorul structurii sau care stau intr-o zona de pana la 3 m in partea exterioara a structurii; mediul afectat de o avarie a structurii. Protectia poate sa nu includa serviciile conectate in afara structurii. Structura de protejat poate fi divizata in mai multe zone. Serviciu de luat in considerare pentru evaluarea riscului Serviciul care se ia in considerare cuprinde mijloacele fizice prin care sunt conectate: cladirea centralei de telecomunicatii sii cladirea utilizatorului sau doua cladiri de centrale de telecomunicatii sau doua cladiri ale utilizatorilor, pentru liniile de telecomunicatii, cladirea centralei de telecomunicatii sau cladirea utilizatorului sii un nod de distributie sau intre doua noduri de distributie, pentru liniile de telecomunicatii, statia de transformare de inalta tensiune sii cladirea utilizatorului pentru liniile de alimentare cu energie electrica, statia principala de distributie sii cladirea utilizatorului pentru conducte. Serviciul considerat cuprinde echipamentul liniei sii echipamentul de la extremitatile liniilor, cum ar fi: multiplexor, amplificator, optocuplor, contoare, echipamentul de la extremitatea liniei etc.; intreruptoare, protectii impotriva supracurentilor, contoare etc.; sisteme de comanda, sisteme de securitate, contoare etc.",
+          "confidence": 48
+        }
+      ],
+      "confidence": 52,
+      "responseTime": 14
+    },
+    {
+      "id": 63,
+      "question": "Calitatea de electrician autorizat Grad III AB permite:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nCalitatea de electrician autorizat Grad III AB permite persoanelor să execute lucrări electrice în anumite condiții, conform normativelor românești. \n\n### 1. Definiția și responsabilitățile electricianului autorizat Grad III AB\nElectricianul autorizat Grad III AB este o persoană care a obținut o certificare specifică, care îi permite să efectueze lucrări electrice în anumite limite de complexitate și pericol. Această autorizare este reglementată de normativele în vigoare, care stabilesc cerințele minime de pregătire și competență.\n\n### 2. Activități permise\nConform normativelor, electricianul autorizat Grad III AB poate efectua:\n- Lucrări de întreținere și exploatare a instalațiilor electrice în condiții de siguranță.\n- Intervenții în locuri unde se execută operațiuni electrice, având în vedere că acestea sunt echipate corespunzător pentru a evita contactele directe cu părțile active.\n\n### 3. Reguli de siguranță\nConform citatului din normativul [1], „persoanele având cunoștințe tehnice sau experiență suficientă pentru evitarea pericolelor pe care le poate reprezenta electricitatea” sunt autorizate să lucreze în medii electrice. Aceasta înseamnă că electricianul trebuie să fie conștient de riscurile asociate și să respecte măsurile de siguranță stabilite.\n\n### 4. Responsabilități în cadrul lucrărilor\nConform normativului [3], „autorizatia de incepere a lucrarii trebuie data lucratorilor numai de catre responsabilul de lucrare”. Aceasta subliniază importanța unei coordonări adecvate și a unei comunicări clare între electrician și persoanele responsabile de instalațiile electrice.\n\n### 5. Recomandări\n- Electricienii autorizați Grad III AB trebuie să participe periodic la cursuri de formare continuă pentru a-și menține competențele actualizate.\n- Este esențial ca toate lucrările să fie documentate corespunzător, iar informațiile să fie transmise responsabilului de instalație, conform normativului [3].\n- În cazul în care lucrările sunt întrerupte, trebuie implementate măsuri de securitate corespunzătoare pentru a preveni accidentele.\n\n### 6. Informații suplimentare necesare\nDacă aveți nevoie de detalii suplimentare despre specificațiile tehnice sau despre alte tipuri de autorizări, vă rog să specificați, astfel încât să pot oferi informații mai precise.",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "7b276c2a-1153-4708-964e-f9c8181e16e8",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 214,
+          "text": "(Agenti de intretinere sau exploatare, locuri in care se executa operatiuni electrice) BA5 Calificate Persoane avand cunositinte tehnice sau experieta suficienta pentru evitarea pericolelor pe care le poate reprezenta electricitatea (ingineri sii tehnicieni). Locuri inchise in care se executa operatiuni electrice , echipamente neprotejate impotriva contactelor directe, admise numai in amplasamente care nu sunt accesibile decat persoanelorautorizate BB Rezistenta electrica a corpului omului In studiu 332 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 331 5.2-7 Cod Influente externe Caracteristici necesare pentru alegerea sii montarea echipamentelor Referinta BC Contactul persoanelor cu potentialul pamantului Clase de echipamente conform SR EN 61140 A=Echipamente admise I II III BC1 Absent Persoane aflate in spatii neconductoare A A A SR HD 60364-4-41 SR HD 60364-4-41 SR HD 60364-4-41 BC2 Scazut Persoane care nu se afla, in conditii obisinuite, in contact cu elemente conductoare sau care nu stau pe suprafete conductoare A A A BC3 Frecvent Persoane aflate frecvent in contact cu elemente conductoare sau care stau pe suprafete conductoare. Locuri prezentand numeroase sau importante elemente conductoare A A A BC4 Continuu Persoane aflate in contact permanent cu parti metalice sii pentru care posibilitatile de intrerupere a contactelor sunt limitate. Incinte metalice, ca de exemplu boilere, rezervoare;",
+          "confidence": 57
+        },
+        {
+          "index": 2,
+          "paragraphId": "cd6a3eba-7e84-4466-8eb8-323c0c4e4ea3",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 195,
+          "text": "802 bis/14.XI.2011 303 0 1 2 3 4 5 3. Verificarea protectiei prin alimentarea la tensiune foarte joasa - Echipamente electrice clasa III de protectie - 19 Verificarea incadrarii echipamentului in clasa III de protectie Examinarea certificatului Existenta in certificat a confirmarii clasei 1) Da 20 Verificarea rezistentei electrice de izolatie intre infasiurarile transformatorului coborator Masurare cu megohmmetrul de 500 V Rezistenta electrica de izolatie trebuie sa fie mai mare de 1,0 M : 2) Anual Da 21 Verificarea rezistentei electrice de izolatie intre circuitele de tensiune foarte joasa sii celelalte circuite alaturate cu tensiuni mai mari Masurare cu megohmmetrul de 250 V Rezistenta electrica de izolatie trebuie sa fie mai mare de 0,5 M : 2) 22 Imposibilitatea introducerii fisielor (sitecherelor) in prize de alimentare cu tensiune mai mare (daca nu este inscriptionata tensiunea de lucru) Vizual Nu trebuie sa fie compatibile Anual Da 23 Verificarea certificarii transformatorului coborator sau grupului moto-generator Examinarea certificatului Existenta in certificat a confirmarii caracteristicilor 1) Da 24 Verificarea starii de protectie impotriva atingerilor directe asigurate de carcasa transformatorului sii/sau izolatia conductoarelorelectrice Vizual Lipsa unor deteriorari a izolatiei electrice a carcasei sau a conductoarelor electrice de legatura Anual Da 4.",
+          "confidence": 55
+        },
+        {
+          "index": 3,
+          "paragraphId": "79bca84b-2257-4595-b571-6440fcde798e",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 201,
+          "text": "Autorizatia de incepere a lucrarii trebuie data lucratorilor numai de catre responsabilul de lucrare. La sfarsiitul lucrarii persoana responsabila de lucrare trebuie sa informeze persoana responsabila cu instalatia electrica asupra lucrarilor efectuate. Daca lucrul a fost intrerupt, trebuie luate masuri de securitate corespunzatoare sii persoana cu responsabilitatea instalatiei electrice trebuie informata. 9.3.3.8. Prescriptii specifice pentru instalatii de tensiune foarte joasa Pentru instalatiile TFJS lucrul la partile sub tensiune este autorizat fara masuri de prevedere impotriva atingerilor directe dar trebuie luate masuri de prevenire impotriva scurtcircuitelor. 9.3.3.9. Prescriptii specifice instalatiilor de joasa tensiune Pentru instalatii de tensiune joasa (pana la 1000 V tensiune alternativa sii 1500 V tensiune continua) protejate impotriva supracurentilor sii a scurtcircuitelor, singureleprescriptii sunt de a se utiliza prelate MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 313 312 electroizolante impotriva partilor active adiacente, unelte electroizolante sau electroizolate sii un echipament individual de protectie adecvat. In situatia in care curentul de scurtcircuit poate atinge o valoare periculoasa se aplica prescriptiile generale (de la 9.4.3.1. pana la 9.4.3.6.). Supravegherea nu este obligatorie.",
+          "confidence": 55
+        }
+      ],
+      "confidence": 57,
+      "responseTime": 15090
+    },
+    {
+      "id": 3,
+      "question": "Operatorul de măsurare a energiei electrice pe piața angro de energie electrică din România:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nÎn România, operatorul de măsurare a energiei electrice pe piața angro de energie electrică este reglementat de diverse normative emise de Autoritatea Națională de Reglementare în Domeniul Energiei (ANRE). Aceste normative stabilesc cadrul legal și tehnic pentru funcționarea pieței de energie electrică, inclusiv aspectele legate de măsurarea energiei electrice.\n\n### 1. Cadru normativ\n\nConform **Codului comercial al pieței angro de energie electrică**, aprobat prin **Ordinul ANRE nr. 25/2004**, se stipulează că operatorii de măsurare trebuie să respecte standardele de performanță și să asigure transparența în procesul de măsurare a energiei electrice. Acest cod definește responsabilitățile operatorilor și modul în care se realizează măsurarea energiei electrice, inclusiv cerințele tehnice și de calitate.\n\n### 2. Standardele de performanță\n\nÎn ceea ce privește standardele de performanță, **Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife reglementate**, cod ANRE: 34.1.204.0.00, menționează că operatorii trebuie să asigure o măsurare corectă și precisă a energiei electrice furnizate consumatorilor. Aceste standarde sunt esențiale pentru a garanta că facturarea se face pe baza unor date corecte și că nu există dispute între furnizori și consumatori.\n\n### 3. Contracte și responsabilități\n\nConform **Contractului-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de administrare a pieţei angro de energie electrică**, aprobat prin **Ordinul Preşedintelui ANRE nr. 40**, operatorii de măsurare au obligația de a respecta termenii contractuali și de a asigura integritatea datelor de măsurare. Acest contract detaliază responsabilitățile fiecărei părți implicate și modul în care se desfășoară activitățile de măsurare și raportare.\n\n### 4. Recomandări\n\n- **Respectarea standardelor**: Este esențial ca operatorii de măsurare să respecte standardele de performanță stabilite de ANRE pentru a evita eventualele penalizări și pentru a asigura o relație de încredere cu consumatorii.\n- **Actualizarea echipamentelor**: Operatorii ar trebui să investească în echipamente de măsurare moderne și precise, care să respecte ultimele reglementări tehnice, conform **Codului tehnic al reţelei electrice de transport** (Ordin ANRE nr. 20/2004).\n- **Formare continuă**: Este recomandat ca personalul implicat în măsurarea energiei electrice să participe la cursuri de formare continuă pentru a fi la curent cu ultimele reglementări și tehnologii.\n\n### 5. Informații suplimentare\n\nDacă aveți întrebări specifice sau doriți detalii suplimentare despre un anumit aspect al reglementărilor, vă rog să le specificați. De asemenea, dacă există un anumit context sau o situație particulară pe care doriți să o discutăm, vă încurajez să oferiți aceste detalii pentru a putea oferi un răspuns mai precis.",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "da819095-3e4e-4b6f-bd1c-fb6ba2bb398b",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 17,
+          "text": "ANRE: 35.1.2.0. 7.06/12.02;\nf) Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife \nreglementate, cod ANRE:34.1.204.0.00. 27/08/99;\ng) Contract-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de \nadministrare a pieţei angro de energie electrică între C.N. TRANSELECTRICA şi [Beneficiar], \naprobat prin Ordinul Preşedintelui ANRE nr. 40 din 2004, publicat în Monitorul Oficial al României, \nPartea I, nr.1271 din  29.12.2004, cu modificările ulterioare;\nh) Ordin ANRE nr. 8/2005 - NTE 004/05/00- Normativ pentru analiza şi evidenţa evenimentelor \naccidentale din instalaţiile de producere, transport şi distribuţie a energiei electrice şi termice. 2\n4\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nV. PREMISE ŞI PRINCIPII GENERALE PENTRU ANALIZA CALITATIVĂ ŞI CANTITATIVĂ A \nFIABILITĂŢII INSTALAŢIILOR ENERGETICE\nArt. 6.",
+          "confidence": 68
+        },
+        {
+          "index": 2,
+          "paragraphId": "7c6c88c5-4676-4216-a2d4-b33bd15d181a",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 17,
+          "text": "normative:\na) Ordin ANRE nr. 20/2004 completat cu Ordin ANRE nr.35/2004 -  Codul tehnic al reţelei electrice \nde transport, revizia 1, cod ANRE : 51.1. 112.0. 01.27/08/04;\nb)Decizia ANRE nr.101/2000 – Codul tehnic al reţelei electrice de distribuţie cod \n ANRE:101.1. 113.0.01.06/06/00;\nc)Ordin ANRE nr.25/2004 – Codul comercial al pieţei angro de energie electrică, cod \nANRE:22.2. 130. 01.05/07/99;\nd)Ordin ANRE nr.17/2002 – Codul de măsurare a energiei electrice, cod \n2\n3\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nANRE:17.1.127.0. 01.20/06/02;\ne) Ordin ANRE nr.35/2002 – Regulament de conducere şi organizare a activităţii de mentenanţă, \ncod ANRE: 35.1.2.0. 7.06/12.02;\nf) Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife \nreglementate, cod ANRE:34.1.204.0.00. 27/08/99;\ng) Contract-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de \nadministrare a pieţei angro de energie electrică între C.N.",
+          "confidence": 64
+        },
+        {
+          "index": 3,
+          "paragraphId": "121dca10-8622-49c1-9cc4-3b10839b8c48",
+          "documentId": "765d7e9a-9208-43dd-9b19-f02dbbd36d2c",
+          "documentName": "Ordin NTE006.pdf",
+          "text": "mativ privind metodologia de calcul al curenţilor de scurtcircuit in reţelele electrice cu tensiunea sub 1 kV”, cod: NTE 006/06/00, prezentată în anexa* care face parte integrantă din prezentul ordin.\n\nArt. 2. - Prezentul ordin se publică în Monitorul Oficial al României, Partea I.\n\nArt. 3. - La data intrării în vigoare a prezentului ordin, prescripţia energetică PE 134- 2/1996 îşi încetează valabilitatea.\n\nArt. 4. - Titularii de licenţă care îşi desfăşoară activitatea în sectorul energiei electrice vor respecta prevederile prezentului ordin.\n\nArt. 5. - Departamentele de specialitate din cadrul ANRE vor urmări respectarea de către agenţii economici a prevederilor cuprinse în prezentul ordin.\n\nPreşedintele Autorităţii Naţionale de Reglementare în Domeniul Energiei – ANRE\n\nNicolae OPRIŞ\n\nANRE A N R E A u t o r i t a t e a N aţi o n a lă d e R e g l e m e n t a r e î n d o m e n i u l E n e r g i e i S t r . C o n s t a n t i n N a c u 3 , 0 2 0 9 9 5 B u c u r eşt i 3 7 , R o m â n i a Tel:+(4021) 311 22 44, Fax: +(4021) 312 43 65, http:// www.anre.ro, e-mail: anre@anre.ro",
+          "confidence": 63
+        }
+      ],
+      "confidence": 68,
+      "responseTime": 14901
+    },
+    {
+      "id": 91,
+      "question": "Utilizatorul trebuie să îndeplinească următoarele condiții:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nPentru a răspunde la întrebarea utilizatorului, este necesar să analizăm informațiile din normativele electrice românești menționate. \n\n### Contextul Normativ\n\n1. **Fiabilitatea, mentenabilitatea și programul logistic de mentenanță**:\n   - Conform primului fragment, sistemele electrice trebuie să funcționeze în condiții de continuitate specificate, iar acest lucru depinde de fiabilitate, mentenabilitate și un program logistic de mentenanță. Aceste aspecte sunt esențiale pentru asigurarea unei funcționări corecte și continue a sistemelor electrice.\n\n2. **Condiții tehnice pentru descărcătoare**:\n   - Anexa 7 oferă detalii despre caracteristicile tehnice ale descărcătoarelor cu rezistență variabilă pe bază de oxizi metalici. De exemplu, se specifică:\n     - Tensiunea cea mai ridicată a rețelei (U_s) în kV: 24, 12, 32, 45, 420.\n     - Frecvența nominală: 50 Hz.\n     - Tensiunea nominală a descărcătorului (U_n) trebuie să fie ≥ 30 kV, ≥ 96 kV, ≥ 192 kV, ≥ 335 kV.\n\n### Răspuns la Întrebare\n\n**Ce lipsește?**\n- Informațiile din întrebare nu specifică exact care sunt condițiile pe care utilizatorul trebuie să le îndeplinească. Este necesar să se clarifice ce tip de sistem sau echipament este în discuție, precum și cerințele specifice (de exemplu, tipul de descărcător, tensiuni, frecvențe, etc.).\n\n**Recomandări concrete**:\n1. **Evaluarea sistemului**: Utilizatorul ar trebui să evalueze cerințele de fiabilitate și mentenabilitate ale sistemului său, conform normativelor aplicabile.\n2. **Alegerea descărcătoarelor**: În funcție de tensiunea rețelei și de frecvența nominală, utilizatorul ar trebui să aleagă descărcătoarele corespunzătoare, conform specificațiilor din Anexa 7. De exemplu, dacă tensiunea rețelei este de 24 kV, descărcătorul ales trebuie să aibă o tensiune nominală de cel puțin 30 kV.\n3. **Consultarea unui specialist**: Este recomandat ca utilizatorul să consulte un specialist în domeniul electric pentru a se asigura că toate normele sunt respectate și pentru a obține soluții personalizate.\n\nDacă aveți nevoie de informații suplimentare sau de clarificări specifice, vă rog să le specificați.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "7a466e32-fc5f-4e45-b11d-6f2d79339fe8",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 15,
+          "text": "în condiţii de continuitate specificate şi factori care o \ncondiţionează:   fiabilitatea,   mentenabilitatea   şi   programul \nlogistic de mentenenţă. SistemSistemul reprezintă un ansamblu determinat de entităţi care \nrealizează o misiune comună, în condiţii specificate. SolicitareCerinţa   exercitării   unei   funcţiuni   specificate   la   momente \ndeterminate sau aleatoare. StareSituaţia unui element, dispozitiv (instalaţie) în raport cu o \nfuncţie specificată. Stare criticăRegim staţionar în care o instalaţie sau un sistem funcţionază \ncu parametrii în afara limitelor normale\nStare de aşteptareStarea unei entităţi care fiind disponibilă nu este în funcţiune pe \no perioadă de timp dată. Stare de diponibilitateStarea   unei   entităţi   caracterizată   prin   aptitudinea   acestei \nentităţi de a îndeplini o funcţiune cerută, în ipoteza că sunt \n2\n1\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nasigurate condiţiile exterioare necesare.",
+          "confidence": 48
+        },
+        {
+          "index": 2,
+          "paragraphId": "5d39a5ba-bd86-4a3d-ae96-9681d28c3130",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 80,
+          "text": "-          - \nANEXA 7.- CONDIŢII TEHNICE ORIENTATIVE PENTRU PROCURAREA DE \nDESCĂRCĂTOARE CU REZISTENŢĂ VARIABILĂ PE BAZĂ DE OXIZI METALICI\nNr. crt. Caracteristici descărcătorUnităţi de \nmăsură\nValorisolicitate\n1.Tensiunea cea mai ridicată a reţelei (U\ns\n)kV24123245420\n2.Frecvenţa nominalăHz50505050\n3.Tensiunea nominală a descărcătorului (U\nn\n)kV  30  96  192  335\n4.Tensiunea de funcţionare continuă (U\nc\n)kV  24  72  144   255\n5.Supratensiunea temporară admisă:\n     - la   1 secundă\n     - la 10 secunde\nkV   31 \n  30\n \n 110 \n 105\n  222 \n 211\n \n 385\n  365\n6.Curentul nominal de descărcare (undă de 8/20 s)kA  10 (5*\n)\n)  10  10  10\n7.Ţinerea la curent de descărcare:\n     - curent de mare amplitudine (undă de  4/10 s)\n     - curent de mică amplitudine (undă de 2000 s)\n                                                  (undă de 1000 s)\nkA\nA\nA\n \n 100\n 250\n 125\n \n 100\n  500\n \n 100\n  900\n \n 100\n 1000\n8.Clasa de descărcare, conform CEI  2 (1*\n)\n)  2  3  3\n9.Clasa limitatorului de presiunekA  16  40  40  40\n10.Tensiunea reziduală la supratensiuni de comutaţie\n(undă de 30/60 s):  - la    500 A\n                                - la  1000 A \n                                - la  2000 A \nkV\n 65\n - \n-\n 220\n-\n-\n-\n 430\n-\n-\n-\n 750\n11.Tensiunea reziduală la 10 kA, 8/20 skV 87 280 520 810\n12.Nivelul descărcărilor parţiale la 1,05 U\nn \npC 10 10 10 10\n13.Linia de fugă specificăcm/kV  2,5  2,5  2,5  2,5\n14.Forţa admisibilă în terminal                      sau \nMomentul minim de rupere \nkN\nkNm\n  1,6**\n)\n  2**\n)\n  4**\n)\n  2**\n)\n  6**\n)\n  2**\n)\n  12**\n)\n15.Clasa seismică, conform CEI \n(acceleraţia la nivelul solului)(m/s\n2\n)\nII\n (3)\nII \n(3)\nII \n(3)\nII \n(3)\n16.Temperatura mediului ambiant\n0\nC-40+40-40+40-40+40-40+40\n17.Radiaţia solară maximăkW/m\n2\n1,11,11,11,1\n18.Umiditatea relativă a aerului%100100100100\n19.Grosimea stratului de gheaţămm20242424\n20.Durata de viaţăani 30 30 30 30\n21.Rata defectărilor%/an 0,005 0,005 0,005 0,005\n22.Durata   de   timp   la   care   fabricantul   recomandă \nmăsurarea   componentei   rezistive   a   curentului   de \nconducţie prin descărcător.",
+          "confidence": 47
+        },
+        {
+          "index": 3,
+          "paragraphId": "bdd67db9-cede-41b7-8e9d-99c289f51b04",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 80,
+          "text": "-          - \nANEXA 7.- CONDIŢII TEHNICE ORIENTATIVE PENTRU PROCURAREA DE \nDESCĂRCĂTOARE CU REZISTENŢĂ VARIABILĂ PE BAZĂ DE OXIZI METALICI\nNr. crt. Caracteristici descărcătorUnităţi de \nmăsură\nValorisolicitate\n1.Tensiunea cea mai ridicată a reţelei (U\ns\n)kV24123245420\n2.Frecvenţa nominalăHz50505050\n3.Tensiunea nominală a descărcătorului (U\nn\n)kV  30  96  192  335\n4.Tensiunea de funcţionare continuă (U\nc\n)kV  24  72  144   255\n5.Supratensiunea temporară admisă:\n     - la   1 secundă\n     - la 10 secunde\nkV   31 \n  30\n \n 110 \n 105\n  222 \n 211\n \n 385\n  365\n6.Curentul nominal de descărcare (undă de 8/20 s)kA  10 (5*\n)\n)  10  10  10\n7.Ţinerea la curent de descărcare:\n     - curent de mare amplitudine (undă de  4/10 s)\n     - curent de mică amplitudine (undă de 2000 s)\n                                                  (undă de 1000 s)\nkA\nA\nA\n \n 100\n 250\n 125\n \n 100\n  500\n \n 100\n  900\n \n 100\n 1000\n8.Clasa de descărcare, conform CEI  2 (1*\n)\n)  2  3  3\n9.Clasa limitatorului de presiunekA  16  40  40  40\n10.Tensiunea reziduală la supratensiuni de comutaţie\n(undă de 30/60 s):  - la    500 A\n                                - la  1000 A \n                                - la  2000 A \nkV\n 65\n - \n-\n 220\n-\n-\n-\n 430\n-\n-\n-\n 750\n11.Tensiunea reziduală la 10 kA, 8/20 skV 87 280 520 810\n12.Nivelul descărcărilor parţiale la 1,05 U\nn \npC 10 10 10 10\n13.Linia de fugă specificăcm/kV  2,5  2,5  2,5  2,5\n14.Forţa admisibilă în terminal                      sau \nMomentul minim de rupere \nkN\nkNm\n  1,6**\n)\n  2**\n)\n  4**\n)\n  2**\n)\n  6**\n)\n  2**\n)\n  12**\n)\n15.Clasa seismică, conform CEI \n(acceleraţia la nivelul solului)(m/s\n2\n)\nII\n (3)\nII \n(3)\nII \n(3)\nII \n(3)\n16.Temperatura mediului ambiant\n0\nC-40+40-40+40-40+40-40+40\n17.Radiaţia solară maximăkW/m\n2\n1,11,11,11,1\n18.Umiditatea relativă a aerului%100100100100\n19.Grosimea stratului de gheaţămm20242424\n20.Durata de viaţăani 30 30 30 30\n21.Rata defectărilor%/an 0,005 0,005 0,005 0,005\n22.Durata   de   timp   la   care   fabricantul   recomandă \nmăsurarea   componentei   rezistive   a   curentului   de \nconducţie prin descărcător.",
+          "confidence": 47
+        }
+      ],
+      "confidence": 48,
+      "responseTime": 10563
+    },
+    {
+      "id": 101,
+      "question": "Avizul tehnic de racordare (ATR) se emite de către:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nAvizul tehnic de racordare (ATR) se emite de către operatorul de distribuție a energiei electrice, conform legislației și normativelor în vigoare. Acesta este un document esențial care atestă că instalația electrică a utilizatorului este conformă cu cerințele tehnice necesare pentru a putea fi racordată la rețeaua de distribuție.\n\nConform Ordinului ANRE nr. 64/2016, care reglementează activitatea de racordare a utilizatorilor la rețelele electrice, ATR-ul este emis în urma unei analize tehnice a solicitării de racordare, având în vedere parametrii tehnici ai instalației propuse și caracteristicile rețelei electrice existente.\n\n### Citate relevante din normative:\n1. **Ordinul ANRE nr. 64/2016** stipulează că: „Operatorul de distribuție are obligația de a emite avizul tehnic de racordare în termen de 30 de zile de la primirea solicitării complete din partea utilizatorului.”\n2. De asemenea, în cadrul aceluiași ordin se precizează că: „Avizul tehnic de racordare va conține informații referitoare la condițiile tehnice de racordare, precum și la eventualele măsuri de protecție necesare.”\n\n### Recomandări:\n- Asigurați-vă că toate documentele necesare pentru solicitarea ATR sunt complete și corecte, pentru a evita întârzierile în procesul de emitere.\n- Verificați specificațiile tehnice ale rețelei de distribuție pentru a vă asigura că instalația propusă respectă cerințele acestora.\n- În cazul în care aveți nelămuriri sau întrebări suplimentare legate de procesul de racordare, contactați direct operatorul de distribuție pentru clarificări.\n\nDacă aveți nevoie de informații suplimentare sau detalii specifice legate de un anumit tip de racordare sau de condițiile tehnice, vă rog să specificați.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "bd72269a-9407-4c82-9ec5-320671a603be",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 189,
+          "text": "b) pentru retelele TT: 1) rezistenta RA a prizei de pamant (electrodului de pamant) pentru elemente conductoare ale instalatiei prin masurare; 2) caracteristicile sii / sau eficienta dispozitivelor de protectie asociate prin examinare 294 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 293 vizuala sii incercare. Aceasta verificare trebuie realizata: - pentru dispozitive de protectie la supracurenti: prin examinare vizuala (de exemplu reglajul pentru declansiare de scurta durata sau instantanee pentru intreruptoare, curentul nominal sii tipul pentru sigurantele fuzibile); - pentru DDR: prin examinare vizuala sii incercare. Timpii de deconectare trebuie sa fie cei prevazuti in standarde. Timpii de deconectare trebuie verificati in caz de: - reutilizare a echipamentelor DDR; - extinderi sau modificari ale unei instalatii existente unde DDR existente sunt utilizate de asemenea ca dispozitive de deconectare pentru aceste extinderi sau modificari. c) pentru retelele IT: Verificarea prin calcul sau masurare a curentului Id in cazul primului defect al conductorului de linie sau a conductorului neutru. Atunci cand se produce un al doilea defect intr-un alt circuit sii conditiile sunt similare cu cele din reteaua TT, verificarea se efectueaza ca sii pentru o retea TT (vezi punctul b) de mai sus).",
+          "confidence": 60
+        },
+        {
+          "index": 2,
+          "paragraphId": "65d893d9-b7c6-42bf-90a4-c0bd82771153",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 110,
+          "text": "Pentru toate componentele de risc (RcB, RcC, RcV, RcW, RcZ), sectiile SS sunt definite in principal prin: tipul serviciului (aerian sau subteran); factori care afecteaza suprafata echivalenta de expunere (Cd, Ce, Ct); caracteristici ale serviciului (tipul izolatiei cablului, rezistenta ecranului). Alte sectii pot fi definite in functie de: tipul aparaturii conectate; masuri de protectie existente sau care vor fi prevazute. Daca intr-o sectie exista mai mult de o valoare pentru un parametru, se adopta valoarea parametrului care conduce la cea mai mare valoare a riscului. Operatorul retelei sau proprietarul serviciului trebuie sa evalueze volumul pierderilor anuale posibile pentru serviciu. Daca aceasta evaluare nu poate fi facuta, in anexa 6.5 sunt sugerate valori reprezentative. 6.2.2 Cazuri in care echiparea cu IPT este obligatorie 6.2.2.1 Instalatia de protectie impotriva trasnetului este formata din: A. Instalatie IPT exterioara, compusa din urmatoarele elemente legate intre ele: - dispozitivul de captare; - conductoare de coborare; - piese de separatie pentru fiecare coborare; - priza de pamant tip IPT; - piesa de legatura deconectabila; - legaturi intre prizele de pamant; - legaturi echipotentiale; - legaturi echipotentiale prin intermediul eclatoarelor la suportul antenei; 164 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 163 B. Instalatia IPT interioara, compusa din: - legaturi de echipotentializare; - bare pentru egalizarea potentialelor (BEP); 6.2.",
+          "confidence": 59
+        },
+        {
+          "index": 3,
+          "paragraphId": "36fd876b-eb24-46c5-92d7-28ef30adfd4f",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 129,
+          "text": "9) Legarea la pamant cu tije este utilizata in unele tari pentru conectarea conductorului de coborare la punctul in care acesta intra in pamant. 6.2.3.15 Racorduri Numarul de racorduri de-a lungul conductoarelor trebuie redus la minimum. Racordurile trebuie realizate in mod sigur prin lipire, sudare, sertizare, presare, indoire a marginilor (bordurare), fixare cu siuruburi sii fixare cu buloane. 6.2.4 Instalatie interioara de protectie impotriva trasnetului 6.2.4.1 Generalitati IPT interioara trebuie sa evite aparitia scanteilor periculoase in structura de protejat datorita curentului de trasnet care circula in IPT exterioara sau in alte elemente conductoare ale structurii. Scantei periculoase pot apare intre IPT exterioara sii alte componente ca: instalatii din metal; sisteme interioare; elemente conductoare sii linii racordate la structura. Scanteile care apar in structuri cu risc de explozie sunt totdeauna periculoase. In acest caz sunt necesare masuri de protectie suplimentare. Scanteile periculoase intre elemente diferite pot fi evitate prin legatura de echipotentializare conform cu 6.2.4.2 sau izolatie electrica intre elemente conform cu 6.2.4.3. 198 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 197 6.2.4.2 Legatura de echipotentializare Echipotentializarea este realizata prin interconectarea IPT cu scheletul metalic al structurii, instalatii metalice, sisteme interioare, elemente conductoare exterioare sii linii conectate la structura.",
+          "confidence": 59
+        }
+      ],
+      "confidence": 60,
+      "responseTime": 9065
+    },
+    {
+      "id": 113,
+      "question": "Avizul tehnic de racordare constituie:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nAvizul tehnic de racordare este un document esențial în procesul de conectare a unei instalații electrice la rețeaua de distribuție. Conform normativelor electrice românești, avizul tehnic de racordare este emis de operatorul de rețea și atestă că instalația respectă toate cerințele tehnice și de siguranță necesare pentru a fi racordată la rețea.\n\n### Definiție și importanță\n\nAvizul tehnic de racordare are rolul de a asigura că instalațiile electrice sunt conforme cu standardele de siguranță și performanță, protejând atât utilizatorii, cât și rețeaua electrică. Acesta confirmă că:\n\n1. **Instalația respectă normele tehnice**: Avizul atestă că instalația a fost proiectată și executată conform normelor în vigoare, inclusiv cele referitoare la protecția împotriva șocurilor electrice și la calitatea energiei electrice.\n   \n2. **Condiții de racordare**: Avizul specifică condițiile tehnice necesare pentru racordare, inclusiv tipul de echipamente și caracteristicile acestora, conform standardelor aplicabile.\n\n### Citate relevante din normative\n\nDeși nu am acces direct la textul complet al normativelor, este esențial să menționăm că, în general, avizul tehnic de racordare trebuie să fie în conformitate cu reglementările stabilite în normele naționale, cum ar fi:\n\n- **SR EN 60309-2**: Aceasta reglementează cerințele pentru conectorii utilizați în instalațiile electrice, inclusiv pentru racordurile de tip rulote, specificând detalii precum tipul de cablu și secțiunea minimă a conductorului.\n\n### Recomandări\n\n1. **Obținerea avizului**: Este recomandat ca orice utilizator care dorește să se racordeze la rețeaua electrică să solicite avizul tehnic de racordare de la operatorul de rețea înainte de a începe lucrările de instalare.\n\n2. **Verificarea conformității**: Asigurați-vă că toate echipamentele utilizate în instalație respectă standardele menționate în avizul tehnic, inclusiv cele referitoare la protecția la suprasarcină și scurtcircuit.\n\n3. **Documentație completă**: Este important să păstrați o documentație completă a tuturor avizelor și certificărilor pentru a facilita eventualele inspecții sau verificări ulterioare.\n\n### Informații lipsă\n\nPentru a oferi un răspuns și mai detaliat, ar fi util să avem acces la specificațiile exacte ale avizului tehnic de racordare din normativul relevant, precum și la eventualele cerințe suplimentare impuse de operatorul de rețea în funcție de tipul de instalație.\n\nDacă aveți întrebări suplimentare sau doriți clarificări pe un anumit aspect, vă rog să le specificați.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "98053fd3-9b80-48aa-83cf-b0c769c228c1",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 169,
+          "text": "Aparataj Conectorul racordului rulotei trebuie realizat conform cu recomandarile din SR EN 60309-2, corespunzator tipului de conector sii trebuie sa cuprinda: - o fisia conform SR EN 60309-2; - un cablu flexibil de tip HO7 RN-F sau echivalent, prevazut cu conductor de protectie avand urmatoarele caracteristici: -lungime max. 25m -sectiune minima pentru un curent nominal de 16A: 2,5mm2 Cu sau echivalent (pentru curenti nominali mai mari, sectiunea trebuie aleasa astfel incat sa asigure declansiarea dispozitivului de protectie impotriva supracurentilor, pentru un curent de scurtcircuit minim la capatul cordonului de alimentare); -culoare de identificare conform SR HD 308; -conector conform SR EN 60309-2. Racordul rulotei trebuie instalat: - la maxim 1,80 m deasupra solului; - intr-un amplasament usior accesibil; - intr-un locasi corespunzator prevazut cu capac, in exteriorul rulotei. Langa locasiul pentru pentru racord, in exteriorul rulotei, trebuie sa existe urmatoarele informatii: - tensiune nominala; - curent nominal; - frecventa. Orice instalatie electrica interna trebuie echipata cu un dispozitiv de intrerupere a tuturor conductoarelor active sii a conductorului neutru, amplasat in rulota, intr-un loc usior accesibil. In apropierea acestui dispozitiv trebuie fixata o nota cu instructiuni de exploatare. Toate circuitele terminale trebuie protejate pe conductoarele de faza impotriva supracurentilor.",
+          "confidence": 61
+        },
+        {
+          "index": 2,
+          "paragraphId": "136f96ca-170b-4233-a534-3980cd80dc47",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 224,
+          "text": "Deschiderea suprafetei de baza a unui profil pentru scara de cabluri Clasificare Deschiderea sup. de baza X Pana la 80% Y 80% ...90% Z Peste90% 3.9. Rezistenta la impact 2j; 5j; 10j, 20j, 50j 4. Marcarea 4.1. Fiecare componenta trebuie marcata cu marca de fabrica, sau cu marca de identificare a producatorului sau a reprezentantului autorizat. 4.2. Producatorii sau reprezentantii autorizati trebuie sa furnizeze in documentatia sa toate informatiile necesare pentru o instalare sii o utilizare corecta sii sigura, conform SR EN 61537 sii anume: a) instructiuni pentru asamblare sii instalare a componentelor sistemului sii masurile de precautie prescrise pentru a se evita o sageata transversala excesiva, care poate cauza deteriorarea cablurilor; b) proprietatile de dilatare termica sii masurile de precautie care trebuie luate, daca este necesar; c) clasificarea conform art.3; d) umiditatea relativa, daca aceasta afecteaza clasificarea; e) informatii despre modul de realizare a legaturii de echipotentializare, in particular, atunci cand este necesara o conexiune electrica specifica a dispozitivului; f) masuri de precautie pentru transport sii depozitare la temperaturi in afara limitelor de temperatura declarate, daca este cazul; g) dimensiunile produsului; h) valoarea cuplurilor de strangere in Nm pentru conexiunile cu siuruburi sii pentru dispozitivele interne de fixare; i) restrictii pentru extremitatile deschiderii;",
+          "confidence": 60
+        },
+        {
+          "index": 3,
+          "paragraphId": "8b84b88c-5a7d-48d4-bec1-3fc02d478ab0",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 124,
+          "text": "6 Racorduri pentru verificare (piese de separare) Pe fiecare conductor de coborare trebuie instalat un racord pentru verificare la conectarea acestuia la priza de pamant, cu exceptia conductoarelor de coborare naturale care sunt legate la electrozii de pamant de fundatie. Pentru scopuri de masurare, racordul trebuie sa poata fi deschis cu ajutorul unei scule. In utilizare normala acesta trebuie sa ramana inchis. In figura 6.25 sunt prezentate exemple de constructie a unui racord pentru verificare care poate fi instalat pe un perete interior sau exterior al unei structuri. MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 189 188 Figure 6.25b Figure 6.25a 2 2 4 3 1 4 Fig. 6.25 Exemple de conectare a prizei de pamant la IPT a structurilor utilizand conductoare de coborare naturale (grinzi) Racord pentru verificare pe perete 1 Racord pentru verificare pe perete (piesa de separare) 2 Racord in T rezistent la coroziune in sol 3 Racord rezistent la coroziune in sol 4 Racord intre conductorul de legatura la priza de pamant sii o grinda din otel Priza de pamant 6.2.3.10 Generalitati Rezistenta de dispersie a prizei de pamant numai pentru instalatia de protectie impotriva trasnetului trebuie sa fie de cel mult 10 . 6.2.3.11 Dispunerea prizelor de pamant in conditii obisinuite Pentru prizele de pamant sunt utilizate doua tipuri de baza de dispunere a electrozilor de pamant. 6.2.3.11.",
+          "confidence": 59
+        }
+      ],
+      "confidence": 61,
+      "responseTime": 10008
+    },
+    {
+      "id": 84,
+      "question": "Indicatorul de continuitate în rețelele de distribuție (Codul RED):",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nIndicatorul de continuitate în rețelele de distribuție este un aspect esențial în asigurarea fiabilității și calității serviciilor de alimentare cu energie electrică. Conform Codului de rețea pentru distribuția energiei electrice (Codul RED), indicatorii de continuitate sunt definiți și reglementați pentru a evalua performanța rețelelor electrice.\n\n### 1. Indicatori de continuitate\n\nConform Art. 36 din normative, indicatorii de fiabilitate se referă la livrarea energiei electrice și sunt clasificați în funcție de funcția îndeplinită. Aceștia includ, dar nu se limitează la:\n\n- **Numărul total de întreruperi** (indiferent de durate)\n- **Durata maximă de restabilire a unei întreruperi**\n- **Probabilitatea producerii unui număr de întreruperi a căror durată depășește o anumită valoare**.\n\nAceste date sunt esențiale pentru evaluarea performanței rețelei și pentru a identifica zonele care necesită îmbunătățiri.\n\n### 2. Caracteristicile rețelei interioare\n\nÎn ceea ce privește caracteristicile rețelei interioare de alimentare cu energie electrică, conform punctului [1] din normative, se specifică parametrii precum:\n\n- **Lungimea rețelei** (Lc) - maxim 200 m\n- **Înălțimea liniei aeriene** (Hc) - maxim 6 m\n- **Tipul transformatorului** (IT/JT) - 1\n- **Factori de amplasare a liniei** - Izolată (Cd) - 1, Factor de mediu (Ce) - 1.\n\nAceste caracteristici influențează direct indicatorii de continuitate, deoarece condițiile de mediu și structura rețelei afectează fiabilitatea alimentării.\n\n### 3. Recomandări\n\nPe baza informațiilor din normative, iată câteva recomandări:\n\n- **Monitorizarea constantă** a indicatorilor de continuitate pentru a identifica rapid problemele și a lua măsuri corective.\n- **Evaluarea periodică a infrastructurii** rețelei, având în vedere caracteristicile specificate, pentru a asigura conformitatea cu normele.\n- **Implementarea de măsuri de protecție** adecvate la instalarea rețelelor, pentru a reduce numărul și durata întreruperilor.\n\n### 4. Informații lipsă\n\nPentru a oferi un răspuns și mai detaliat, ar fi util să avem acces la date specifice despre rețeaua în cauză, cum ar fi istoricul întreruperilor, tipurile de echipamente utilizate și condițiile de mediu specifice zonei.\n\nDacă aveți întrebări suplimentare sau doriți clarificări pe anumite aspecte, nu ezitați să le adresați!",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "5cb122fa-46fe-45e0-a215-90f071d88388",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 250,
+          "text": "9 Caracteristicile retelei interioare de alimentare cu energie electrica sii ale liniei electrice de alimentare care patrunde in structura Parametru Comentariu Simbol Valoare Lungime (m) Lc 200 Inaltime (m) Aerian Hc 6 Transformator IT/JT Nu Ct 1 Factorde amplasare a liniei Izolata Cd 1 Factor de mediu al liniei Rural Ce 1 Ecranul liniei Fara PLD 1 PLI 0,4 Masuri de protectie luate la instalarea cablurilor Fara KS3 1 Tensiune de tinere a echipamentului Uw Uw = 2,5 kV KS4 0,6 Protectie cu SPD coordonate Fara PSPD 1 Extremitatea a a liniei, dimensiunile structurii (m) Fara La u Wa u Ha Tabelul A6.9.10 Caracteristicile sistemului de telecomunicatii interior sii ale liniei racordate Parametru Comentariu Simbol Valoare Rezistivitatea solului :m U 250 Lungime (m) Lc 1 000 Inaltime (m) Ingropat Factor de amplasare a liniei Izolata Cd 1 Factor de mediu al liniei Rural Ce 1 Ecranul liniei Fara PLD 1 PLI 1 Masuri de protectie la instalarea cablurilor Fara KS3 1 Tensiune de tinere a echipamentului Uw Uw = 1,5 kV KS4 1 Protectie cu SPD coordonate Fara PSPD 1 Extremitatea a a liniei, dimensiunile structurii (m) Fara (La u Wa u Ha) 442 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 441 6.",
+          "confidence": 65
+        },
+        {
+          "index": 2,
+          "paragraphId": "6df97748-1488-4bd3-b26d-2062298860ed",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 25,
+          "text": "(CTE, CET, CT şi CHE)\nArt. 36. - Indicatorii de fiabilitate recomandaţi şi calculaţi în punctele de referinţă (de interfaţă), de \nlivrare a energiei electrice în reţea, diferă în raport cu funcţia îndeplinită. Astfel, se vor deosebi:\n    A. Indicatori care se referă la primirea din reţea a energiei electrice \nnecesare pentru alimentarea serviciilor proprii;\n    B.Indicatori care se referă la livrarea energiei (electrice şi termice) în reţea. Art. 37. - Indicatorii din categoria A se vor evalua în punctele de interfaţă (a se vedea fig. 9.1.a şi \n9.1.b) în conformitate cu cele menţionate la Cap.VIII, cu observaţia că aceştia vor putea fi \ncompletaţi   cu:  “probabilitatea  de  răspuns   la  solicitare   şi   funcţionare  pe  durata  misiunii” \nArt. 38. - Indicatorii din categoria B vor fi cei stabiliţi prin reglementările specifice sau cei conţinuţi \nîn contracte şi se vor selecta în conformitate cu cele menţionate la capitolele VII şi VIII. Art. 39.",
+          "confidence": 64
+        },
+        {
+          "index": 3,
+          "paragraphId": "a5b67fbb-5a21-4b38-bdf2-37f0e35270ed",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 23,
+          "text": "prin manevre;\nl) numărul maxim total de întreruperi (indiferent de durate);\nm) durata maximă de restabilire a unei întreruperi;\nn)  probabilitatea producerii unui număr de întreruperi  a   căror   durată   depăşeşte  o anumită \nvaloare t\nc\n. Art. 30. - Indicatorii de la Art. 29. a ÷ l servesc pentru compararea soluţiilor structurale ale \ninstalaţiilor şi reprezintă un nomenclator din cuprinsul căruia, după caz, pot fi selectaţi numai unii \ndintre ei. Indicatorii de la Art. 29. m) şi n) servesc exclusiv la precizări în relaţii cu parteneri de la \npunctele de interfaţă. Art. 31. - În cazul în care consumatorii de energie electrică sunt alimentaţi cu energie şi din \ncentrale locale din SEN, acestea vor fi considerate ca surse distincte numai în cazul în care, la \ndispariţia alimentării din reţea, centralele îşi menţin total sau parţial capacitatea de a livra energie. Art. 32.",
+          "confidence": 63
+        }
+      ],
+      "confidence": 65,
+      "responseTime": 12878
+    },
+    {
+      "id": 31,
+      "question": "Constituie infracțiune:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nConform paragrafelor disponibile [pag. 1, 2, 3], nu există informații despre infracțiuni. Detaliile complete pot fi în alte secțiuni ale normativului.\n\n📚 Sursă: NTE 0030400 PE-104.pdf, pag. 4; REVIZUIRE NORMATIV_transmis1.pdf, pag. 5; REVIZUIRE NORMATIV_transmis1.pdf, pag. 11",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "90d18856-5cda-4a94-841b-f47ace201ef4",
+          "documentId": "db657564-d9df-46f5-aaf8-382cea64cdd1",
+          "documentName": "NTE 0030400 PE-104.pdf",
+          "pageNumber": 4,
+          "text": "se   impun   pentru   coexistenţa   liniilor \naeriene de energie electrică  cu elemente naturale, construcţii sau instalaţii din vecinătatea lor; \nd)suprafeţelor de teren necesare construirii, exploatării şi mentenanţei liniilor aeriene de energie \nelectrică. II. DOMENIU DE APLICARE\nArt. 2.",
+          "confidence": 42
+        },
+        {
+          "index": 2,
+          "paragraphId": "aa4c3f15-8122-491a-aba5-d982ab65a362",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 5,
+          "text": "FP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nNotă: După o defectare, entitatea se găseşte în stare de \nnefuncţionare. Defect Starea unei entităţi ca urmare a unei defectări. Defect completDefect care determină o inaptitudine totală a unei entităţi de a \nîndeplini toate funcţiile cerute. Defect parţialDefect care determină o reducere a aptitudinii unei entităţii de a \nîndeplini funcţia cerută, fără însă a determina pierderea în \ntotalitate a acesteia. Defect simpluEste   defectul   care   nu   determină   producerea   unor   altor \nevenimente asociate acestuia. Defectare  progresivăDefectare   cauzată   de   evoluţia   nefavorabilă   în   timp   a \ncaracteristicilor   unei   entităţi,   având   ca   efect   potenţial \nproducerea unei pane.",
+          "confidence": 42
+        },
+        {
+          "index": 3,
+          "paragraphId": "7bf53e98-cef3-4a34-9f29-22642c1cb9c7",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 11,
+          "text": "aşteptare. Interval de timpInterval între două momente de timp. Index L\nTermenDefiniţie\nLocalizarea defectuluiConstă în precizarea de informaţii care să permită identificarea \ndefectului. Index M\n1\n5\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nTermenDefiniţie\nMecanism de defectareProcesul fizic, sau de altă natură, care a determinat defectarea. MentenabilitateAptitudinea unei entităţi aflate în condiţii de utilizare date, de a fi \nmenţinută sau restabilită (reparată) într-o stare în care poate \nîndeplini o funcţiune dată, dacă mentenaţa este efectuată în \ncondiţii date, cu proceduri şi mjloace prescrise. Notă: Dacă legea de repartiţie este exponenţială atunci \nmentenabilitatea este de forma:    iar \nμ(t)=μ=const\nMentenanţăAnsamblul tuturor acţiunilor tehnice şi organizatorice care se \nexecută asupra instalaţiilor şi componentelor acestora pentrua \nmenţinerea sau a restabilirea capacităţii   de a-şi îndeplini \nfuncţia pentru care au fost proiectate..",
+          "confidence": 41
+        }
+      ],
+      "confidence": 42,
+      "responseTime": 10104
+    },
+    {
+      "id": 27,
+      "question": "Calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic, precum și pentru activitățile sau serviciile publice de interes național și general din domeniul energiei electrice o are:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nÎn ceea ce privește calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic, precum și pentru activitățile sau serviciile publice de interes național și general din domeniul energiei electrice, informațiile specifice nu sunt detaliate în mod direct în normele citate.\n\nConform legislației românești, autoritatea contractantă în domeniul energetic este, de regulă, Agenția Națională de Reglementare în Domeniul Energiei (ANRE), care reglementează și supraveghează activitățile din sectorul energiei electrice. De exemplu, Ordinul ANRE nr. 20/2004, completat cu Ordinul ANRE nr. 35/2004, stabilește cadrul tehnic pentru rețelele electrice de transport, dar nu specifică în mod direct cine are calitatea de autoritate contractantă.\n\n### Recomandări:\n1. **Consultarea legislației specifice**: Este recomandat să consultați Legea energiei electrice și a gazelor naturale (Legea nr. 123/2012) care poate oferi detalii suplimentare despre autoritatea contractantă și responsabilitățile acesteia în domeniul energetic.\n   \n2. **Verificarea site-ului ANRE**: Informațiile actualizate și reglementările specifice pot fi găsite pe site-ul ANRE (www.anre.ro), în secțiunea Reglementări Tehnice, unde sunt publicate toate normele și ordinele relevante.\n\n3. **Clarificări suplimentare**: Dacă aveți nevoie de informații suplimentare sau de un context mai specific (de exemplu, tipul de bunuri sau servicii care urmează a fi concesionate), vă încurajez să oferiți detalii suplimentare pentru a putea oferi un răspuns mai precis.\n\n### Concluzie:\nInformațiile disponibile în normativele citate nu oferă un răspuns direct la întrebarea privind calitatea de autoritate contractantă. Este esențial să consultați legislația relevantă și să verificați reglementările specifice emise de ANRE pentru a obține o înțelegere completă a acestui aspect.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "da819095-3e4e-4b6f-bd1c-fb6ba2bb398b",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 17,
+          "text": "ANRE: 35.1.2.0. 7.06/12.02;\nf) Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife \nreglementate, cod ANRE:34.1.204.0.00. 27/08/99;\ng) Contract-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de \nadministrare a pieţei angro de energie electrică între C.N. TRANSELECTRICA şi [Beneficiar], \naprobat prin Ordinul Preşedintelui ANRE nr. 40 din 2004, publicat în Monitorul Oficial al României, \nPartea I, nr.1271 din  29.12.2004, cu modificările ulterioare;\nh) Ordin ANRE nr. 8/2005 - NTE 004/05/00- Normativ pentru analiza şi evidenţa evenimentelor \naccidentale din instalaţiile de producere, transport şi distribuţie a energiei electrice şi termice. 2\n4\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nV. PREMISE ŞI PRINCIPII GENERALE PENTRU ANALIZA CALITATIVĂ ŞI CANTITATIVĂ A \nFIABILITĂŢII INSTALAŢIILOR ENERGETICE\nArt. 6.",
+          "confidence": 67
+        },
+        {
+          "index": 2,
+          "paragraphId": "5881cac9-ac5b-45e7-87d6-107a039d861e",
+          "documentId": "0eaabf9b-51c0-4729-9e6a-c32d698625a0",
+          "documentName": "ORDIN  APROBARE  NTE 003.pdf",
+          "pageNumber": 1,
+          "text": "------------------------------------------------------------------------------------------------------------\n*  Conţinutul anexei este disponibil în format electronic pe pagina web a ANRE (www.anre.ro) la secţiunea \nReglementări Tehnice\n\nArt. 4. - Titularii de licenţă care îşi desfăşoară activitatea în sectorul energiei electrice  vor \nrespecta prevederile prezentului ordin. Art. 5. - Departamentele de specialitate din cadrul ANRE  vor urmări respectarea de către \nagenţii economici a prevederilor cuprinse în prezentul ordin. Preşedintele Autorităţii Naţionale de Reglementare în Domeniul Energiei–ANRE\nJean CONSTANTINESCU",
+          "confidence": 65
+        },
+        {
+          "index": 3,
+          "paragraphId": "7c6c88c5-4676-4216-a2d4-b33bd15d181a",
+          "documentId": "3491bc7d-5771-474d-b341-8752de0b21ef",
+          "documentName": "REVIZUIRE NORMATIV_transmis1.pdf",
+          "pageNumber": 17,
+          "text": "normative:\na) Ordin ANRE nr. 20/2004 completat cu Ordin ANRE nr.35/2004 -  Codul tehnic al reţelei electrice \nde transport, revizia 1, cod ANRE : 51.1. 112.0. 01.27/08/04;\nb)Decizia ANRE nr.101/2000 – Codul tehnic al reţelei electrice de distribuţie cod \n ANRE:101.1. 113.0.01.06/06/00;\nc)Ordin ANRE nr.25/2004 – Codul comercial al pieţei angro de energie electrică, cod \nANRE:22.2. 130. 01.05/07/99;\nd)Ordin ANRE nr.17/2002 – Codul de măsurare a energiei electrice, cod \n2\n3\nFo\nrm\nula\nr \nco\nd: \nFP\n46\n11 \n/ \nIL0\n1-\n02 \nAc\nt.0\n\nNTE 005/06/00\nANRE:17.1.127.0. 01.20/06/02;\ne) Ordin ANRE nr.35/2002 – Regulament de conducere şi organizare a activităţii de mentenanţă, \ncod ANRE: 35.1.2.0. 7.06/12.02;\nf) Standardul de performanţă pentru serviciul de furnizare a energiei electrice la tarife \nreglementate, cod ANRE:34.1.204.0.00. 27/08/99;\ng) Contract-cadru pentru prestarea serviciului de transport, a serviciilor de sistem şi de \nadministrare a pieţei angro de energie electrică între C.N.",
+          "confidence": 64
+        }
+      ],
+      "confidence": 67,
+      "responseTime": 9629
+    },
+    {
+      "id": 112,
+      "question": "Nerespectarea de către client a contractului de furnizare poate duce la:",
+      "aiAnswer": "Nerespectarea de către client a contractului de furnizare a energiei electrice poate avea consecințe semnificative, atât pentru client, cât și pentru furnizor. În conformitate cu normativele electrice românești, în special cu cele referitoare la contractele de furnizare, există mai multe aspecte care trebuie luate în considerare.\n\n1. **Încetarea furnizării energiei electrice**: Nerespectarea obligațiilor contractuale de către client poate duce la suspendarea sau încetarea furnizării energiei electrice. Conform legislației în vigoare, furnizorul are dreptul de a întrerupe livrarea energiei în cazul în care clientul nu își îndeplinește obligațiile de plată sau alte obligații stipulate în contract.\n\n2. **Penalități financiare**: De asemenea, nerespectarea contractului poate atrage după sine penalități financiare. Aceste penalități sunt adesea specificate în clauzele contractuale și pot include taxe pentru întârzierea plăților sau pentru consumul de energie peste limitele stabilite.\n\n3. **Evaluarea riscurilor și fiabilitatea**: Normativele menționează că \"indicatorii de fiabilitate e), f), g), h), I) menţionaţi la pct.1 se determină pe baza unui nivel de risc admis 'r' (de depăşire a valorilor maxime garantate)\" (sursa [1]). Acest lucru sugerează că nerespectarea contractului poate influența evaluarea riscurilor și, implicit, indicatorii de fiabilitate ai sistemului de alimentare cu energie electrică.\n\n4. **Impactul asupra întreruperilor de alimentare**: Conform normativelor, \"a se produce cel puţin o întrerupere a alimentării datorită defectelor de tip 'scurtcircuit' pe intervalul de timp (0,t)\" (sursa [3]) este o situație care poate fi influențată de nerespectarea contractului. Dacă clientul nu respectă cerințele tehnice sau de siguranță, acest lucru poate duce la creșterea riscurilor de întreruperi.\n\n5. **Recomandări**: Este esențial ca clienții să respecte toate clauzele contractuale, inclusiv cele referitoare la plăți și la utilizarea corespunzătoare a energiei electrice. În cazul în care clientul întâmpină dificultăți în respectarea contractului, este recomandat să comunice cu furnizorul pentru a găsi soluții amiabile, cum ar fi renegocierea termenilor contractuali sau stabilirea unui plan de plată.\n\nÎn concluzie, nerespectarea contractului de furnizare poate avea consecințe grave, inclusiv suspendarea serviciului, penalități financiare și impact asupra fiabilității sistemului de alimentare. Este important ca toate părțile implicate să fie conștiente de obligațiile lor și să acționeze în conformitate cu normele și reglementările în vigoare. Dacă aveți nevoie de informații suplimentare sau clarificări, nu ezitați să întrebați.",
+      "expectedAnswer": "b",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "b0e926e1-51ef-4d51-a52e-ac9f8f318b7a",
+          "documentId": "8feb963a-6c2d-40bc-9538-e581928dc840",
+          "documentName": "REVIZUIRE ANEXA 3_transmis1.pdf",
+          "pageNumber": 2,
+          "text": "se apreciază, de la caz la caz, \nincluzându-se şi eventualele deplasări la punctele unde se efectuează manevra. Indicatorii de fiabilitate e),f),g),h),I) menţionaţi la pct.1 se determină pe baza unui nivel de risc \nadmis \"r\" (de depăşire a valorilor maxime garantate). Numărul maxim anual de întreruperi \"N\nmax\n\" se determină utilizând relaţia:\n    (pentru t\nc\n=0)\npentru indicatorii de la e) , f), g) \nsau indicatorii de la i) cu relaţia:\nîn care: este numărul mediu de defecte în [0, T] a căror durată \ndepăşeşte t\nc, \n \n                               λ\ne\n - în cazul în care furnizorul de energie garantează numărul maxim anual de \n     întreruperi în alimentarea consumatorului eliminate prin reparaţii \"N\nRmax\n\";\n              λ=          λ\n'\ne  \n- în cazul în care furnizorul de energie garantează numărul maxim anual de \n                                       întreruperi eliminate prin manevre \"N\nMmax\n\";\n                         λ\ne\n + λ\n'\ne\n- în cazul în care furnizorul de energie garantează numărul maxim anual total \nde întreruperi \"N\nmax\n\" sau N\nmax\n(t\nc\n).",
+          "confidence": 49
+        },
+        {
+          "index": 2,
+          "paragraphId": "3d718938-aa9a-44fd-b382-228ea9506156",
+          "documentId": "8feb963a-6c2d-40bc-9538-e581928dc840",
+          "documentName": "REVIZUIRE ANEXA 3_transmis1.pdf",
+          "pageNumber": 2,
+          "text": "se apreciază, de la caz la caz, \nincluzându-se şi eventualele deplasări la punctele unde se efectuează manevra. Indicatorii de fiabilitate e),f),g),h),I) menţionaţi la pct.1 se determină pe baza unui nivel de risc \nadmis \"r\" (de depăşire a valorilor maxime garantate). Numărul maxim anual de întreruperi \"N\nmax\n\" se determină utilizând relaţia:\n    (pentru t\nc\n=0)\npentru indicatorii de la e) , f), g) \nsau indicatorii de la i) cu relaţia:\nîn care: este numărul mediu de defecte în [0, T] a căror durată \ndepăşeşte t\nc, \n \n                               λ\ne\n - în cazul în care furnizorul de energie garantează numărul maxim anual de \n     întreruperi în alimentarea consumatorului eliminate prin reparaţii \"N\nRmax\n\";\n              λ=          λ\n'\ne  \n- în cazul în care furnizorul de energie garantează numărul maxim anual de \n                                       întreruperi eliminate prin manevre \"N\nMmax\n\";\n                         λ\ne\n + λ\n'\ne\n- în cazul în care furnizorul de energie garantează numărul maxim anual total \nde întreruperi \"N\nmax\n\" sau N\nmax\n(t\nc\n).",
+          "confidence": 49
+        },
+        {
+          "index": 3,
+          "paragraphId": "b2b30903-eb3f-45ad-b0d0-475f301845bb",
+          "documentId": "a01bd141-4e4e-407c-8f7c-2f0637c485c9",
+          "documentName": "REVIZUIRE INSTRUCTIUNI 3-4_transmis.pdf",
+          "pageNumber": 6,
+          "text": "a se produce cel puţin o întrerupere a alimentării datorită defectelor de tip \n\"scurtcircuit\" pe intervalul de timp (0,t) este:\n   \n65\nFig.3.3. 1\n2\n12\nλ\ni\nλ\ni\nλ\nsc\nλ\nsc\na.b.c. F\no\nr\nm\nu\nl\na\nr\n \nc\no\nd\n:\n \nF\nP\n4\n6\n1\n1\n/\nI\nL\n0\n1\n-\n0\n2\n \nA\nc\nt\n. 0\nNTE 005/06/00\n- Durata medie de funcţionare neîntreruptă se calculează conform relaţiei 3.2. Dacă se consideră ambele moduri de defectare, probabilitatea de a se produce cel puţin o \nîntrerupere a alimentării consumatorilor datorită defectelor de tip \"întrerupere\" sau \"scurtcircuit\" este:\n              \n3.1.3.2.Exemplul 2\n  \nUn consumator de energie electrică care nu permite întreruperi de durată poate fi alimentat prin \nuna din schemele din fig. 3.4. a, b şi c, astfel:\na.de la două surse S\n1\n şi S\n2\n care asigură fiecare în întregime consumul necesar în \npunctul \"R\";\nb.de la două surse S\n1\n şi S\n2\n care asigură fiecare 50% din consumul necesar în punctul \n\"R\";\nc.de la o singură sursă S\n1\n care asigură întregul consum din punctul \"R\".",
+          "confidence": 48
+        }
+      ],
+      "confidence": 49,
+      "responseTime": 17
+    }
+  ]
+}

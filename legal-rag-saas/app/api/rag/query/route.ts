@@ -9,6 +9,9 @@ import { COMMON_QUESTIONS } from '@/lib/cache/query-cache';
 import { extractMeasurementIntent, parseNumericalQuery, findNumericalValues, scoreNumericalMatch } from '@/lib/search/numerical-search';
 import { optimizeConfidence, selectOptimalCitations, detectPracticalScenario } from '@/lib/search/confidence-optimizer';
 import { createSearchVariants, hasExpandableTerms } from '@/lib/search/synonyms';
+import { detectQuizQuestion, buildQuizPrompt, parseQuizAnswer, formatQuizResponse } from '@/lib/quiz/quiz-handler';
+import AdvancedQuizHandler from '@/lib/quiz/advanced-quiz-handler';
+import { SmartAnswerRouter } from '@/lib/quiz/smart-answer-router';
 
 const QuerySchema = z.object({
   query: z.string().min(3, 'Query must be at least 3 characters'),
@@ -22,6 +25,14 @@ const QuerySchema = z.object({
 // STRICT CONFIDENCE THRESHOLD - Only answer with high confidence
 const MIN_CONFIDENCE_THRESHOLD = 40; // 40% minimum confidence for OpenAI embeddings
 const MIN_SCORE_THRESHOLD = 0.40; // Minimum similarity score 0.40 for OpenAI
+
+// Initialize Smart Router for dual-mode handling
+const smartRouter = new SmartAnswerRouter({
+  minConfidenceQuiz: 0.75,
+  minConfidenceNormal: 0.5,
+  enableNumericVerification: true,
+  maxRetries: 2
+});
 
 export async function POST(req: NextRequest) {
   try {
@@ -45,6 +56,13 @@ export async function POST(req: NextRequest) {
     console.log(`[RAG API] Query: "${query}"`);
     console.log(`[RAG API] WorkspaceId: ${workspaceId}`);
 
+    // Detectăm dacă e o grilă (întrebare cu variante)
+    const quizQuestion = detectQuizQuestion(query);
+    if (quizQuestion.isQuiz) {
+      console.log(`[RAG API] Detected quiz question with ${quizQuestion.options.length} options`);
+      console.log(`[RAG API] Options: ${quizQuestion.options.map(o => o.letter).join(', ')}`);
+    }
+
     // CHECK CACHE FIRST
     const cached = await queryCache.get(query, workspaceId);
     if (cached) {
@@ -61,6 +79,7 @@ export async function POST(req: NextRequest) {
           needsClarification: false,
           fromCache: true,
           cacheHits: cached.hitCount,
+          answerSource: 'documents', // cache only stores document-based answers
         },
       });
     }
@@ -95,9 +114,11 @@ export async function POST(req: NextRequest) {
           resultsCount: 0,
           needsClarification: generalAnswer.needsClarification,
           isGeneralAnswer: true,
+          answerSource: generalAnswer.answerSource, // 'general_knowledge' when no documents
+          warning: 'RĂSPUNS GENERAT DE AI - NU DIN DOCUMENTE NORMATIVE',
           message: hasDocuments 
-            ? 'Nu există documente indexate în sistem. Răspunsul este oferit pe baza cunoștințelor generale.'
-            : 'Sistemul nu are documente încărcate. Răspunsul este oferit pe baza cunoștințelor generale. Pentru răspunsuri bazate pe documente specifice, încărcați documentele dorite.',
+            ? '⚠️ Nu există documente indexate în sistem. Răspunsul este oferit de AI pe baza cunoștințelor generale și poate conține inexactități.'
+            : '⚠️ Sistemul nu are documente încărcate. Răspunsul este generat de AI din cunoștințe generale. Pentru citate exacte din normative, încărcați documentele dorite.',
         },
       });
     }
@@ -371,7 +392,48 @@ export async function POST(req: NextRequest) {
           confidence: Math.round(r.score * 100),
         }))
       : citations;
-    const answer = await buildStrictAnswer(query, allResultsForAnswer, finalConfidence);
+    
+    // Use new dual-mode Smart Router for answer generation
+    // It automatically detects quiz vs normal questions and handles accordingly
+    let answer: string | null;
+    let answerType: 'quiz' | 'normal' = 'normal';
+    
+    try {
+      const smartResult = await smartRouter.generateAnswer(query, allResultsForAnswer.map((r: any) => ({
+        paragraphId: r.paragraphId,
+        documentId: r.documentId,
+        content: r.text,
+        score: r.score,
+        metadata: {
+          pageNumber: r.pageNumber,
+          articleNumber: r.articleNumber,
+          paragraphLetter: r.paragraphLetter,
+        }
+      })));
+      
+      answer = smartResult.answer;
+      answerType = smartResult.type;
+      
+      // Update confidence with router's confidence
+      finalConfidence = smartResult.confidence;
+      
+      console.log(`[RAG API] Smart Router result: type=${smartResult.type}, confidence=${smartResult.confidence}%`);
+      
+      // If the router detected this is a quiz but gave normal answer, wrap it
+      if (smartResult.type === 'normal' && quizQuestion.isQuiz && smartResult.metadata.needsClarification) {
+        answer = `⚠️ **Clarificare necesară:**\n\n${answer}`;
+      }
+    } catch (routerError) {
+      console.error('[RAG API] Smart Router error, falling back:', routerError);
+      // Fallback to legacy handlers
+      if (quizQuestion.isQuiz) {
+        answer = await buildQuizAnswer(quizQuestion, allResultsForAnswer, finalConfidence);
+        answerType = 'quiz';
+      } else {
+        answer = await buildStrictAnswer(query, allResultsForAnswer, finalConfidence);
+        answerType = 'normal';
+      }
+    }
 
     await prisma.$disconnect();
 
@@ -396,10 +458,17 @@ export async function POST(req: NextRequest) {
 
     console.log(`[RAG API] Response cached. Cache stats:`, await queryCache.getStats());
 
+    // BANNER pentru răspuns din documente
+    const documentBanner = `🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\n`;
+    
+    const finalAnswerWithBanner = answer ? `${documentBanner}${answer}` : answer;
+
     return NextResponse.json({
       success: true,
       data: {
-        answer,
+        answer: finalAnswerWithBanner,
+        answerType,
+        isQuiz: answerType === 'quiz' || quizQuestion.isQuiz,
         citations: responseCitations,
         confidence: finalConfidence,
         queryIntent: detectIntent(query),
@@ -407,6 +476,11 @@ export async function POST(req: NextRequest) {
         disclaimer: 'Text citat ad-literam din documente. Verificați sursa pentru informații complete.',
         needsClarification: false,
         fromCache: false,
+        answerSource: 'documents', // clear indicator that this comes from documents
+        detection: {
+          isQuizDetected: quizQuestion.isQuiz,
+          optionsCount: quizQuestion.options?.length || 0,
+        },
         scenario: scenario.isPractical ? {
           type: scenario.scenarioType,
           complexity: scenario.complexity,
@@ -444,35 +518,101 @@ async function buildStrictAnswer(query: string, citations: any[], overallConfide
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const systemPrompt = `Ești un electrician expert care citește normativul I7/2011 și răspunde la întrebări.
+    const systemPrompt = `Ești un ASISTENT LEGAL-TEHNIC SPECIALIZAT în interpretarea normativelor electrotehnice românești (I7/2011, I6, etc.).
 
-SARCINA TA:
-Citește paragrafele furnizate și răspunde direct la întrebare. Extrage informația relevantă și prezint-o clar.
+## SARCINA PRIMARĂ
+Răspunde la întrebarea utilizatorului EXCLUSIV pe baza PARAGRAFELOR furnizate din normativ. Nu adăuga informații din cunoștințele generale.
 
-REGULI:
-1. Răspunde EXACT la întrebarea pusă
-2. Folosește informațiile din paragrafele furnizate
-3. Reformulează pentru claritate, dar păstrează sensul tehnic exact
-4. Menționează pagina: [pag. X]
-5. Dacă informația nu e clară în paragrafe, spune ce știi din ele și menționează că detaliile complete sunt în document
+## REGULI ABSOLUTE (rate 100% conformitate)
 
-EXEMPLU:
-Întrebare: "Ce reprezintă 30mA pentru DDR?"
-Paragraf: "...DDR care nu depășește 30 mA pentru prize de utilizare generală..."
-Răspuns: "Valoarea de 30 mA reprezintă curentul maxim de defect admis pentru DDR-urile utilizate la prize de uz general. Acest DDR asigură protecția suplimentară pentru prizele cu curent nominal până la 20A [pag. 34]."
+### 1. SURSA INFORMAȚIEI
+- Folosește DOAR paragrafele marcate cu [pag. X] furnizate în context
+- Dacă informația nu există în paragrafe, răspunde: "Conform paragrafelor disponibile [pag. X, Y], nu există informații despre [subiect]. Detaliile complete pot fi în alte secțiuni ale normativului."
+- NU inventa articole, pagini sau prevederi
 
-Răspunde în română, ca un coleg electrician, clar și direct.`;
+### 2. CITAREA EXACTĂ
+- Pentru fiecare afirmație, citează: [pag. X, articolul Y.Z.W]
+- Prezintă mai întâi citatul exact din normativ (între ghilimele), apoi explicația ta
+- Exemplu: "Normativul prevede: 'căderile de tensiune...' [pag. 144, 5.3.4.3.1.4]"
 
-    const userPrompt = `Întrebare: "${query}"
+### 3. IERARHIA INFORMAȚIEI (toate variantele)
+- Dacă normativul menționează "RECOMANDAT: X, Y" și "SE ADMIT ȘI: A, B, C" → prezintă PE AMBELE categorii, clar distincte
+- NU rezuma doar la "recomandate" ignorând "admise"
+- Evidențiază diferențele: culori pentru BARE (stații) vs. culori pentru CABLURI (instalații consum)
 
-PARAGRAFE DIN NORMATIVUL I7/2011:
+### 4. EXPLICAȚIA PENTRU "OMUL DE RÂND"
+- După citatul tehnic, adaugă secțiunea "ÎN LIMBAJ SIMPLU:"
+- Explică: ce înseamnă practic, cui se aplică, ce trebuie făcut concret
+- Folosește analogii din viața reală (ex: "ca un siguranță de casă, dar pentru...")
+
+### 5. DISTINCȚII CRITICE (fără confuzii)
+- BLEU (albastru) = NEUTRU (nu fază!)
+- Verde/galben = PĂMÂNT (nu nul!)
+- Fază = maro/negru/gri (conform tabelului specific)
+- Separă clar: prescripții obligatorii vs. recomandări vs. opțiuni permise
+
+### 6. FORMATUL RĂSPUNSULUI (obligatoriu)
+
+---
+**RĂSPUNS DIRECT:** [da/nu/depinde sau valoarea exactă]
+
+**Baza legală:** 
+"[citat exact din normativ]" [pag. X, art. Y]
+
+**În limaj simplu:** 
+[explicație pentru ne-electricieni]
+
+**Detalii tehnice:** 
+[context suplimentar din paragrafe, dacă există]
+
+**Atenție la:** 
+[capcane, excepții, condiții speciale menționate în normativ]
+---
+
+### 7. GESTIONAREA GOLURILOR
+Dacă paragrafele sunt incomplete sau contradictorii:
+- Spune EXACT ce știi din ele
+- Indică ce lipsește: "Paragrafele furnizate nu specifică [detaliu]"
+- NU completa cu "probabil" sau "în general se practică"
+
+### 8. VERIFICĂRI ÎNAINTE DE RĂSPUNS
+Înainte să generezi răspunsul final, verifică mental:
+- [ ] Fiecare afirmație are [pag.] în spate?
+- [ ] Am distins între "recomandat" și "admis"?
+- [ ] Am explicat termenii tehnici?
+- [ ] Nu am adăugat nimic din afara paragrafelor?
+- [ ] Culoarea BLEU e pentru neutru, nu fază?
+
+## EXEMPLU DE RĂSPUNS CORECT
+
+**Întrebare:** "Ce cădere de tensiune e admisă la motoare?"
+
+**Răspuns:**
+
+---
+**RĂSPUNS DIRECT:** 5% pentru motoare [pag. 154]
+
+**Baza legală:** 
+"În cazul alimentării consumatorului se fac... căderi de tensiune: - 5% pentru receptoarele din instalațiile..." [pag. 154, 4.2.3]
+
+**În limaj simplu:** 
+Dacă ai 230V la tablou, la motor trebuie să ai minimum 218.5V (230 - 5%). Dacă scade mai mult, motorul se încinge și se strică.
+
+**Detalii tehnice:** 
+Această limită e valabilă pentru receptoarele din instalațiile electrice ale clădirilor. Alte valori pot exista pentru alte categorii (vezi tabelul complet în normativ).
+
+**Atenție la:** 
+- 5% e maximul, nu idealul
+- Se măsoară la borna motorului, nu la tablou
+---`;
+
+    const userPrompt = `## CONTEXT FURNIZAT (paragrafele din normativ):
 ${context}
 
-Sarcina: 
-1. Găsește în paragrafele de mai sus informația care răspunde la întrebare
-2. Formulează un răspuns clar și direct
-3. Menționează pagina [pag. X] pentru fiecare informație
-4. Dacă nu găsești răspunsul complet, prezintă ce informații relevante ai găsit`;
+## ÎNTREBAREA UTILIZATORULUI:
+${query}
+
+Generează răspunsul conform formatului obligatoriu de mai sus. Verifică checklist-ul înainte de a răspunde.`;
 
     const completion = await openaiClient.chat.completions.create({
       model: 'gpt-4o-mini',
@@ -540,12 +680,12 @@ async function generateGeneralAnswer(query: string): Promise<{
   needsClarification: boolean; 
   clarifyingQuestion: string | null;
   confidence: number;
+  answerSource: 'documents' | 'general_knowledge';
 }> {
   const queryLower = query.toLowerCase();
   const queryNormalized = queryLower.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   
-  // Use AI only to understand the query intent and formulate clarifying questions
-  // NEVER provide answers from general knowledge - only guide to documents
+  // Use AI to provide a helpful general answer and guide to documents
   try {
     const openaiClient = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
@@ -556,48 +696,67 @@ async function generateGeneralAnswer(query: string): Promise<{
       messages: [
         {
           role: 'system',
-          content: `Ești un asistent care analizează întrebări despre normative tehnice (instalații electrice, I7/2011, PE 116/1995, etc.).
+          content: `Ești un electrician expert care răspunde la întrebări despre instalații electrice.
 
-**REGULI STRICTE:**
-1. NU oferi răspunsuri tehnice din cunoștințele tale
-2. NU "inventa" informații despre normative
-3. Analizează doar ce solicită utilizatorul
-4. Formulează întrebări de clarificare pentru a înțelege exact ce documente/capitole îi trebuiesc
-5. Sugerează ce documente normative ar trebui încărcate
+**REGULI:**
+1. Răspunde clar și util la întrebare, bazându-te pe cunoștințe generale din domeniul electric
+2. Fii practic și direct - nu cere clarificări inutile
+3. La final, menționează că pentru citate exacte din normativ, documentele trebuie încărcate
+4. NU refuza să răspunzi - oferă informații utile din cunoștințe generale
 
-Scopul tău: înțelege ce vrea utilizatorul și ghidează-l să încarce documentele corecte.`,
+Scopul tău: oferă un răspuns util electricianului, chiar dacă nu ai acces la documente în acest moment.`,
         },
         {
           role: 'user',
-          content: `Analizează această întrebare: "${query}"
+          content: `Întrebare: "${query}"
 
-Ce solicită utilizatorul? Ce documente normative ar trebui încărcate? Ce întrebări de clarificare sunt necesare?`,
+Oferă un răspuns clar și practic. Nu cere clarificări - răspunde direct cu ce știi despre acest subiect în instalațiile electrice.`,
         },
       ],
-      max_tokens: 500,
+      max_tokens: 800,
+      temperature: 0.3,
     });
     
-    const analysis = completion.choices[0]?.message?.content || '';
+    const answer = completion.choices[0]?.message?.content || '';
     
-    // Generate appropriate clarifying question based on the analysis
-    const clarifyingQuestion = formulateClarifyingQuestion(query, analysis);
+    // BANNER VIZIBIL pentru răspuns general (AI-only)
+    const banner = `🟡 ════════════════════════════════════════════════════════════════
+⚠️  RĂSPUNS GENERAT DE AI - NU ESTE DIN DOCUMENTE NORMATIVE
+🟡 ════════════════════════════════════════════════════════════════
+
+📋 **Ce înseamnă acest lucru:**
+• Acest răspuns este generat de inteligența artificială pe baza cunoștințelor generale
+• NU conține citate exacte din normative (I7/2011, PE 116/1995, etc.)
+• Poate conține inexactități sau informații incomplete
+• NU înlocuiește consultarea documentelor normative oficiale
+
+✅ **Pentru răspunsuri 100% sigure din normative:**
+Încărcați documentele PDF în secțiunea "Documente" și întrebați din nou.
+
+──────────────────────────────────────────────────────────────────
+
+`;
+    
+    const fullAnswer = `${banner}${answer}`;
     
     return {
-      answer: null,
-      needsClarification: true,
-      clarifyingQuestion,
-      confidence: 0,
+      answer: fullAnswer,
+      needsClarification: false,
+      clarifyingQuestion: null,
+      confidence: 60, // Moderate confidence for general knowledge
+      answerSource: 'general_knowledge',
     };
     
   } catch (error) {
-    console.error('[RAG API] Error analyzing query:', error);
+    console.error('[RAG API] Error generating answer:', error);
     
-    // Fallback - simple clarifying question
+    // Fallback - provide a helpful message
     return {
-      answer: null,
-      needsClarification: true,
-      clarifyingQuestion: generateClarifyingQuestionForVagueQuery(query),
-      confidence: 0,
+      answer: `🟡 ⚠️ RĂSPUNS AI (NU DIN DOCUMENTE)\n\nÎntrebarea dvs. despre "${query}" este înregistrată.\n\nMomentan nu am documente normative încărcate pentru a vă oferi citate exacte.\n\nPentru răspunsuri bazate pe normative (I7/2011, PE 116/1995, etc.), vă rugăm să încărcați documentele PDF în secțiunea "Documente".`,
+      needsClarification: false,
+      clarifyingQuestion: null,
+      confidence: 30,
+      answerSource: 'general_knowledge',
     };
   }
 }
@@ -705,31 +864,112 @@ function generateClarifyingQuestionForVagueQuery(query: string): string {
 }
 
 function generateClarifyingQuestion(query: string, citations?: any[]): string {
-  const queryLower = query.toLowerCase();
-  
-  // Generate specific clarifying questions based on the query
-  if (queryLower.includes('priza') || queryLower.includes('prize')) {
-    return `Nu am găsit informații clare despre "${query}". Puteți specifica:\n• Este vorba despre prize în băi, bucătării sau exterior?\n• Căutați informații despre înălțimea de montaj sau protecție?`;
-  }
-  
-  if (queryLower.includes('ddr') || queryLower.includes('dispozitiv diferential')) {
-    return `Am găsit informații parțiale despre DDR. Puteți clarifica:\n• Doriți definiția DDR?\n• Sau caracteristicile tehnice (tip A, AC, curent nominal)?\n• Sau condiții de montaj?`;
-  }
-  
-  if (queryLower.includes('impamantare') || queryLower.includes('legare la pamant')) {
-    return `Subiectul împământare este vast. Puteți specifica:\n• Electrozii de pământ (tipuri, dimensiuni)?\n• Conductorii de legare la pământ?\n• Prizele de pământ (dispunere tip A sau B)?`;
-  }
-
-  if (queryLower.includes('electrod') || queryLower.includes('electrozi')) {
-    return `Despre electrozi am găsit referințe limitate. Puteți clarifica:\n• Electrozi în fundație?\n• Electrozi verticali în sol?\n• Sau electrozi în buclă (dispunere tip B)?`;
-  }
-
+  // Provide helpful guidance instead of asking for clarifications
   if (citations && citations.length > 0) {
     const avgConfidence = Math.round(citations.reduce((s, c) => s + c.confidence, 0) / citations.length);
-    return `Am găsit informații cu ${avgConfidence}% încredere, dar sub pragul de 50% necesar pentru un răspuns sigur.\n\nPuteți reformula întrebarea pentru a fi mai specifică?\n\nSau consultați direct documentul la paginile: ${citations.map((c: any) => c.pageNumber).join(', ')}.`;
+    const pageNumbers = citations.map((c: any) => c.pageNumber).filter(Boolean);
+    
+    return `Am gasit informatii partiale (${avgConfidence}% incredere).
+
+📄 **Consultati documentul la:**
+${pageNumbers.length > 0 ? `• Paginile: ${pageNumbers.slice(0, 5).join(', ')}` : '• Documentele incarcate'}
+
+💡 **Sau reformulati** intrebarea cu termeni specifici din normativ.`;
   }
 
-  return `Nu am găsit informații suficient de clare în documente pentru: "${query}".\n\nVă sugerez să:\n• Reformulați întrebarea cu termeni mai specifici din normativ\n• Verificați dacă documentele încărcate conțin această informație\n• Încărcați documente suplimentare dacă este necesar`;
+  return `Nu am gasit informatii clare pentru: "${query}".
+
+📥 **Solutii:**
+• Incarcati documente normative (I7/2011, PE 116/1995, etc.)
+• Reformulati cu termeni din normativ
+• Verificati daca informatia exista in documentele disponibile`;
+}
+
+/**
+ * Construiește răspuns pentru grile (întrebări cu variante)
+ */
+async function buildQuizAnswer(
+  quiz: import('@/lib/quiz/quiz-handler').QuizQuestion,
+  citations: any[],
+  overallConfidence: number
+): Promise<string | null> {
+  if (citations.length === 0) return null;
+
+  // Sort by score
+  citations.sort((a, b) => b.score - a.score);
+  
+  // Ia primele 5 citări pentru context
+  const topCitations = citations.slice(0, 5);
+  
+  try {
+    const openaiClient = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+
+    // Construim promptul special pentru grile
+    const { systemPrompt, userPrompt } = buildQuizPrompt(quiz, topCitations);
+
+    const completion = await openaiClient.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+      max_tokens: 800,
+      temperature: 0.1, // Mai puțin creativ, mai precis
+    });
+
+    const aiResponse = completion.choices[0]?.message?.content?.trim();
+    
+    if (!aiResponse) {
+      return generateQuizFallback(quiz, topCitations);
+    }
+
+    // Parsăm răspunsul AI
+    const quizResult = parseQuizAnswer(aiResponse, quiz, topCitations);
+    
+    // Formatează răspunsul pentru afișare
+    const formattedResponse = formatQuizResponse(quizResult, quiz);
+    
+    // Adăugăm sursele
+    const sources = Array.from(new Set(topCitations.map((c: any) => `${c.documentName}, pag. ${c.pageNumber}`)));
+    return formattedResponse + `\n📚 Surse: ${sources.join('; ')}`;
+
+  } catch (error) {
+    console.error('[RAG API] Quiz processing error:', error);
+    return generateQuizFallback(quiz, citations);
+  }
+}
+
+/**
+ * Fallback pentru grile când AI-ul eșuează
+ */
+function generateQuizFallback(
+  quiz: import('@/lib/quiz/quiz-handler').QuizQuestion,
+  citations: any[]
+): string {
+  const mainCitation = citations[0];
+  
+  let formatted = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+  formatted += `⚠️ **RĂSPUNS NECERT (Mod Fallback)**\n`;
+  formatted += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+  
+  formatted += `Nu s-a putut determina cu certitudine răspunsul corect.\n\n`;
+  
+  formatted += `**Întrebare:** ${quiz.question}\n\n`;
+  
+  formatted += `**Variante:**\n`;
+  for (const opt of quiz.options) {
+    formatted += `${opt.letter}) ${opt.text}\n`;
+  }
+  
+  formatted += `\n📖 **Text relevant din normativ:**\n`;
+  formatted += `${mainCitation.text.substring(0, 300)}...\n`;
+  
+  const sources = Array.from(new Set(citations.map((c: any) => `${c.documentName}, pag. ${c.pageNumber}`)));
+  formatted += `\n📚 Surse: ${sources.join('; ')}`;
+  
+  return formatted;
 }
 
 function detectIntent(query: string): string {
@@ -738,6 +978,12 @@ function detectIntent(query: string): string {
   if (lower.includes('interzis') || lower.includes('nu este permis')) return 'prohibition';
   if (lower.includes('ce este') || lower.includes('definitie')) return 'definition';
   if (lower.includes('cum se face') || lower.includes('procedura')) return 'procedure';
+  
+  // Detectăm și grilele
+  if (/[A-D][)\.\]]/.test(query) && (query.includes('A)') || query.includes('B)'))) {
+    return 'quiz';
+  }
+  
   return 'general';
 }
 

@@ -1,0 +1,8 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+echo "💬 Chat interactiv cu memorie (context reținut)"
+echo "Comenzi speciale:"
+echo "  /clear  - Șterge istoricul conversației"
+echo "  /exit   - Ieșire"
+echo ""
+node --import tsx cli/chat-cli.ts

@@ -25,6 +25,12 @@ const nextConfig = {
   env: {
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
+  
+  // Experimental features
+  experimental: {
+    // Permite fișiere mari în App Router
+    serverComponentsExternalPackages: ['fluent-ffmpeg'],
+  },
 };
 
 module.exports = nextConfig;

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2026-03-18T14:12:03.554Z",
+  "config": {
+    "numQuestions": 5,
+    "jsonFile": "normative_2023_gradul_3a.json",
+    "apiUrl": "http://localhost:3000/api/rag/query"
+  },
+  "summary": {
+    "total": 5,
+    "successful": 5,
+    "withCitations": 5,
+    "avgConfidence": 66.6,
+    "avgResponseTime": 14436.4
+  },
+  "results": [
+    {
+      "id": 221,
+      "question": "Se consideră atingere indirectă:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nAtingerea indirectă se referă la contactul neintenționat al unei persoane cu părți active ale unui echipament electric, care nu sunt în mod direct accesibile, dar care devin electrificate din cauza unei defecțiuni sau a unei izolații defectuoase. Conform normativelor electrice românești, protecția împotriva atingerii indirecte este esențială pentru asigurarea siguranței utilizatorilor.\n\n### Definiție și măsuri de protecție\n\nConform normativului, protecția împotriva atingerii indirecte se realizează prin:\n\n1. **Măsura de protecție principală**: Aceasta trebuie să asigure protecția în orice condiții. De exemplu, utilizarea unui sistem de împământare eficient care să limiteze tensiunea de atingere în cazul unei defecțiuni.\n   \n2. **Măsura de protecție suplimentară**: Aceasta este activată în cazul defectării măsurii principale. De exemplu, utilizarea de întrerupătoare de protecție (RCD) care să deconecteze circuitul în cazul detectării unei curent de defecțiune.\n\n### Citate relevante din normative\n\n- **Articolul 4.1.3.1** menționează: „Protecția la defect (împotriva atingerii indirecte) se realizează printr-o măsură de protecție principală care să asigure protecția în orice condiții și o măsură de protecție suplimentară care să asigure protecția în cazul defectării protecției principale.”\n\n- De asemenea, **Articolul 4.1.2.4.2** subliniază importanța obstacolelor: „Obstacolele trebuie să prevină atingerea neintenționată a corpului de părțile active; atingerea neintenționată cu părțile active pe durata funcționării echipamentului sub tensiune în funcționare normală.”\n\n### Recomandări\n\n1. **Implementarea măsurilor de protecție**: Asigurați-vă că atât măsura principală, cât și cea suplimentară sunt implementate și verificate periodic pentru a asigura funcționarea corectă.\n\n2. **Utilizarea echipamentelor de protecție**: Folosiți echipamente de protecție personală (EPP) adecvate în zonele unde există riscuri de atingere indirectă.\n\n3. **Instruirea personalului**: Este esențial ca personalul să fie instruit cu privire la riscurile de atingere indirectă și la măsurile de protecție implementate.\n\n4. **Evaluarea periodică a instalațiilor**: Efectuați evaluări regulate ale instalațiilor electrice pentru a identifica și remedia eventualele defecțiuni care ar putea duce la atingeri indirecte.\n\nDacă aveți nevoie de informații suplimentare sau de clarificări pe un anumit aspect al protecției împotriva atingerii indirecte, vă rog să specificați.",
+      "expectedAnswer": "c",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "bd83293a-5fcb-4ff8-963c-41fc630843ec",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 26,
+          "text": "Masuri tehnice pentru protectia la defect (protectia impotriva atingerilor indirecte) 4.1.3.1. Protectia la defect (impotriva atingerii indirecte) se realizeaza printr-o masura de protectie principala, care sa asigure protectia in orice conditii sii o masura de protectie suplimentara, care sa asigure protectia in cazul defectarii protectiei principale. Cele doua masuri de protectie trebuie alese astfel incat sa nu se anuleze una pe cealalta. 4.1.3.2. Protectia in caz de defect (protectia la atingere indirecta) se realizeaza numai prin masuri tehnice. Acestea sunt : - masuri tehnice principale : - legarea la pamant a partilor conductoare accesibile (ce accidental ar putea fi puse sub tensiune) inconditiile specifice fiecarui sistem de alimentare : TN, TT, IT; - utilizarea tensiunilor reduse TFJS sii TFJP ; - separarea de protectie, pentru un singur receptor ; - izolarea dubla sau intarita a echipamentelor electrice clasa II de izolatie; - masuri tehnice suplimentare : - deconectarea automata la aparitia unui curent electric de defect periculos, prin utilizarea dispozitivelor de curent diferential rezidual DDR ; - legatura de echipotentializare de protectie suplimentara; - izolarea zonei de manipulare a omului (izolarea amplasamentului); - deconectarea automata la aparitia tensiunii de atingere ; - folosirea mijloacelor individuale de protectie electroizolante certificate; - alte masuri tehnice suplimentare ce respecta regula fundamentala.",
+          "confidence": 54
+        },
+        {
+          "index": 2,
+          "paragraphId": "107ecea7-9964-48a5-bcd6-14b7f76b52d8",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 26,
+          "text": "Obstacolele trebuie sa previna: - atingerea neintentionata a corpului de partile active; - atingerea neintentionata cu partile active pe durata functionarii echipamentului sub tensiune in functionare normala. 4.1.2.4.2. Obstacolele pot fi indepartate fara utilizarea unor chei sau scule, insa trebuie asigurate astfel incat sa previna indepartarea neintentionata. 4.1.2.5. Amplasarea in afara zonei de accesibilitate la atingere 4.1.2.5.1 Parti simultan accesibile care sunt la potentiale diferite nu trebuie sa fie in zona de accesibilitate la atingere. Doua parti sunt considerate simultan accesibile daca sunt la distanta mai mica de 2.5 m (dimensiunea de accesibilitate este determinata de lungimea maini fara o scula de ajutor) . 4.1.2.5.2 Daca o suprafata orizontala este restrictionata de un obstacol (balustrada sau ecran de plasa de sarma) cu un grad de protectie mai mare de IP XXB sau IP2X, zona de atingere trebuie sa inceapa de la acest obstacol. In directie verticala (in sus), zona de accesibilitate este de 2.5 m de la suprafata S, netinand seama de nici un obstacol intermediar care asigura un grad de protectie mai mic de IPXXB MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 41 40 sau IP2X. Fig. 4.0. Zona de accesibilitate la atingere 4.1.2.5.3. In locurile in care, in mod normal, sunt manevrate obiecte bune conductoare lungi sii voluminoase, distantele de la art.4.1.2.5.1 sii 4.1.2.5.2 trebuie marite tinand seama de dimensiunile acestor obiecte. 4.1.3.",
+          "confidence": 54
+        },
+        {
+          "index": 3,
+          "paragraphId": "4b32dd33-fa96-43b9-b409-e8e0a5f78be3",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 26,
+          "text": "Masurile suplimentare insotesc intotdeauna o masura tehnica principala sii se prevad in : Vedere din fata Vedere de sus Vedere laterala 2,5 m S 1,25 m 1,25 m 2,5 m S 0,75 m 0,75 m S 1,25 m Limita zonei de accesibilitate la atingere 42 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 41 - instalatiile electrice din mediile periculoase sii foarte periculoase ; - anumite conditii de influente ale conditiilor externe sii amplasamente speciale, asia cum sunt mentionate in cap.7 ; - cazurile in care se utilizeaza conductoare din aluminiu cu sectiunea mai mica de 16 mm2 . Protectia in caz de defect poate fi omisa pentru un echipament cu parti conductoare accesibile de dimensiuni sub 50 50 mm2 sau daca sunt amplasate astfel incat nu pot veni in contact semnificativ cu o parte a corpului uman sii daca racordarea cu un conductor de protectie se realizeaza cu dificultate sau este nesigura . 4.1.3.3. Masurile de protectie diferite aplicate in aceeasii instalatie pentru protectie la defect (la atingere indirecta) nu trebuie sa se influenteze sau sa se anuleze reciproc. 4.1.3.4. Masurile tehnice de protectie la defect (impotriva atingerilor indirecte) mentionate depind de tipul retelei de alimentare sii conditiile de defect. Acestea sunt detaliate in cadrul masurilor de protectie din subcap. 4.1.4. 4.1.4. Masura de protectie Se admit, in general, urmatoarele masuri : 1 intreruperea automata a alimentarii ; 2 izolarea dubla sau intarita ;",
+          "confidence": 52
+        }
+      ],
+      "confidence": 54,
+      "responseTime": 17654
+    },
+    {
+      "id": 64,
+      "question": "Căile de curent din instalațiile electrice cu tensiuni se vor realiza, de regulă, din conductoare neizolate flexibile în:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nPentru a răspunde la întrebarea referitoare la realizarea căilor de curent din instalațiile electrice cu tensiuni, este important să ne referim la normativele electrice românești, în special la cele care reglementează utilizarea conductoarelor neizolate și izolate.\n\n### 1. Tipul conductorului\nConform normativului, căile de curent se vor realiza, de regulă, din conductoare neizolate flexibile. Aceasta se bazează pe specificațiile din tabelul 5.6, care stabilește distanțele minime între conductoare, în funcție de tipul acestora (neizolate sau izolate). Este esențial să se respecte aceste distanțe pentru a evita pericolele de atingere directă și deteriorare mecanică.\n\n### 2. Măsuri de protecție\nSe admite montarea conductoarelor electrice la distanțe mai mici decât cele specificate în tabelul 5.6, cu condiția să se ia măsuri de protecție. Aceste măsuri trebuie să asigure inaccesibilitatea la conductoare, astfel încât să se evite pericolul atingerilor directe și pericolul de deteriorare mecanică. De exemplu, se pot utiliza carcase de protecție sau alte soluții de izolare.\n\n### 3. Structuri instabile\nÎn cazul în care structura clădirilor prezintă riscuri de mișcare, suporturile pentru cabluri și sistemele de protecție trebuie să permită o deplasare relativă. Acest lucru este menționat în secțiunea 5.2.2.14.2, care subliniază importanța utilizării sistemelor de pozare flexibile în structuri instabile. Acestea trebuie să fie conforme cu specificațiile din 5.2.2.7, 5.2.2.8 și 5.2.2.12.\n\n### 4. Protecția utilizatorilor\nÎn incaperi cu condiții speciale de protecție (de exemplu, unde se află copii sau persoane cu dizabilități mintale), este necesar ca prizele să fie de tip special, prevăzute cu dispozitive de protecție diferențială de 30 mA, conform secțiunii 5.4.29. Aceasta este o măsură suplimentară de siguranță care trebuie avută în vedere.\n\n### Recomandări\n- **Verificarea distanțelor**: Asigurați-vă că distanțele între conductoare sunt conforme cu tabelul 5.6, sau că sunt implementate măsuri de protecție adecvate dacă distanțele sunt mai mici.\n- **Utilizarea sistemelor flexibile**: În structuri instabile, utilizați sisteme de pozare flexibile pentru a preveni solicitările mecanice excesive asupra conductoarelor.\n- **Dispozitive de protecție**: În zonele cu utilizatori vulnerabili, asigurați-vă că prizele sunt de tip special și dotate cu protecție diferențială.\n\nDacă aveți nevoie de informații suplimentare sau clarificări, nu ezitați să întrebați!",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "603e8189-017f-48f4-a3a4-eb7935bf6496",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 71,
+          "text": ") se stabilesc in functie de tipul conductorului, neizolat sau izolat, conform tabelului 5.6. Se admite montarea conductoarelor electrice la distante mai mici decat cele specificate in tabelul 5.6. cu conditia luarii de masuri prin care sa se asigure inaccesibilitatea la aceste conductoare, astfel incat sa fie evitat pericolul atingerilor directe sii pericolul de deteriorare mecanica (de ex. prin ingradiri, acoperiri etc.). Tabelul 5.6. Distante minime intre conductoare sii suprafetele de circulatie Tipul conductoarelor Distanta minima pana la suprafetele de circulatie [m] pe verticala pe orizontala neizolate 3,5 2 izolate 2,5 1,5 5.2.10.8. Coborarile din distributiile cu conductoare neizolate spre masiini electrice, aparate etc. trebuie executate cu conductoare izolate. Sub inaltimea de 2,5 m de la pardoseala, conductoarele electrice trebuie protejate mecanic sii impotriva atingerilor directe. 5.2.10.9. Ramificatiile se fixeaza astfel incat sa nu solicite la tractiune conductoare electrice din traseul principal. 5.2.11. Pozarea barelor electrice 5.2.11.1. La alegerea materialului barelor sii montarea lor, trebuie respectate, pe langa prevederile din acest normativ sii recomandarile din STAS 7944. 5.2.11.2. Barele electrice se instaleaza, conform prevederilor cuprinse in reglementarile tehnice specifice referitoare la proiectarea sii executarea instalatiilor de conexiuni sii distributie cu tensiuni pana la 1000V c.a.",
+          "confidence": 68
+        },
+        {
+          "index": 2,
+          "paragraphId": "c0e12235-9e49-4fa9-8dc1-24dd997ac467",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 62,
+          "text": "Atunci cand structura cladirilor prezinta riscuri de misicare, suporturile pentru cabluri sii sistemele de protectie trebuie sa permita o deplasare relativa astfel incat conductoarele sii cablurile sa nu fie supuse la solicitari mecanice excesive. 5.2.2.14.2. In structurile flexibile sau instabile, trebuie folosite sisteme de pozare flexibile, conform cu 5.2.2.7., 5.2.2.8. sii 5.2.2.12 . 5.2.3. Curenti admisibili in sisteme de pozare 5.2.3.0. Prescriptii generale 5.2.3.0.1. Prescriptiile din acest capitol sunt destinate sa determine curentii admisibili in sistemele de pozare specifice pentru cladiri, in scopul asigurarii unei durate de viata satisfacatoare pentru conductoarele sii izolatiile supuse efectelor termice ale curentilor admisibili pe perioade prelungite in functionare normala. 5.2.3.0.2. Alegerea sectiunii conductoarelor sii cablurilor in functie de curentul maxim admisibil pentru anumite conditii de pozare se facein conformitate cu prescriptiile producatorului. In situatia in care nu se dispune de prescriptiile producatorului, valorile curentilor admisibili pot fi determinate conform metodelor descrise in SR CEI 60287, sau se poate proceda astfel : a) utilizand recomandarile din standardul SR HD 384.5.523 S2 pentru curentii admisibili in sistemele de pozare in cladiri, pentru conductoare izolate sii cabluri (fara armatura sii armate multifilare), cu tensiunea nominala mai mica de 1kV in tensiune alternativa sau 1,5 kV in tensiune continua, conform subcap. 5.2.3.",
+          "confidence": 68
+        },
+        {
+          "index": 3,
+          "paragraphId": "33d43285-c8f7-434f-ac78-39c1d350e7e1",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 88,
+          "text": "(curentul diferential rezidual nominal trebuie sa fie d 30 mA) sii amplasate la min. 1 m de materialele combustibile. 5.4.29. In incaperi in care se impun conditii speciale de protectie datorita utilizatorilor (copii, bolnavi mintal etc.), prizele trebuie sa fie de tip special (de ex. cu obturatori) sii prevazute cu dispozitive de protectie diferentiala d 30 mA. 5.4.30. Elementele conductoare de curent ale aparatelor de comutatie pentru montaj ingropat in elemente de constructie se monteaza in doze de aparat. 5. 4.31. Intreruptoarele, comutatoarele, butoanele sii prizele din incaperi pentru bai, grupuri sanitare sii piscine, se instaleaza respectandu-se conditiile din subcap. 7.1 sii 7.2. 126 MONITORUL OFICIAL AL ROMANIEI, PARTEA I, Nr. 802 bis/14.XI.2011 125 5.5. Sisteme de legare la pamant 5.5.1.Generalitati 5.5.1.1.Sistemele de legare la pamant au drept scop: a) asigurarea potentialului pamantului pentru: - conductorul PEN, in retelele TN-C. Conductorul PEN, la consumator, este conectat la borna (bara) principala de legare la pamant a instalatiei (fig. 5.1.), care ofera posibilitatea conectarii electrice a unui numar de conductoare in scopul legarii la pamant; - conductorul neutru (N), in retelele TN-S pentru a permite conectarea la retea a receptoarelor monofazate sau trifazate legate in stea sii neuniform incarcate pe faze; - conductorul de protectie (PE), in retelele TN-S, pentru a asigura protectia persoanelor sii a animalelor impotriva siocurilor electrice;",
+          "confidence": 66
+        }
+      ],
+      "confidence": 68,
+      "responseTime": 14165
+    },
+    {
+      "id": 110,
+      "question": "Montarea siguranțelor de JT pe conductoarele izolate de protecție:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nMontarea siguranțelor de JT (Joasă Tensiune) pe conductoarele izolate de protecție este un subiect important în conformitate cu normativele electrice românești. În acest context, voi analiza informațiile disponibile și voi oferi recomandări bazate pe citatele din normativele relevante.\n\n### Analiza Normativelor\n\n1. **Normativ 2011 49**:\n   - Conform acestui normativ, \"conductoarele circuitelor TFJS sau TFJP trebuie să fie închise într-o manta nemetalică sau o carcasă electroizolantă, suplimentar față de izolația de bază\". Aceasta sugerează că, pentru siguranța circuitelor de joasă tensiune, este esențial ca conductoarele să fie protejate adecvat.\n   - De asemenea, se menționează că \"conductoarele circuitelor TFJS sau TFJP trebuie separate de conductoarele circuitelor cu tensiuni mai mari decât cele din domeniul I printr-o manta metalică legată la pământ sau ecran metalic legat la pământ\". Aceasta indică necesitatea de a preveni interferențele între circuitele de joasă tensiune și cele de tensiune mai mare, ceea ce este crucial pentru siguranța echipamentelor și a personalului.\n\n2. **Normativ 2011 87**:\n   - Acest normativ face referire la caracteristicile generale ale tuburilor de protecție și fitingurilor, stipulând că acestea trebuie să respecte standardele menționate. Este important ca toate componentele sistemului de protecție să fie conforme cu aceste standarde pentru a asigura o protecție adecvată.\n\n3. **Conductor de protecție**:\n   - Conform normativului, \"astfel de circuite trebuie să conțină un conductor de protecție\". Aceasta este o cerință esențială, deoarece conductorul de protecție joacă un rol crucial în prevenirea accidentelor electrice și în asigurarea unei funcționări sigure a sistemului.\n\n### Recomandări\n\n1. **Asigurarea protecției adecvate**:\n   - Este recomandat să se utilizeze conductoare izolate de protecție care să fie închise într-o manta nemetalică sau o carcasă electroizolantă, conform normativului 2011 49. Aceasta va contribui la prevenirea contactului accidental cu conductoarele sub tensiune.\n\n2. **Separarea circuitelor**:\n   - Asigurați-vă că există o separare adecvată între conductoarele de joasă tensiune și cele de tensiune mai mare, utilizând mantale metalice sau ecrane metalice legate la pământ, conform cerințelor normativului.\n\n3. **Utilizarea conductorului de protecție**:\n   - Includeți un conductor de protecție în toate circuitele, conform normativului 2011 49. Acesta trebuie să fie corect dimensionat și legat la pământ pentru a asigura o protecție eficientă.\n\n### Informații Lipsă\n\nPentru a oferi un răspuns și mai detaliat, ar fi util să avem informații suplimentare despre:\n- Tipul specific de siguranțe de JT care urmează să fie montate.\n- Condițiile de mediu în care se va realiza montajul (interior/exterior, umiditate, etc.).\n- Specificațiile tehnice ale conductoarelor utilizate.\n\nAceste informații ar putea influența deciziile de proiectare și montaj, asigurându-se astfel respectarea normativelor și siguranța sistemului electric.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "51c95cf6-9d71-4739-b282-38e4df947080",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 33,
+          "text": "2011 49 - conductoarele circuitelor TFJS sau TFJP trebuie sa fie inchise intr-o manta nemetalica sau o carcasa electroizolanta, suplimentar fata de izolatia de baza; - conductoarele circuitelor TFJS sau TFJP trebuie separate de conductoarele circuitelor cu tensiuni mai mari decat cele din domeniul I printr-o manta metalica legata la pamant sau ecran metalic legat la pamant; - conductoarele circuitului la tensiuni mai mari decat domeniul I pot fi incluse in cabluri multiconductoare sau alte grupari de conductoare daca conductoarele TFJS sau TFJP sunt izolate pentru cea mai mare tensiune prezenta; - prin separare fizica; - sistemul de pozare al altor circuite este cu izolatie dubla sau intarita (conform art. 4.1.4.2.4.1). 4.1.4.3.4.3. Prizele sii fisiele in retelele TFJS sii TFJP trebuie sa indeplineasca urmatoarele conditii: - fisiele sa nu permita introducerea in prize pentru alte sisteme de tensiune; - prizele nu trebuie sa permita introducerea fisielor pentru alte sisteme de tensiune; - fisiele sii prizele in sistem TFJS nu trebuie sa aiba contact pentru conductor de protectie. 4.1.4.3.4.4. Partile conductoare accesibile in circuitele TFJS nu trebuie legate la pamant sau la conductoare de protectie sau parti conductoare accesibile ale altui circuit. 4.1.4.3.4.5.",
+          "confidence": 68
+        },
+        {
+          "index": 2,
+          "paragraphId": "d11f31e5-3680-4178-b37c-5ddc5a3cce5d",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 135,
+          "text": "astfel de circuite trebuie sa contina un conductor de protectie, sau - cablurile sau conductoarele care au incorporat un invelisi metalic legat la pamant conform prescriptiilor pentru conductor de protectie al circuitului respectiv, sau cablurile sau conductorele sunt in jgheaburi de cabluri sau tuburi legate la pamant care corespund prescriptiilor pentru conductor de protectie, sau este utilizata o izolatie concentrica, sau - cablurile sau conductoarele echipate cu o protectie mecanica, de ex. tub metalic, care sa previna penetrarea cablului de cuie, siuruburi, burghie sii similar. 7.1.4.3. Montarea aparatelor de comutatie, de comanda sii a accesoriilor Aparatele de comutatie, de comanda sii accesoriile pot fi instalate astfel: - in volumul 0 : nici unul; - in volumul 1 : doze sii dispozitive de fixare pentru alimentarea receptoarelor, permise in volumele 0 sii 1, conform art. 7.1.5; - accesorii ale circuitelor protejate prin TFJS sau TFJP cu o tensiune nominala care nu depasiesite 25 V tensiune alternativa sau 60 V tensiune continua, inclusiv prizele de curent; sursa de alimentare trebuie instalata in afara volumelor 0 sii 1; - in volumul 2 : accesorii, altele decat prizele de curent; - accesorii ale circuitelor TFJS sau TFJP, inclusiv prizele de curent; sursa de alimentare trebuie instalata in afara volumelor 0 sii 1; - alimentare pentru aparatele de ras conform recomandarilor SR EN 61558 2 5;",
+          "confidence": 68
+        },
+        {
+          "index": 3,
+          "paragraphId": "d7194e9f-8d96-4295-9f70-97029590fc5a",
+          "documentId": "428362a7-4afc-45f7-879b-962cb6f4206b",
+          "documentName": "normativ.odt",
+          "pageNumber": 59,
+          "text": "2011 87 86 Caracteristicile generale inclusiv marcarea tuburilor de protectie sii fitingurilor, conform standardelor susmentionate sunt prezentate in anexa 5.7. TABELUL 5.2 Montarea sistemelor de pozare in functie de situatia de amplasare Conductoare si cabluri Mod de pozare conform anexei 5.6. Fara fixare Fixare directa Tuburi Jgheaburi Tuburi profilate Paturi de cabluri tip scara, table,console Pe izolatoare Pe fir purtator In goluri ale constructiei accesibile 40 33 41;42 6;7;8; 9;12;13;14 43;44 30;31;32; 33;34 - 0 neaccesibile 40 0 41;42 0 43 0 - - In canale pentru cabluri 56 56 54;55 0 30;31; 32; 34 - - Ingropat in pamant 72;73 0 70;71 - 70;71 0 - - Incastrat in structura 57;58 3 1;2;5 9;60 50;51 ;52;5 3 46;45 0 - - Aparent - 20;21;2 2;23;33 4;5 6;7;8;9 ;12;13; 14 6;7;8;9 30;31; 32;34 36 - Aerian - 33 0 10;11 10;11 30;31; 32; 34 36 35 Tocul ferestrelor 16 16 Tocul usiilor 15 15 Imersat 0 Numarul din casuta indica numarul de referinta sii modul de pozare din anexa 5.6. : - neadmis ; 0 neaplicabil sau neutilizat in practica. 5.2.1.6.2. Sisteme de jgheaburi (SJ) sii tuburi profilate (STP) Sisteme de jgheaburi (SJ) sii de tuburi profilate (STP) pentru instalatii electrice se utilizeaza pentru protectia sii pozarea conductoarelor izolate, cablurilor, cordoanelor flexibile, aparate (intreruptoare, prize, etc) sii daca este cazul pentru separarea lor.",
+          "confidence": 67
+        }
+      ],
+      "confidence": 68,
+      "responseTime": 15495
+    },
+    {
+      "id": 38,
+      "question": "În rețelele cu neutrul izolat, curentul de scurtcircuit monofazat:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nÎn rețelele electrice cu neutrul izolat, curentul de scurtcircuit monofazat se comportă diferit comparativ cu rețelele în care neutrul este legat la pământ. Conform normativelor electrice românești, în special NTE 001/03/00, se specifică faptul că:\n\n1. **Determinarea curentului de scurtcircuit**: Valoarea curentului de scurtcircuit monofazat în rețelele cu neutrul legat la pământ prin rezistență se determină prin adunarea curenților capacitivi de punere la pământ ai tuturor liniilor electrice aeriene (LEA) și cablurilor din rețea. Aceasta se face utilizând relația specificată în normative, care include tensiunea de alimentare și curentul capacitiv.\n\n2. **Neutru izolat**: În cazul rețelelor cu neutrul izolat, este important de menționat că, pentru a limita puterea de scurtcircuit, se recomandă montarea de scurtcircuitare rapide pe neutru. Acest lucru este menționat în textul normativ: „În cazul în care, din motive de limitare a puterii de scurtcircuit, este necesar ca transformatorul să funcţioneze cu neutrul izolat, se impune montarea pe neutru a scurtcircuitarelor rapide.”\n\n3. **Recomandări**: \n   - Este recomandat să se efectueze o analiză detaliată a curentului de scurtcircuit în rețelele cu neutrul izolat, având în vedere că curentul capacitiv poate influența semnificativ comportamentul rețelei în condiții de scurtcircuit.\n   - Implementarea scurtcircuitărilor rapide pe neutru este esențială pentru protejarea echipamentelor și limitarea efectelor negative ale scurtcircuitelor.\n\n4. **Informații lipsă**: În textul furnizat nu se oferă detalii despre formula exactă utilizată pentru calculul curentului de scurtcircuit monofazat în rețelele cu neutrul izolat. Ar fi util să se consulte documentația tehnică specifică sau să se solicite clarificări suplimentare pentru a obține informații complete.\n\nDacă aveți întrebări suplimentare sau doriți să explorați un aspect specific al normativei, vă stau la dispoziție pentru clarificări.",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "d1fdd34f-ed7c-4efc-a410-5bcd5a66642c",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 86,
+          "text": "al   unei   reţele   electrice   cuplate   galvanic  la  un \nmoment dat se obţine adunând curenţii capacitivi de punere la pământ ai tuturor LEA şi cablurilor \ndin această reţea. Valoarea   curentului   de   scurtcircuit   monofazat   în   reţelele   cu   neutrul   legat   la   pământ   prin \nrezistenţă se determină cu relaţia\n                              + jI\ncp\n,\nîn care\nU\nf\n  - tensiunea pe fază\n95\n\nNTE 001/03/00                                                                                              -          - \nR\nN\n - valoarea rezistenţei de legare la pământ a neutrului\nr    - valoarea rezistenţei de trecere la locul defectului\nZ\n+\n , Z\n0\n - impedanţele de secvenţă pozitivă şi, respectiv, de secvenţă zero a reţelei electrice \n                  redusă la punctul de scurtcircuit.",
+          "confidence": 71
+        },
+        {
+          "index": 2,
+          "paragraphId": "b902df68-4699-489b-beaf-4b2ff919d1c7",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 86,
+          "text": "al   unei   reţele   electrice   cuplate   galvanic  la  un \nmoment dat se obţine adunând curenţii capacitivi de punere la pământ ai tuturor LEA şi cablurilor \ndin această reţea. Valoarea   curentului   de   scurtcircuit   monofazat   în   reţelele   cu   neutrul   legat   la   pământ   prin \nrezistenţă se determină cu relaţia\n                              + jI\ncp\n,\nîn care\nU\nf\n  - tensiunea pe fază\n95\n\nNTE 001/03/00                                                                                              -          - \nR\nN\n - valoarea rezistenţei de legare la pământ a neutrului\nr    - valoarea rezistenţei de trecere la locul defectului\nZ\n+\n , Z\n0\n - impedanţele de secvenţă pozitivă şi, respectiv, de secvenţă zero a reţelei electrice \n                  redusă la punctul de scurtcircuit.",
+          "confidence": 71
+        },
+        {
+          "index": 3,
+          "paragraphId": "5a99e760-78ec-4fe5-a68f-ef855598a29a",
+          "documentId": "a513206a-ae42-4e55-a782-bf9a15ed683b",
+          "documentName": "Ord 02 03 P109.pdf",
+          "text": "ului. În cazul în care, din motive de limitare a puterii de scurtcircuit, este necesar ca transformatorul să funcţioneze cu neutrul izolat, se impune montarea pe neutru a scurtcircuitarelor rapide. 44\n\nNTE 001/03/00 - - IX. PROTECŢIA INSTALAŢIILOR ELECTRICE ÎMPOTRIVA SUPRATENSIUNILOR TEMPORARE 9.1.- Tratarea neutrului în reţelele electrice de medie tensiune de distribuţie",
+          "confidence": 71
+        }
+      ],
+      "confidence": 71,
+      "responseTime": 11980
+    },
+    {
+      "id": 20,
+      "question": "În cazul echipării stâlpilor liniilor electrice aeriene cu tensiuni mai mari de 1 kV, cu mai multe circuite, acestea:",
+      "aiAnswer": "🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\nÎn cazul echipării stâlpilor liniilor electrice aeriene cu tensiuni mai mari de 1 kV, cu mai multe circuite, este esențial să se respecte normele și standardele specifice pentru a asigura siguranța și funcționarea corectă a sistemului. \n\n### Legarea la pământ\nConform normativului, legarea la pământ a stâlpilor liniilor electrice aeriene trebuie să se realizeze conform STAS 12604/4-89 și STAS 12604/5-90. Este important ca rezistența prizei de pământ a fiecărui stâlp să nu depășească valorile specificate în tabelul 6.1, în funcție de rezistivitatea solului. Aceasta asigură protecția împotriva curenților de scurgere și minimizează riscurile de electrocutare.\n\n### Izolația și protecția\nDe asemenea, în cazul liniilor electrice aeriene protejate cu conductoare de protecție (integral sau pe porțiuni), se impune o reglementare a intervalelor de protecție care trebuie coordonată cu izolația lanțurilor de izolatoare. Acest lucru este crucial pentru stingerea sigură a curentului de însoțire, după amorsarea acestuia. \n\n### Recomandări\n1. **Verificarea rezistenței la pământ**: Asigurați-vă că rezistența prizei de pământ respectă limitele specificate în normativ, adaptându-vă la condițiile de sol.\n2. **Întreținerea izolatorilor**: Monitorizați starea izolatorilor pentru a preveni deteriorarea acestora, care poate duce la întreruperea legăturii de înaltă frecvență.\n3. **Evaluarea periodică**: Efectuați evaluări periodice ale sistemului de protecție și a izolației pentru a asigura funcționarea corectă a liniilor electrice aeriene.\n\n### Informații lipsă\nPentru a oferi un răspuns mai detaliat, ar fi util să specificați tipul de echipare a stâlpilor (de exemplu, tipul de conductoare utilizate, numărul de circuite) și condițiile specifice de mediu (de exemplu, tipul de sol, umiditate) în care se află aceste linii electrice.\n\nDacă aveți nevoie de clarificări suplimentare sau de informații specifice, nu ezitați să întrebați!",
+      "expectedAnswer": "a",
+      "citations": [
+        {
+          "index": 1,
+          "paragraphId": "c3243760-89d9-4a21-9ba9-e31cf37430f5",
+          "documentId": "a513206a-ae42-4e55-a782-bf9a15ed683b",
+          "documentName": "Ord 02 03 P109.pdf",
+          "text": "ne de 110 kV; d) 25 kA pentru linii electrice aeriene de 20 kV.  6. 1. 6. - Legarea la pământ a stâlpilor liniilor electrice aeriene trebuie să se realizeze conform STAS 12604/4-89 şi STAS 12604/5-90.\n\nÎn funcţie de rezistivitatea solului, rezistenţa prizei de pământ a fiecărui stâlp la curenţii de frecvenţă industrială nu trebuie să depăşească valorile din tabelul 6. 1.  În cazul liniilor de 750 kV, rezistenţa prizei de pământ a fiecărui stâlp la curenţii de frecvenţă industrială nu trebuie să depăşească valoarea de 10 .  Tabelul 6. 1 Rezistenţa prizelor de pământ ale stâlpilor liniilor electrice aeriene în funcţie de rezistivitatea solului Rezistivitatea solului ( cm)Rezistenţa maximă de legare la pământ pentru tensiunea () U  110 kVU > 110 kV - până la 10 4 inclusiv1010 1) - peste 10 4 până la 5. 10 4 inclusiv1510 - peste 5. 10 4 până la 10 5 inclusiv2015 - peste 10 5 3020 2) Note: 1) Se recomandă adoptarea unei rezistenţe de până la 5  dacă aceasta nu impune greutăţi deosebite de realizare.  2) În cazuri excepţionale, când condiţiile impun prize costisitoare, se admite valoarea maximă de 30 .  6. 1. 7.",
+          "confidence": 72
+        },
+        {
+          "index": 2,
+          "paragraphId": "b2b45816-3685-49e3-a412-ca89e0b0713c",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 29,
+          "text": "această soluţie,  deoarece  la  deteriorarea  izolatorului \napare întreruperea legăturii de înaltă frecvenţă. Reglarea intervalelor de protecţie se stabileşte coordonat cu izolaţia lanţurilor de izolatoare şi \npentru stingerea sigură a curentului de însoţire, după amorsarea acestuia. 6.1.5.- În cazul liniilor electrice aeriene protejate cu conductoare de protecţie (integral sau pe \nporţiuni) vor fi admise următoarele valori ale curenţilor de protecţie în cazul loviturii de trăsnet în \nstâlp\na) 150 kA pentru linii electrice aeriene de 400 kV şi 750 kV;\nb) 100 kA pentru linii electrice aeriene de 220 kV;\nc)   50 kA pentru linii electrice aeriene de 110 kV;\nd)   25 kA pentru linii electrice aeriene de 20 kV. 6.1.6.-  Legarea la pământ a stâlpilor liniilor electrice aeriene trebuie să se realizeze conform \nSTAS 12604/4-89 şi STAS 12604/5-90.",
+          "confidence": 71
+        },
+        {
+          "index": 3,
+          "paragraphId": "fccb8650-de73-4d5b-b7f8-08fb03b7a0a5",
+          "documentId": "4bdfe151-8813-4185-a9f9-b30649095eda",
+          "documentName": "Ord 02 03 P109.pdf",
+          "pageNumber": 29,
+          "text": "această soluţie,  deoarece  la  deteriorarea  izolatorului \napare întreruperea legăturii de înaltă frecvenţă. Reglarea intervalelor de protecţie se stabileşte coordonat cu izolaţia lanţurilor de izolatoare şi \npentru stingerea sigură a curentului de însoţire, după amorsarea acestuia. 6.1.5.- În cazul liniilor electrice aeriene protejate cu conductoare de protecţie (integral sau pe \nporţiuni) vor fi admise următoarele valori ale curenţilor de protecţie în cazul loviturii de trăsnet în \nstâlp\na) 150 kA pentru linii electrice aeriene de 400 kV şi 750 kV;\nb) 100 kA pentru linii electrice aeriene de 220 kV;\nc)   50 kA pentru linii electrice aeriene de 110 kV;\nd)   25 kA pentru linii electrice aeriene de 20 kV. 6.1.6.-  Legarea la pământ a stâlpilor liniilor electrice aeriene trebuie să se realizeze conform \nSTAS 12604/4-89 şi STAS 12604/5-90.",
+          "confidence": 71
+        }
+      ],
+      "confidence": 72,
+      "responseTime": 12888
+    }
+  ]
+}

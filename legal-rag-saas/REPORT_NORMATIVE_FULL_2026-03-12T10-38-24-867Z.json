@@ -1,0 +1,2281 @@
+{
+  "total": 227,
+  "correct": 120,
+  "incorrect": 107,
+  "noAnswer": 0,
+  "accuracy": 52.863436123348016,
+  "results": [
+    {
+      "questionId": 1,
+      "question": "La stabilirea zonei de protecție a unui post de transformare se are în vedere:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 2,
+      "question": "La stabilirea zonei de siguranță a unei linii electrice se au în vedere:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 57,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 3,
+      "question": "Pentru posturi de transformare aeriene pe stâlpi, zona de protecție este:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 4,
+      "question": "Prin delimitarea zonelor de siguranță ale capacităților energetice se urmărește:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 50,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 5,
+      "question": "Distanța minimă pe verticală între conductorul cel mai apropiat al liniei și coronamentul arborilor:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 6,
+      "question": "Lățimea normată a culoarelor de trecere pentru LEA simplu/dublu circuit pentru LEA cu tensiuni de 220 kV este de:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 57,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 7,
+      "question": "În cazul posturilor de transformare, punct de alimentare, cabine de secționare prevăzute cu adăpostment zidit, zona de protecție și zona de siguranță:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 57,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 8,
+      "question": "Pentru posturi de transformare aeriene pe stâlpi, dotate cu echipament cu ulei, zona de siguranță este:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 55,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 9,
+      "question": "Protecția muncii și electrică împotriva întreruperii sau scăderii tensiunii de alimentare și restabilirii ei ulterioare este o protecție:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 10,
+      "question": "În amplasamente cu risc de incendiu datorită prafului și/sau fibrelor, temperatura la suprafața corpurilor de iluminat, în caz de defect, trebuie să fie limitată la:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 76,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 11,
+      "question": "Rezistența de izolație a unui circuit (de joasă tensiune) cu tensiune nominală > 500 V se măsoară în c.c. și trebuie să aibă o valoare:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 89,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 12,
+      "question": "Se admit doze comune pentru circuitele de iluminat normal, de priză, de comandă și de semnalizare:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 74,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 13,
+      "question": "Se prevede accesul pe la ambele capete pe coridoarele din spatele tablourilor de distribuție (atunci când lungimea tabloului este mai mare de):",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 97,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 14,
+      "question": "Protecția circuitelor împotriva supratensiunilor electrice, care se prevede pe toate conductoarele de fază, trebuie să producă deconectarea:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 81,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 15,
+      "question": "Pentru verificarea rezistenței de izolație a pardoselii, măsurile efectuate cu cel puțin trei măsurări în același amplasament, una din aceste măsurări se efectuează la o distanță de orice conductor extern accesibil din amplasament de:",
+      "expected": "c",
+      "actual": "a",
+      "correct": false,
+      "confidence": 85,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 16,
+      "question": "În cazul rețelelor cu tensiuni mai mari de 1 - 35 kV cu neutru izolat, impedanța legăturilor directe de trasare și împotriva undelor de supratensiune care se propagă pe LEA se realizează cu:",
+      "expected": "c",
+      "actual": "a",
+      "correct": false,
+      "confidence": 55,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 17,
+      "question": "Valoarea rezistenței de dispersie a prizei de pământ artificiale pentru o instalație de paratrăsnet, în cazul când nu este comună cu priza de pământ față de prizele de pământ pentru instalații electrice, trebuie să fie cel mult:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 18,
+      "question": "La traversarea LEA peste conducte magistrale (gaz și petrol, apă și produse chimice), conductoarele LEA trebuie să aibă o secțiune minimă de:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 86,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 19,
+      "question": "Cu măsura de protecție mărită se evită avarierea de protecție împotriva incendiilor:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 20,
+      "question": "În cazul echipării stâlpilor liniilor electrice aeriene cu tensiuni mai mari de 1 kV, cu mai multe circuite, acestea:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 51,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 21,
+      "question": "La LEA cu tensiune peste 1000 V, se prevăd prize artificiale de pământ pentru dirijarea potențialelor la:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 63,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 22,
+      "question": "La LEA 110 kV, pentru realizarea creșterii nivelului de izolație, numărul de izolatoare tip capă-tijă dintr-un lanț, determinat conform NTE 001/03/00:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 88,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 23,
+      "question": "La LEA 110 kV cu izolatoare tip tijă, pentru realizarea creșterii nivelului de izolație determinat conform NTE 001/03/00:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 88,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 24,
+      "question": "În cazul încrucișărilor liniilor cu tensiunea nominală peste 1000 V, pe stâlpi de lemn fără conductor de protecție, pentru ca distanța între cele două linii, pe verticală și pe orizontală, să provină din norme, elementele valabile:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 25,
+      "question": "Zona de siguranță coincide cu zona de protecție:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 51,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 26,
+      "question": "Amplasarea unor obiective față de o capacitate energetică la o distanță mai mică decât distanța de siguranță sau în alte condiții de siguranță ce de protecție decât cele reglementate în Norme tehnice privind definirea zonelor de protecție și de siguranță aferente capacităților energetice:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 75,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 27,
+      "question": "Măsurile de protecție la LEA reprezintă toate măsurile care se iau în condițiile impuse de Norme tehnice privind definirea zonelor de protecție și de siguranță aferente capacităților energetice pentru funcționarea:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 53,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 28,
+      "question": "Pentru protecția liniei împotriva supratensiunilor atmosferice și pentru protecția oamenilor împotriva tensiunilor de pas și de atingere, în cazul traversărilor, stâlpii LEA se leagă la pământ astfel:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 64,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 29,
+      "question": "La creșterea nivelului de izolație a izolatoarelor tip tijă ale LEA, prin adăugarea de izolatoare tip capă-tijă:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 55,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 30,
+      "question": "Calculul curenților de scurtcircuit în rețelele electrice cu tensiunea sub 1 kV se face considerând:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 31,
+      "question": "Calculul curenților de scurtcircuit în rețelele electrice cu tensiunea sub 1 kV se face considerând:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 62,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 32,
+      "question": "Calculul curenților de scurtcircuit în rețelele electrice cu tensiunea sub 1 kV se face în următoarele condiții:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 62,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 33,
+      "question": "Conform NTE 006/06/00, pentru calculul curenților de scurtcircuit trifazat simetric, în cazul când scurtcircuitul este departe de generator, curentul de scurtcircuit inițial Ik este:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 46,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 34,
+      "question": "Contribuția motoarelor asincrone la curentul inițial de scurtcircuit Ik în cadrul rețelelor de joasă tensiune se ia în considerare dacă acesta este mai mare de ... din curentul de scurtcircuit inițial calculat fără influența motoarelor:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 35,
+      "question": "În calculul curenților de scurtcircuit în rețelele electrice cu tensiunea sub 1 kV:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 63,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 36,
+      "question": "În calculul curenților de scurtcircuit în rețelele electrice cu tensiunea sub 1 kV:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 37,
+      "question": "În cazul unui scurtcircuit aproape de generator, într-un sistem cu generatoare, posturi de transformare, curentul de scurtcircuit inițial Ik este egal cu:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 46,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 38,
+      "question": "În rețelele cu neutrul izolat, curentul de scurtcircuit monofazat:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 70,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 39,
+      "question": "În timpul scurtcircuitului trifazat în rețelele de joasă tensiune, impedanța de succesiune negativă este aproximativ egală cu impedanța de succesiune pozitivă:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 40,
+      "question": "Forțele electrodinamice ce apar în cazul unui aparat de comutație și protecție din circuitele electrice de joasă tensiune, valoarea maximă:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 77,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 41,
+      "question": "Raportul de transformare I/U în funcție de mărimea transformării:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 53,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 42,
+      "question": "Alegerea caracteristicilor dispozitivelor de protecție în cazul motoarelor se face ținându-se seama:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 43,
+      "question": "Adâncimea de pozare în condiții normale a cablurilor cu tensiunea nominală până la 20 kV inclusiv va fi, de regulă, cel puțin de:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 79,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 44,
+      "question": "La pozarea cablurilor sub cerul liber peste izolația conductoarelor (din câmp deschis) se pot utiliza până la tensiunea de:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 80,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 45,
+      "question": "Cablurile electrice pozate în sol, în apropierea marginilor, trebuie protejate față de acestea prin amplasarea lor la o distanță minimă de:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 84,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 46,
+      "question": "Distanța dintre plăcuțele de marcaj pe traseele rectilinii ale cablurilor pozate în afara zonelor locuite din localități va fi de:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 47,
+      "question": "Înnădirea cablurilor de comandă și control:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 48,
+      "question": "La executarea unei terminații într-o rețea de cabluri, pentru rezerve se prevăd lungimi minime necesare refacerii:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 60,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 49,
+      "question": "Conductorul neutru se leagă la dulia lămpii:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 55,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 50,
+      "question": "Dimensionarea conductoarelor circuitelor de alimentare în cazul motoarelor se face ținându-se seama:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 76,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 51,
+      "question": "Este admisă racordarea prin prize la circuitul de alimentare al receptoarelor electrice cu putere nominală până la:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 52,
+      "question": "Corpuri de iluminat care se instalează în depozite cu materiale combustibile, categoria BE 2, trebuie să fie întreținute:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 86,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 53,
+      "question": "În încăperi de locuit și similare se recomandă ca traseele tuburilor orizontale pe pereți să fie la o distanță de marginea de:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 97,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 54,
+      "question": "Pentru cablurile cu tensiuni cuprinse între 10 – 30 kV se recomandă alegerea izolației, de preferință, din:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 55,
+      "question": "Protecția cablurilor împotriva curenților de scurtcircuit se realizează:",
+      "expected": "c",
+      "actual": "a",
+      "correct": false,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 56,
+      "question": "Numărul maxim al mansoanelor de legătură pe 1 km de linie nou construită, pentru cabluri cu tensiuni de 1-35 kV, cu fire de cupru, este de:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 87,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 57,
+      "question": "Secțiunile cablurilor de comandă – control, din cupru, folosite în circuitele secundare ale transformatoarelor de curent, nu trebuie să fie mai mici de:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 84,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 58,
+      "question": "Temperatura maximă admisă a unui conductor sau a unui cablu, în regim permanent, este:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 59,
+      "question": "În instalațiile de joasă tensiune alimentate clădirile, rezistența electrică a izolației trebuie măsurată:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 60,
+      "question": "În mod special se prevăd conductoare din cupru la circuitele electrice pentru alimentarea de sisteme și instalații de prevenire și stingere a incendiului, atunci când secțiunea conductoarelor din aluminiu ar rezulta mai mică de:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 91,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 61,
+      "question": "Conductoarele electrice pentru alimentarea receptoarelor de importanță deosebită (receptoare din blocul operator al spitalelor, alarmă incendiu), materialul conductoarelor este:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 62,
+      "question": "Alegerea traseelor liniilor electrice aeriene trebuie să se bazeze pe o concepție de dezvoltare și sistematizare în perspectivă a rețelelor din zona respectivă, având în vedere o perspectivă de:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 85,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 63,
+      "question": "Căile de curent din instalațiile electrice cu tensiunea nominală peste 1 kV se vor realiza, de regulă, din conductoare neizolate rigide:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 64,
+      "question": "Căile de curent din instalațiile electrice cu tensiuni se vor realiza, de regulă, din conductoare neizolate flexibile în:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 65,
+      "question": "Compensatoarele statice sau sincrone, pentru reglajul tensiunii și puterii reactive, se vor instala:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 66,
+      "question": "Drept criteriu de siguranță în dimensionarea rețelelor de medie tensiune se va considera că timpul de întrerupere, în caz de avarie pe ambele căi de alimentare a unui consumator va fi...",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 70,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 67,
+      "question": "Drept criteriu de siguranță în dimensionarea rețelelor de medie tensiune se va considera că timpul de întrerupere, în caz de avarie pe o singură cale...",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 72,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 68,
+      "question": "Excepțiile care fac justificată, în cazuri rare, poziția punctelor de transformare de abonați vor fi:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 60,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 69,
+      "question": "Excepțiile care fac justificată tehnic și economic, rețelele aeriene de joasă tensiune vor fi realizate cu conductoare:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 70,
+      "question": "În zonele urbane cu densitate mare a construcțiilor, rețelele de joasă tensiune vor fi proiectate:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 71,
+      "question": "Izolatoarele suporților electrici pot fi prevăzute cu instalații electrice de iluminat folosind:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 72,
+      "question": "Îmbinările de legare la pământ ale liniilor electrice de medie tensiune vor fi proiectate din:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 63,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 73,
+      "question": "Legăturile barelor cu aparatele:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 58,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 74,
+      "question": "Pentru limitarea solicitărilor termice ale echipamentelor și căilor parcurse de curenții de scurtcircuit, în cazul rețelelor până la 110 kV, timpul de acționare a protecțiilor nu trebuie să depășească:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 75,
+      "question": "Legăturile conductoarelor de protecție trebuie executate:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 76,
+      "question": "Pentru limitarea solicitărilor termice ale echipamentelor și căilor parcurse de curenții de scurtcircuit, în cazul rețelelor până la 110 kV, timpul de acționare a protecțiilor nu trebuie să depășească:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 77,
+      "question": "Posturile de transformare din rețeaua de distribuție publică urbană de tip interior vor fi proiectate cu:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 61,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 78,
+      "question": "Stațiile de conexiuni cu tensiuni până la 20 kV vor fi dispuse, de regulă:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 79,
+      "question": "Stațiile de conexiuni cu tensiuni peste 20 kV vor fi dispuse, de regulă:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 80,
+      "question": "Stațiile de transformare din Sistemul Energetic Național, cu tensiunea primară de 400kV, 220kV sau 110kV, se proiectează:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 76,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 81,
+      "question": "Toate elementele liniei electrice aeriene de înaltă tensiune prin care circulă curentul de scurtcircuit se verifică la stabilitate termică conform NTE 003, luându-se în considerare valoarea de perspectivă a curentului de scurtcircuit și a timpului virtual de defect de:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 90,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 82,
+      "question": "Amplasarea instalațiilor electrice pentru alimentarea unor consumatori, se face:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 83,
+      "question": "Legăturile conductoarelor izolate se acoperă cu material electroizolant (de ex. tub varnis, bandă izolantă, capsule izolante etc):",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 70,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 84,
+      "question": "Legăturile electrice între conductoare izolate (pentru înnădiri sau derivații) se fac:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 85,
+      "question": "Distanța minimă de izolare în aer reprezintă distanța minimă:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 86,
+      "question": "Înălțimea conductoarelor din instalațiile de înaltă tensiune se poate face:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 87,
+      "question": "Măsurile pentru evitarea contactului direct cu materialul combustibil al echipamentelor electrice cu grad de protecție inferior IP54 se aplică:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 86,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 88,
+      "question": "Principalele tipuri de protecție electrică, conform prescripțiilor energetice aplicabile:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 70,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 89,
+      "question": "La LEA 110 kV, pentru un singur izolator de 1 kV, mărimea lanțurilor de izolatoare pentru suspendarea conductorului de fază este:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 90,
+      "question": "Îngustările de protecție definitive, prin una sau mai multe planuri sau instalații electrice de înaltă tensiune, se execută prin mărirea distanțelor de siguranță de cel puțin:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 91,
+      "question": "Instalația de ventilație de avarie din încăperea unei instalații de distribuție se conține echipamente cu volum mare de ulei:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 85,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 92,
+      "question": "La realizarea plantațiilor cu perdele încrucișările de producție electrică:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 70,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 93,
+      "question": "Plăcuțele de separație între celule la stațiile interioare de medie tensiune se va prevedea:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 94,
+      "question": "Montarea pe materiale combustibile a echipamentelor electrice cu grad de protecție inferior IP54:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 78,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 95,
+      "question": "Posturile de transformare situate în mediul rural sau cele cu regim de construcție similar în mediul urban:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 58,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 96,
+      "question": "Montarea tuburilor de protecție a conductoarelor electrice de JT pe pardoseala combustibilă a podurilor:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 70,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 97,
+      "question": "Panoul de alimentare este:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 98,
+      "question": "Motoarele electrice alimentate prin circuite separate trebuie prevăzute pe toate fazele:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 80,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 99,
+      "question": "Se admite condiționat instalarea, în încăperi comune cu instalațiile de distribuție de înaltă și joasă tensiune, de cel mult simplu tip, a două transformatoare de putere în ulei cu o putere totală de:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 59,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 100,
+      "question": "Rețelele din distribuție cu conductoare electrice libere montate pe izolatoare în interiorul clădirilor se vor executa, de regulă:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 101,
+      "question": "Se admite alimentarea a mai multor receptoare electrice de putere de aceeași natură (vibratoare de ex. motoare) prin același circuit de JT prevăzut cu protecție comună la scurtcircuit, dacă puterea totală instalată este de maxim:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 89,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 102,
+      "question": "Amplasarea aparatelor cu ulei în interiorul tablourilor electrice:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 56,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 103,
+      "question": "Amplasarea aparatelor electrice de conexiune și distribuție în interiorul încăperilor de cabluri:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 104,
+      "question": "Căile de curent ce se pot realiza în execuție etanșă, în încăperi și în spații din exterior cu mediu coroziv pot fi realizate din:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 105,
+      "question": "Circuitele de joasă tensiune de curent alternativ, de curent continuu sau de tensiuni diferite:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 106,
+      "question": "Puterea instalată pe un circuit monofazat de prize din clădirile de locuit și social-culturale este de:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 107,
+      "question": "În cazul în care temperatura minimă este sub valorile stabilite de norme, montarea aparatelor înglobate în echipamentul de joasă tensiune:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 54,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 108,
+      "question": "Întreruperea conductorului de protecție prin aparate de conectare:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 66,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 109,
+      "question": "Distanța minimă de izolare între căile de curent de JT și distanța minimă de izolare în aer între piesele sub tensiune ale diferitelor faze, precum și între acestea și părți metalice legate la pământ trebuie să fie de cel puțin:",
+      "expected": "c",
+      "actual": "a",
+      "correct": false,
+      "confidence": 91,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 110,
+      "question": "Montarea siguranțelor de JT pe conductoarele izolate de protecție:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 75,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 111,
+      "question": "Se recomandă ca montarea instalațiilor electrice de interior cu tensiuni până la și peste 1000 V să fie amplasate:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 54,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 112,
+      "question": "Siguranțele cu capac filetat trebuie să fie montate în așa fel încât:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 113,
+      "question": "Tabloul de distribuție de JT trebuie montat:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 56,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 114,
+      "question": "Armăturile, clemele, piesele de fixare ale conductoarelor din centralele și stațiile electrice, în regim de scurtcircuit:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 72,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 115,
+      "question": "Supunerea legăturilor electrice la eforturi de tracțiune:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 62,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 116,
+      "question": "Curentul de scurtcircuit reprezentat:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 117,
+      "question": "Dimensionarea sau verificarea în condițiile curenților de scurtcircuit a liniilor electrice aeriene cu tensiunea nominală mai mică de 110 kV:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 48,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 118,
+      "question": "Din punct de vedere al solicitărilor la scurtcircuit, cablurile electrice se verifică:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 119,
+      "question": "Din punct de vedere al solicitărilor la scurtcircuit, conductoarele rigide (bare, profile) se verifică:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 120,
+      "question": "În funcție de raportul R/X (în care R este partea reală, iar X coeficientul părții imaginare a impedanței complexe a căii de scurtcircuit de la sursă la locul defectului) folosit pentru calculul curentului de șoc de scurtcircuit:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 121,
+      "question": "Îmbinările din stațiile și stațiile electrice se verifică la:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 122,
+      "question": "La calculul curenților de scurtcircuit, impedanța transformatoarelor racordați la punți cu calea de scurtcircuit:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 123,
+      "question": "La determinarea valorii de vârf a curentului de scurtcircuit, dacă există aparate limitatoare de curent:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 64,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 124,
+      "question": "Tablourile de distribuție din locuințe se pot monta astfel încât înălțimea lămpii de sus a tabloului față de pardoseala finisată să nu depășească:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 125,
+      "question": "Verificarea la stabilitate termică la scurtcircuit a conductoarelor de oțel-aluminiu ale LEA se va face cu datele secțiunii:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 126,
+      "question": "Tuburile și țevile metalice sau din material plastic din instalațiile electrice de JT se instalează:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 127,
+      "question": "Pentru dimensionarea sau verificarea aparatelor electrice la solicitările mecanice în cazul curenților de scurtcircuit, se ia în considerare:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 58,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 128,
+      "question": "Temperaturile maxime de scurtă durată ale componentelor cablurilor nu trebuie să depășească:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 129,
+      "question": "Norma tehnică energetică - NTE 001 - privind alegerea izolației, coordonarea izolației și protecția instalațiilor electroenergetice de i.t. împotriva supratensiunilor se aplică:",
+      "expected": "c",
+      "actual": "a",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 130,
+      "question": "Verificarea aparatelor electrice la solicitări mecanice în cazul curenților de scurtcircuit se face ținând seama de valoarea maximă a:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 51,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 131,
+      "question": "Liniile electrice aeriene cu tensiunea nominală de 110 kV sau mai mare se verifică, în condițiile curenților de scurtcircuit:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 132,
+      "question": "La LEA 110 kV, pentru realizarea creșterii nivelului de izolație, numărul de izolatoare tip capă-tijă dintr-un lanț, determinat conform NTE 001/03/00:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 88,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 133,
+      "question": "Apropierea acestui LEA de joasă tensiune de construcții în care se prelucrează sau depozitează materiale ușor inflamabile, la sol, pe durata de incendiu (explozie):",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 63,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 134,
+      "question": "La LEA 400 kV cu izolatoare tip tijă, pentru realizarea creșterii nivelului de izolație determinat conform NTE 001/03/00:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 88,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 135,
+      "question": "Distanța minimă pe verticală la fasciculul torsadat al LEA joasă tensiune, montat pe stâlpi, în punctele de săgeată maximă, la sol, trebuie să fie de:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 96,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 136,
+      "question": "La LEA 220 kV cu izolatoare tip tijă, pentru realizarea creșterii nivelului de izolație determinat conform NTE 001/03/00:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 88,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 137,
+      "question": "La determinarea încărcărilor normate pentru calculul mecanic al LEA de joasă tensiune, se ia în considerare:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 61,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 138,
+      "question": "La dimensionarea din considerente mecanice, secțiunile minime ale conductoarelor LEA de joasă tensiune, neizolate, din oțel-aluminiu utilizate în alimentarea consumatorilor, vor fi:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 139,
+      "question": "Verificarea valorilor rezistențelor de dispersie ale prizelor de pământ ale stâlpilor LEA:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 140,
+      "question": "La LEA cu tensiuni nominale peste 1 kV ca măsura de protecție mărită se interzice înnădirea conductoarelor în deschidere:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 141,
+      "question": "La dimensionarea LEA cu stâlpi comuni pentru joasă și medie tensiune, distanța pe verticală între conductoarele de joasă și medie tensiune, la condiția de săgeată maximă, și conductorul superior al liniei de joasă tensiune:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 142,
+      "question": "La dimensionarea LEA cu stâlpi comuni pentru joasă și medie tensiune:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 143,
+      "question": "La LEA 220 kV, pentru realizarea creșterii nivelului de izolație, numărul de izolatoare tip capă-tijă dintr-un lanț, determinat conform NTE 001/03/00:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 88,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 144,
+      "question": "La dimensionarea LEA de joasă tensiune, traversarea cu linii poate fi făcută în zona stâlpilor, depozitelor de materiale și depozitării materialelor:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 59,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 145,
+      "question": "La dimensionarea liniilor electrice de joasă tensiune, într-o anumită deschidere, ca 'măsuri de siguranță':",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 146,
+      "question": "Nivelul de izolație mărit reprezintă:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 58,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 147,
+      "question": "Montarea fasciculelor de conductoare izolate torsadate ale LEA joasă tensiune pe elemente de clădire din materiale combustibile:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 148,
+      "question": "Secțiunea nominală a unui conductor sau a unei bare metalice se exprimă prin:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 149,
+      "question": "Traversarea liniilor de contact pentru tramvai sau troleibuze de către LEA de joasă tensiune:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 60,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 150,
+      "question": "Bateriile de condensatoare de joasă tensiune se instalează, de regulă:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 151,
+      "question": "Bateriile de condensatoare pot fi montate:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 72,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 152,
+      "question": "Intersecția unui LEA cu un obiect oarecare se consideră:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 86,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 153,
+      "question": "La bateriile de condensatoare automate și fracționare montate pe trepte la medie tensiune va fi cuprinsă între:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 90,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 154,
+      "question": "La pozarea cablurilor de energie și de comandă - control se va prevedea la capetele terminale o rezervă de cablu având lungimea minimă:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 155,
+      "question": "Pentru consumatorii dintr-un anumit regim definit prin structura de furniză (filtre), se recomandă utilizarea de:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 156,
+      "question": "În incintele prin planșee (în interior) sau la trecerea din pământ în aer (în exterior) cablurile montate în spații de producție sau expuse la deteriorări mecanice se protejează pe o înălțime de:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 88,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 157,
+      "question": "Nivelul de izolație a cablurilor este caracterizat de valorile:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 158,
+      "question": "Ordinea de așezare a cablurilor pe rastele, pe grupe de tensiune, de sus în jos, este:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 78,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 159,
+      "question": "Zona de protecție a cablurilor cu tensiunea mai mare de 1 kV pozate sub oțel, trebuie să aibă o lățime de:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 66,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 160,
+      "question": "Din ajutorul metodei componentelor simetrice se face:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 62,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 161,
+      "question": "Curentul de scurtcircuit permanent reprezintă:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 162,
+      "question": "În calculul curentului de scurtcircuit, în cazul schemelor cu mai multe trepte de tensiune, cuplate prin transformatoare, se utilizează pentru simplificare:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 51,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 163,
+      "question": "În calculul curentului de scurtcircuit, valorile impedanțelor directă și inversă dintr-un punct oarecare al rețelei:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 164,
+      "question": "Pentru calculul curenților de scurtcircuit, în cazul exprimării în unități relative, toate impedanțele elementelor se raportează:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 47,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 165,
+      "question": "În cazul producerii unui scurtcircuit departe de generator, componenta periodică alternativă a curentului de scurtcircuit are o valoare efectivă:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 60,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 166,
+      "question": "În cazul unui scurtcircuit aproape de generator trebuie determinate:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 167,
+      "question": "În cazul unui scurtcircuit aproape de generator, componenta periodică alternativă a curentului de scurtcircuit are o valoare efectivă:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 61,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 168,
+      "question": "În cazul unui scurtcircuit departe de generator trebuie determinate:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 169,
+      "question": "În stațiile electrice active de înaltă tensiune, pentru calculul curenților de scurtcircuit, în toate punctele de transformare se utilizează:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 170,
+      "question": "Pentru calculul curenților de scurtcircuit, reactanța capacitivă a liniilor:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 60,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 171,
+      "question": "Reactanța raportată la lungimea longitudinală a mașinii sincrone este reactanța:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 58,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 172,
+      "question": "Schema pentru calculul curenților de scurtcircuit, dacă se aplică teoria componentelor simetrice în cazul scurtcircuitelor simetrice și nesimetrice, se întocmește:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 47,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 173,
+      "question": "Scurtcircuitul departe de generator reprezintă un scurtcircuit în timpul căruia valoarea efectivă a:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 56,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 174,
+      "question": "Timpul minim de deconectare a unui scurtcircuit reprezintă:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 175,
+      "question": "Toate elementele rețelei care intervin în calculul curenților de scurtcircuit se introduc în schema de calcul prin:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 61,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 176,
+      "question": "Conductoarele coloanelor electrice:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 62,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 177,
+      "question": "Conductoarele de protecție ale coloanelor electrice individuale trebuie să fie legat la pământ:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 74,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 178,
+      "question": "Montarea dozelor de trecere este obligatorie în cazul în care lungimea coloanelor în linie dreaptă, pe orizontală, depășește:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 60,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 179,
+      "question": "Pentru compensarea puterii reactive în rețelele electrice de medie tensiune, numărul de trepte al bateriei de condensatoare va fi astfel determinat încât șocul de tensiune ce apare pe barele de medie tensiune să nu depășească:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 91,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 180,
+      "question": "Pentru asigurarea selectivității, între curentul nominal al fuzibilelor a două trepte consecutive, trebuie să fie de cel puțin:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 64,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 181,
+      "question": "Pentru limitarea solicitărilor termice ale echipamentelor și căilor parcurse de curenții de scurtcircuit, în cazul rețelelor de 220 și 400 kV, timpul de acționare a protecțiilor nu trebuie să depășească:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 182,
+      "question": "Deasupra încăperilor în care se pot afla simultan mai mult de 50 persoane:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 183,
+      "question": "În conformitate cu prevederile normelor tehnice, amplasarea unor instalații cu tensiuni diferite (până la și peste 1000 V) în aceeași încăpere:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 58,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 184,
+      "question": "În spații de producție de mărime industrială, la posturi, pe un stâlp, se va dispune, de regulă:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 62,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 185,
+      "question": "Se admite montarea la etajul 1 al clădirilor a transformatoarelor de putere cu ulei, condiționat, când acestea au pareri de până la:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 86,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 186,
+      "question": "Dispunerea barelor colectoare în tablourile de joasă tensiune se recomandă să se facă:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 187,
+      "question": "Armăturile, clemele, piesele de fixare ale conductoarelor din centralele și stațiile electrice se verifică la:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 188,
+      "question": "La dimensionarea sau verificarea liniilor electrice aeriene, din punct de vedere al solicitării la scurtcircuit în condițiile curenților de scurtcircuit, pentru defecte de punere la pământ, se recomandă luarea în considerare a:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 51,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 189,
+      "question": "Nu este obligatorie dimensionarea sau verificarea în condițiile curenților de scurtcircuit a circuitelor electrice cu tensiune nominală până la 1 kV inclusiv:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 70,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 190,
+      "question": "Pentru un element de instalație care se dimensionează sau se verifică în condiții de scurtcircuit se va considera că:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 191,
+      "question": "Verificarea aparatelor electrice la solicitări mecanice în cazul curenților de scurtcircuit se face luându-se în considerare, de regulă:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 51,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 192,
+      "question": "Accesoriile LEA joasă tensiune (console, suporți, armături) se protejează prin:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 59,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 193,
+      "question": "În LEA joasă tensiune se utilizează de regulă stâlpi din:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 59,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 194,
+      "question": "În rețelele de joasă tensiune, nu se admit circuite cu conductoare neizolate torsadate, distanța minimă dintre faze fiind:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 91,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 195,
+      "question": "Traversarea LEA de joasă tensiune peste construcții în care se prelucrează sau depozitează substanțe combustibile, inflamabile sau cu pericol de incendiu (explozie):",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 96,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 196,
+      "question": "Bateriile de condensatoare automate și fracționare montate pe trepte la joasă tensiune vor fi de:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 197,
+      "question": "Distanța de izolare în aer între două părți sub tensiune neizolate sau între acestea și părți legate la pământ este normată:",
+      "expected": "c",
+      "actual": "a",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 198,
+      "question": "În instalații electrice de tip deschis persoanele sunt protejate împotriva atingerii accidentale ale părților sub tensiune:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 199,
+      "question": "Încăperile cu spații de producție electrică se numesc încăperi sau spații:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 56,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 200,
+      "question": "În vederea sistematizării stațiilor (unior racordate la consumator, stațiilor de transformare etc.) se vor folosi porțiuni de linii de:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 201,
+      "question": "Instalațiile electrice de înaltă tensiune, de exterior sau de interior, pot fi amplasate la distanțe convenabile față de construcțiile industriale sau civile, fără să fie necesară îndeplinirea altor condiții:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 202,
+      "question": "În spațiile de producție pot fi amplasate instalații electrice de medie tensiune:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 48,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 203,
+      "question": "Se admit ca părți ale instalației, care sunt în mod normal separate, să fie conectate pentru scurtă durată (până la remedierea unei avarii sau manevre), chiar dacă în aceste intervale de timp puterea de scurtcircuit depășește valoarea nominală pentru care este dimensionată instalația:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 49,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 204,
+      "question": "Schema electrică de conexiuni:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 74,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 205,
+      "question": "Separarea de lucru:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 206,
+      "question": "La instalațiile de peste 1 kV se admit separări de lucru fără întreruperea vizibilă a circuitului:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 207,
+      "question": "Legarea la pământ a căilor de curent din instalațiile cu tensiuni până la 20 kV inclusiv se realizează:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 70,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 208,
+      "question": "Într-o rețea electrică cu tensiunea peste 1 kV:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 77,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 209,
+      "question": "În instalațiile electrice cu tensiuni nominale până la 35 kV inclusiv, transformatoarele de tensiune racordate la barele colectoare vor fi, de regulă, protejate cu:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 71,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 210,
+      "question": "În încăperile de producție, în instalațiile cu tensiuni peste 1 kV:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 50,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 211,
+      "question": "Numărul maxim admis de posturi de transformare cu ulei, înglobate în aceeași clădire civilă cu grad de rezistență la foc I, II sau III, este de:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 57,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 212,
+      "question": "La stațiile de 110 kV de tip interior, peretele de separație între celule se va prevedea:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 10,
+      "needsClarification": false
+    },
+    {
+      "questionId": 213,
+      "question": "Încadrarea în clasele de reacție la foc a rezistenței la foc a materialelor se face în conformitate cu:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 61,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 214,
+      "question": "Amplasarea instalațiilor electrice de joasă tensiune pe trasee comune cu acelea ale altor instalații sau utilaje care ar putea să le pericliteze în funcționarea normală sau în caz de avarie:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 62,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 215,
+      "question": "Masiv (a unei echipament sau element de construcție) reprezintă:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 63,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 216,
+      "question": "Dacă protecția motoarelor contra suprasarcinilor este realizată cu întrerupere, dispozitivul de protecție trebuie să întrerupă obligatoriu:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 75,
+      "citationsCount": 5,
+      "needsClarification": false
+    },
+    {
+      "questionId": 217,
+      "question": "Simbolul literal T utilizat pentru notarea schemei de legare la pământ de tip TN are următoarea semnificație:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 72,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 220,
+      "question": "Se consideră atingere directă:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 65,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 221,
+      "question": "Se consideră atingere indirectă:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 67,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 223,
+      "question": "Conform I7, parte activă a unei instalații este:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 72,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 224,
+      "question": "Conform I7, părțile conductoare accesibile sunt:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 72,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 230,
+      "question": "La instalațiile electrice de putere de joasă tensiune, densitatea maximă de curent admisă în regim de scurtă durată la pornire este de:",
+      "expected": "a",
+      "actual": "a",
+      "correct": true,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 235,
+      "question": "Secțiunea minimă admisă pentru conductoare de fază din circuite pentru prize monofazate în instalațiile electrice de interior clădiri este de:",
+      "expected": "b",
+      "actual": "c",
+      "correct": false,
+      "confidence": 69,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 238,
+      "question": "Pentru un circuit trifazat cu patru conductoare de aluminiu-cupru, secțiunea conductoarelor de fază de 35 mm², conductorul neutru are secțiunea minimă de:",
+      "expected": "b",
+      "actual": "a",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 251,
+      "question": "Cablurile de energie la circuitele care alimentează receptoare de importanță deosebită, se prevăd cu conductoare de cupru când secțiunea conductoarelor (din aluminiu) ar rezulta mai mică de:",
+      "expected": "a",
+      "actual": "b",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 276,
+      "question": "Centralele electrice de mică putere de tip interior se dimensionează corespunzător puterilor:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 59,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 287,
+      "question": "Ca măsură de protecție mărită conductoarele LEA cu tensiune nominală peste 1 kV trebuie să aibă o secțiune de minimum:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 73,
+      "citationsCount": 3,
+      "needsClarification": false
+    }
+  ],
+  "timestamp": "2026-03-12T10:38:24.867Z",
+  "duration": 336805
+}

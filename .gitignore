@@ -57,3 +57,18 @@ test-reports/
 
 # OS
 Thumbs.db
+
+# Python virtual environments
+venv_test/
+venv/
+.venv/
+env/
+
+# ANRE Downloads (large PDFs)
+legal-rag-saas/downloads/
+
+# Voice samples (large audio files)
+legal-rag-saas/voice-samples/
+
+# Temporary PDF extraction
+pdf_pages/

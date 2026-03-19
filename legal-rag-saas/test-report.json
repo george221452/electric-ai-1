@@ -1,0 +1,99 @@
+{
+  "totalQuestions": 10,
+  "correctAnswers": 9,
+  "incorrectAnswers": 1,
+  "accuracy": 90,
+  "results": [
+    {
+      "questionId": 1,
+      "question": "Sistem de măsurare inteligentă a energiei electrice este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, un sistem de măsurare inteligentă a energiei electrice este definit ca un sistem care permite transmiterea bidirecțională securizată a datelor de măsurare. Aceasta înseamnă că informațiile pot fi trimise atât de la contor către centrala de măsurare, cât și invers, ceea ce este esențial pentru gestionarea eficientă a energiei electrice.\n\nDE CE CELELALTE SUNT GREȘITE:\n- B: Această variantă afirmă că sistemul permite transmiterea unidirecțională a datelor, ceea ce este incorect. Un sistem de măsurare inteligentă trebuie să permită transmiterea bidirecțională, nu doar unidirecțională, ceea ce face ca această definiție să fie incompletă și să nu reflecte cerințele normativului.\n- C: Această variantă se concentrează pe înregistrarea și stocarea multiplă a datelor fără transmitere, ceea ce nu corespunde definiției unui sistem de măsurare inteligentă. Un sistem inteligent implică în mod necesar capacitatea de transmitere a datelor, nu doar stocarea lor locală, ceea ce face ca această variantă să fie prea permisivă și să omită condițiile esențiale.\n\nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 2,
+      "question": "Încadrarea punctelor de măsurare aferente locurilor de consum în una dintre categoriile A, B, C, se face în funcţie de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, încadrarea punctelor de măsurare aferente locurilor de consum se face în funcție de energia electrică consumată în ultimele 12 luni pentru locurile de consum existente. Aceasta este o regulă clară care se aplică în mod direct și nu lasă loc de interpretări sau excepții.\n\nDE CE CELELALTE SUNT GREȘITE:\n- B: Această variantă este greșită deoarece se referă la puterea aprobată prin avizul tehnic de racordare / certificatul de racordare, ceea ce nu este specificat ca fiind criteriul de încadrare în normativ. Normativul se concentrează pe consumul efectiv de energie electrică, nu pe puterea aprobată, care poate să nu reflecte consumul real.\n- C: Această variantă este greșită deoarece se referă la energia electrică anuală contractată pentru locurile de consum noi. Normativul nu menționează că pentru locurile de consum noi se face încadrarea pe baza energiei contractate, ci pe baza consumului efectiv înregistrat în ultimele 12 luni pentru locurile existente.\n\nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 3,
+      "question": "Operatorul de măsurare a energiei electrice pe piaţa angro de energie electrică din România:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, operatorul de măsurare a energiei electrice pe piaţa angro de energie electrică din România este unic, respectiv operatorul de transport și de sistem prin structura internă dispecerizată a SOMEPA. Aceasta înseamnă că nu există mai mulți operatori care să îndeplinească această funcție, ci un singur operator care are responsabilitatea de a măsura energia electrică pe piața angro.\n\nDE CE CELELALTE SUNT GREȘITE:\n- A: Această variantă este greșită deoarece afirmă că poate fi oricare operator de distribuție concesionar, ceea ce este incorect. Normativul specifică un operator unic, nu permite o diversitate de operatori de distribuție pentru această funcție.\n- C: Această variantă este greșită deoarece sugerează că oricare producător poate fi operator de măsurare, ceea ce nu este conform cu normativul. Operatorul de măsurare este specificat ca fiind unic și nu include producători în această capacitate.\n\nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 9,
+      "question": "ANRE este:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, ANRE se referă la \"Autoritatea Națională de Reglementare în domeniul Energiei\". Aceasta este definiția corectă și completă a acronimului ANRE, care se ocupă cu reglementarea sectorului energetic.\n\nDE CE CELELALTE SUNT GREȘITE:\n- A: \"Agenţie naţională de reglementare în domeniul energiei termice\" este greșită deoarece se limitează doar la energia termică, ignorând faptul că ANRE reglementează și alte domenii ale energiei, nu doar pe cel termic.\n- B: \"Autoritatea Națională de Reglementare pentru Serviciile Publice de Gospodărie Comunală\" este greșită deoarece se referă la un alt domeniu de reglementare, care nu este specific pentru ANRE, ci pentru alte autorități care se ocupă cu serviciile publice de gospodărie comunală.\n\nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 10,
+      "question": "Asupra terenurilor aflate in proprietatea terților, cuprinse in zonele de protecţie si de siguranţa ale capacităţilor energetice, se stabileşte pentru deţinătorul capacităţilor energetice:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, asupra terenurilor aflate în proprietatea terților, cuprinse în zonele de protecție și de siguranță ale capacităților energetice, se stabilește pentru deținătorul capacităților energetice un drept de servitute legală. Aceasta înseamnă că deținătorul capacităților energetice are dreptul de a utiliza terenurile respective în mod legal, fără a deveni proprietar al acestora.\n\nDE CE CELELALTE SUNT GREȘITE:\n- A) drept de utilizare gratuită: Această variantă este greșită deoarece nu reflectă natura legală a dreptului stabilit de normativ. Dreptul de utilizare gratuită sugerează o utilizare fără obligații legale sau restricții, ceea ce nu este cazul în contextul zonelor de protecție și siguranță, unde există reglementări stricte.\n- B) drept de proprietate: Această variantă este greșită deoarece dreptul de proprietate implică deținerea totală a terenului, ceea ce nu este permis în cazul terenurilor aflate în proprietatea terților. Normativul specifică un drept de servitute, nu un drept de proprietate, care ar implica transferul de proprietate asupra terenului.\n  \nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 14,
+      "question": "Furnizorul de energie electrică este îndreptăţit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, furnizorul de energie electrică este îndreptățit să rezilieze contractul de furnizare a energiei electrice în caz de sustragere de energie electrică, care trebuie să fie constatată prin hotărâre judecătorească definitivă. Aceasta este o condiție specifică și clară care permite rezilierea contractului.\n\nDE CE CELELALTE SUNT GREȘITE:\n- A: neplata abonamentului radio-tv - Această variantă este greșită deoarece nu are legătură cu contractul de furnizare a energiei electrice. Neplata abonamentului radio-tv nu constituie un motiv legal pentru rezilierea contractului de furnizare a energiei electrice, ignorând astfel contextul specific al normativului.\n- C: neplata unei facturi la termenul scadent - Această variantă este greșită pentru că, deși neplata unei facturi poate fi un motiv de reziliere, normativul nu specifică că aceasta este o condiție suficientă. Este posibil ca normativul să prevadă alte condiții sau pași care trebuie urmați înainte de a se ajunge la rezilierea contractului, ceea ce face această variantă prea permisivă.\n\nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 18,
+      "question": "Tarifele de racordare la reţea sunt:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, tarifele de racordare la rețea sunt reglementate de ANRE (Autoritatea Națională de Reglementare în Domeniul Energiei). Aceasta înseamnă că ANRE stabilește cadrul legal și normativ pentru aceste tarife, asigurându-se că sunt corecte și transparente pentru toți utilizatorii.\n\nDE CE CELELALTE SUNT GREȘITE:\n- A: Această variantă este greșită deoarece afirmă că tarifele sunt stabilite de operatorii de rețea, ceea ce este prea strict și nu reflectă realitatea. Operatorii de rețea trebuie să respecte reglementările ANRE, deci nu au libertatea de a stabili tarifele în mod unilateral.\n- B: Această variantă este greșită pentru că sugerează că tarifele sunt negociate cu solicitantul, ceea ce este o abordare prea permisivă. Tarifele de racordare nu sunt negociabile, ci sunt stabilite prin reglementări clare de către ANRE, ceea ce exclude posibilitatea de negociere individuală.\n\nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 19,
+      "question": "ANRE poate aplica sancţiuni contravenţionale în cazul în care un electrician:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: C\n\nEXPLICAȚIE: Conform normativului I7/2011, ANRE poate aplica sancțiuni contravenționale în cazul în care un electrician deține adeverință/legitimație de electrician autorizat și desfășoară activități de realizare de instalații electrice într-o formă care nu este prevăzută în regulamentul de autorizare. Aceasta înseamnă că, dacă electricianul nu respectă reglementările stabilite, ANRE are dreptul să intervină și să aplice sancțiuni.\n\nDE CE CELELALTE SUNT GREȘITE:\n- A: Această variantă este greșită deoarece afirmă că ANRE nu poate aplica sancțiuni în cazul în care electricianul comite o faptă permisă. Totuși, normativul nu menționează că faptele permise sunt scutite de sancțiuni, ci se referă la faptele interzise. Astfel, este prea strictă și ignoră posibilitatea ca, chiar și cu adeverință, electricianul să comită fapte care pot atrage sancțiuni.\n- B: Această variantă este greșită deoarece sugerează că un electrician poate desfășura activități de realizare de instalații electrice pe cont propriu, în calitate de PFA, fără a respecta reglementările. Normativul nu permite desfășurarea acestor activități fără respectarea cerințelor legale, ceea ce face ca această variantă să fie prea permisivă.\n  \nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 22,
+      "question": "ANRE - Autoritatea Națională de Reglementare în domeniul Energiei este abilitată prin lege să constate și să sancționeze:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: B\n\nEXPLICAȚIE: Conform normativului I7/2011, ANRE - Autoritatea Națională de Reglementare în domeniul Energiei este abilitată să constate și să sancționeze încălcarea reglementărilor emise de aceasta. Aceasta înseamnă că ANRE are autoritatea de a interveni în cazul în care tehnicienii sau persoanele fizice nu respectă normele stabilite, ceea ce face ca varianta B să fie corectă.\n\nDE CE CELELALTE SUNT GREȘITE:\n- A: \"executarea unor lucrări de proastă calitate\" este prea strictă, deoarece normativul nu menționează explicit că ANRE se ocupă de calitatea lucrărilor, ci mai degrabă de respectarea reglementărilor. Aceasta omite aspectul că ANRE se concentrează pe conformitatea cu reglementările, nu pe evaluarea calității lucrărilor în sine.\n- C: \"încălcarea prevederilor legislației muncii\" este prea permisivă, deoarece ANRE nu are competențe în domeniul legislației muncii, ci se axează pe reglementările specifice domeniului energetic. Aceasta omite faptul că ANRE nu este responsabilă pentru aspectele legate de legislația muncii, ci doar pentru reglementările din domeniul energiei.\n\nSURSĂ: Pagina 1"
+    },
+    {
+      "questionId": 27,
+      "question": "Calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic, precum şi pentru activităţile sau serviciile publice de interes naţional și general din domeniul energiei electrice o are:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85,
+      "explanation": "RĂSPUNS CORECT: A\n\nEXPLICAȚIE: Conform normativului I7/2011, calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic este atribuită Ministerului de resort. Aceasta este o responsabilitate clar definită, fără excepții sau condiții suplimentare care să permită altor entități să preia această calitate.\n\nDE CE CELELALTE SUNT GREȘITE:\n- B: ANRE - Autoritatea Națională de Reglementare în domeniul Energiei nu are calitatea de autoritate contractantă pentru concesionarea bunurilor, ci se ocupă cu reglementarea și supravegherea sectorului energetic. Aceasta este o funcție diferită și nu se aliniază cu responsabilitățile de concesionare.\n- C: ANRSC - Autoritatea Națională de Reglementare în domeniul Serviciilor Comunale nu are nicio legătură cu domeniul energetic în ceea ce privește concesionarea bunurilor. Aceasta se concentrează pe reglementarea serviciilor comunale, ceea ce o face inadecvată pentru această responsabilitate specifică.\n\nSURSĂ: Pagina 1"
+    }
+  ],
+  "timestamp": "2026-03-12T07:54:16.282Z"
+}

@@ -1,0 +1,61 @@
+{
+  "total": 5,
+  "correct": 2,
+  "incorrect": 3,
+  "noAnswer": 0,
+  "accuracy": 40,
+  "results": [
+    {
+      "questionId": 1,
+      "question": "La stabilirea zonei de protecție a unui post de transformare se are în vedere:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 68,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 2,
+      "question": "La stabilirea zonei de siguranță a unei linii electrice se au în vedere:",
+      "expected": "b",
+      "actual": "b",
+      "correct": true,
+      "confidence": 57,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 3,
+      "question": "Pentru posturi de transformare aeriene pe stâlpi, zona de protecție este:",
+      "expected": "a",
+      "actual": "c",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 4,
+      "question": "Prin delimitarea zonelor de siguranță ale capacităților energetice se urmărește:",
+      "expected": "c",
+      "actual": "c",
+      "correct": true,
+      "confidence": 50,
+      "citationsCount": 3,
+      "needsClarification": false
+    },
+    {
+      "questionId": 5,
+      "question": "Distanța minimă pe verticală între conductorul cel mai apropiat al liniei și coronamentul arborilor:",
+      "expected": "c",
+      "actual": "b",
+      "correct": false,
+      "confidence": 100,
+      "citationsCount": 3,
+      "needsClarification": false
+    }
+  ],
+  "timestamp": "2026-03-12T10:29:56.404Z",
+  "duration": 696
+}

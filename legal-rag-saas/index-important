@@ -1,0 +1,103 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+echo ""
+echo "╔══════════════════════════════════════════════════════════════════╗"
+echo "║     📚 INDEXARE DOCUMENTE IMPORTANTE PENTRU GRILE               ║"
+echo "╚══════════════════════════════════════════════════════════════════╝"
+echo ""
+
+# Creează folder pentru documente importante
+mkdir -p downloads/important_for_quiz
+
+# Șterge ce era înainte (ca să refacem lista)
+rm -f downloads/important_for_quiz/*
+
+echo "🔍 Selectez documentele esențiale..."
+echo ""
+
+# Copiază NTE-urile (Norme Tehnice) - CELE MAI IMPORTANTE
+echo "  📋 Copiez NTE-uri (Norme Tehnice)..."
+cp downloads/anre_nte/*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*NTE*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*nte*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază PE (Proiecte de reglementare)
+echo "  📄 Copiez PE (Proiecte de reglementare)..."
+cp downloads/anre_super_complete/*PE*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*pe*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază Ordine ANRE
+echo "  📜 Copiez Ordine ANRE..."
+cp downloads/anre_super_complete/*Ord*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*ordin*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*ORD*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază Legi
+echo "  ⚖️  Copiez Legi..."
+cp downloads/anre_super_complete/*Lege*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*lege*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*LEGE*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază Hotărâri de Guvern
+echo "  🏛️  Copiez Hotărâri de Guvern..."
+cp downloads/anre_super_complete/*HG*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*Hotarare*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*hotarare*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază Regulamente
+echo "  📖 Copiez Regulamente..."
+cp downloads/anre_super_complete/*Regulament*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*regulament*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază Decizii ANRE
+echo "  📋 Copiez Decizii ANRE..."
+cp downloads/anre_super_complete/*Decizie*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*decizie*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază Ghiduri și Îndrumări
+echo "  📚 Copiez Ghiduri și Îndrumări..."
+cp downloads/anre_super_complete/*Ghid*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*ghid*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*Indrumar*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Copiază I7/2011 și alte instrucțiuni importante
+echo "  📑 Copiez Instrucțiuni..."
+cp downloads/anre_super_complete/*I7*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*I-7*.pdf downloads/important_for_quiz/ 2>/dev/null
+cp downloads/anre_super_complete/*Instructiuni*.pdf downloads/important_for_quiz/ 2>/dev/null
+
+# Numără câte sunt
+COUNT=$(ls downloads/important_for_quiz/*.pdf 2>/dev/null | wc -l)
+SIZE=$(du -sh downloads/important_for_quiz/ 2>/dev/null | cut -f1)
+
+echo ""
+echo "═══════════════════════════════════════════════════════════════════"
+echo "  ✅ Gata! Am selectat $COUNT documente importante ($SIZE)"
+echo "═══════════════════════════════════════════════════════════════════"
+echo ""
+echo "  📂 Acestea sunt cele mai importante pentru grile:"
+echo "     • NTE (Norme Tehnice) - cele mai frecvente în grile"
+echo "     • PE (Proiecte de reglementare)"
+echo "     • Ordine ANRE"
+echo "     • Legi și Hotărâri"
+echo "     • Regulamente"
+echo "     • Ghiduri și instrucțiuni"
+echo ""
+echo "  ⏱️  Timp estimat de indexare: ~$((COUNT * 10 / 60))-$((COUNT * 15 / 60)) minute"
+echo ""
+
+# Verifică dacă vrea să indexeze
+read -p "Vrei să încep indexarea acum? (da/nu): " raspuns
+
+if [ "$raspuns" = "da" ] || [ "$raspuns" = "DA" ] || [ "$raspuns" = "d" ]; then
+    echo ""
+    echo "🚀 Pornesc indexarea..."
+    echo ""
+    # Modifică sursa pentru a folosi folderul important_for_quiz
+    SOURCE_DIR="./downloads/important_for_quiz" node --import tsx manual-index-important.ts
+else
+    echo ""
+    echo "💡 Poți indexa mai târziu cu: ./index-start-important"
+    echo ""
+fi

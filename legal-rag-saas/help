@@ -1,0 +1,50 @@
+#!/bin/bash
+cat << 'EOF'
+
+╔══════════════════════════════════════════════════════════════════╗
+║                    📚 COMENZI DISPONIBILE                         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📥 INDEXARE DOCUMENTE:
+   index-start          - Indexează TOATE documentele (~8 ore)
+   index-essential      - Selectează și indexează doar NTE/PE/I7 (rapid) ⭐
+   index-important      - Selectează și indexează documente pentru grile
+   index-status         - Vezi cât a indexat
+   reindex              - Șterge tot și reindexează (ATENȚIE!)
+   clear                - Șterge doar indexul
+
+📊 INFORMAȚII:
+   status           - Status complet sistem
+   stats            - Statistici detaliate
+   count            - Numără câte documente ai
+   check            - Verifică dacă serviciile merg
+
+💬 CHAT (cu memorie):
+   chat             - Chat interactiv care reține contextul ⭐
+
+🧪 TESTARE:
+   test-quiz [n]    - Testează grilele din normativ (default: 50)
+   test-one "text"  - Testează o întrebare
+
+🔍 CĂUTARE:
+   search "text"    - Caută în documente
+
+⬇️ DESCĂRCARE:
+   download         - Descarcă documente noi de pe ANRE
+
+🗄️ BAZA DE DATE:
+   db-studio        - Deschide Prisma Studio (interfață web)
+   db-reset         - Resetează baza de date (PERICULOS!)
+
+═══════════════════════════════════════════════════════════════════
+
+💡 EXEMPLE:
+   index-start                    ← Începe indexarea
+   index-status                   ← Vezi progresul
+   test-one "Care e tensiunea?"   ← Testează o întrebare
+   search "NTE 001"               ← Caută NTE 001
+
+⚠️  Comenzi periculoase (necesită confirmare):
+   reindex, clear, db-reset
+
+EOF

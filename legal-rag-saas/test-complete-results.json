@@ -1,0 +1,969 @@
+{
+  "totalQuestions": 120,
+  "correctAnswers": 84,
+  "incorrectAnswers": 36,
+  "accuracy": 70,
+  "results": [
+    {
+      "questionId": 1,
+      "question": "Sistem de măsurare inteligentă a energiei electrice este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 2,
+      "question": "Încadrarea punctelor de măsurare aferente locurilor de consum în una dintre categoriile A, B, C, se face în funcție de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 3,
+      "question": "Operatorul de măsurare a energiei electrice pe piața angro de energie electrică din România:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 4,
+      "question": "În rețelele electrice trifazate, măsurarea energiei electrice se efectuează:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 5,
+      "question": "Înfășurările secundare ale transformatoarelor de curent și tensiune pentru măsurare:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 6,
+      "question": "Punctele de măsurare de categoria C sunt cele:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 7,
+      "question": "Punctele de măsurare din subcategoria C1 sunt punctele de măsurare dotate cu grupuri de măsurare:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 8,
+      "question": "Accesul la rețeaua electrică de interes public este definit ca fiind:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 9,
+      "question": "ANRE este:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 10,
+      "question": "Asupra terenurilor aflate în proprietatea terților, cuprinse în zonele de protecție și de siguranță ale capacităților energetice, se stabilește pentru deținătorul capacităților energetice:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 11,
+      "question": "O persoană care deține o rețea electrică de distribuție proprie la data intrării în vigoare a Legii nr.123/2012:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 12,
+      "question": "Clientul casnic este clientul care:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 13,
+      "question": "Finanțarea lucrărilor de electrificare a localităților este obligația:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 14,
+      "question": "Furnizorul este îndreptățit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 15,
+      "question": "Furnizorul este îndreptățit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 16,
+      "question": "În cazul sustragerii de energie prin ocolirea măsurării:",
+      "expectedAnswer": "C",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 17,
+      "question": "Pe piața cu amănuntul, furnizorii vând energie electrică clienților finali prin:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 18,
+      "question": "Tarifele de racordare la rețea sunt:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 19,
+      "question": "ANRE poate aplica sancțiuni contravenționale în cazul în care un electrician:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 20,
+      "question": "Autorizarea electricienilor în domeniul instalațiilor electrice se realizează:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 21,
+      "question": "Electricianul autorizat pentru gradul III, tip A+B are următoarele competențe:",
+      "expectedAnswer": "A",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 22,
+      "question": "ANRE - Autoritatea Națională de Reglementare în domeniul Energiei este abilitată prin lege să constate și să sancționeze:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 23,
+      "question": "Electricienii care doresc să solicite autorizarea, pentru a fi acceptați la examen trebuie să îndeplinească următoarele condiții:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 24,
+      "question": "În cazul în care electricianul autorizat își pierde Legitimația/Adeverința de electrician autorizat, la solicitarea sa, ANRE poate emite un duplicat, dacă:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 25,
+      "question": "Pentru a fi valabilă, adeverința de electrician autorizat:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 26,
+      "question": "Termenul de vizare a adeverinței de electrician autorizat, de la data emiterii documentului sau, după caz, de la data ultimei vizări, este de:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 27,
+      "question": "Calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic, precum și pentru activitățile sau serviciile publice de interes național și general din domeniul energiei electrice o are:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 28,
+      "question": "Trecerea la un grad de autorizare superior se poate face:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 29,
+      "question": "Pot face obiectul unei concesiuni energetice:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 30,
+      "question": "Constituie contravenție:",
+      "expectedAnswer": "A",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 31,
+      "question": "Constituie infracțiune:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 32,
+      "question": "Regulamentul pentru atestarea operatorilor economici care proiectează, execută și verifică instalații electrice este aprobat de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 33,
+      "question": "Se recomandă includerea în subcategoria C3 a punctelor de măsurare ale utilizatorilor rețelelor electrice de interes public:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 34,
+      "question": "Într-un sistem de producere distribuită:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 35,
+      "question": "Codul tehnic al rețelelor electrice de distribuție (Codul RED), reglementare ce este parte constitutivă a legislației secundare, este aprobat de către:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 36,
+      "question": "Criteriile de promovare a energiei electrice produse în centrale electrice de cogenerare de înaltă eficiență au în vedere:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 37,
+      "question": "Codul tehnic al rețelelor electrice de distribuție reglementează activitatea operatorilor de distribuție:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 38,
+      "question": "Obligațiile de serviciu public pentru operatorii economici din sectorul energiei electrice se pot stabili:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 39,
+      "question": "Standardul de performanță pentru serviciul de distribuție a energiei electrice stabilește indicatori de performanță privind:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 40,
+      "question": "Furnizorul de energie electrică este îndreptățit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 41,
+      "question": "Se integrează în sisteme de măsurare inteligentă punctele de măsurare din:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 42,
+      "question": "În conformitate cu prevederile legii nr.123/2012 sunt considerate surse regenerabile de energie:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 43,
+      "question": "Nerespectarea normelor tehnice emise de către ANRE constituie:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 44,
+      "question": "Actualizarea avizului tehnic de racordare atunci când se produce schimbarea titularului locului de producere sau de consum:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 45,
+      "question": "Energia electrică furnizată clienților finali pe piața de energie electrică și energia electrică produsă în instalațiile utilizatorilor se măsoară de către operatorii de măsurare, prin grupuri de măsurare, conform codului de măsurare elaborat de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 46,
+      "question": "Operatorul de distribuție:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 47,
+      "question": "Operatorul de transport și de sistem este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 48,
+      "question": "În cazul existenței mai multor puncte de delimitare, se consideră un singur loc de consum și o singură instalație de utilizare dacă:",
+      "expectedAnswer": "C",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 49,
+      "question": "Pentru protejarea rețelelor electrice de distribuție, persoanelor fizice și juridice:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 50,
+      "question": "Printre obiectivele de bază ale Legii nr. 123/2012 se regăsesc:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 51,
+      "question": "Rețea electrică de interes public este o rețea electrică la care sunt racordați cel puțin:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 52,
+      "question": "Obținerea avizului tehnic de racordare de către un utilizator:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 53,
+      "question": "Sursele electrice de tensiune continuă, dacă nu sunt racordate prin invertoare la SEN, se supun Legii nr. 123/2012?:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 54,
+      "question": "Executarea sau folosirea de instalații clandestine în scopul racordării directe la rețea constituie:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 55,
+      "question": "Avizul tehnic de racordare emis își încetează valabilitatea:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 56,
+      "question": "În cazul unui ansamblu de blocuri de locuințe, grupurile de măsurare individuale se poziționează:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 57,
+      "question": "Soluția de racordare se stabilește printr-o fișă de soluție pentru:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 58,
+      "question": "Soluția de racordare se stabilește printr-un studiu de soluție pentru:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 59,
+      "question": "Autoritatea Națională de Reglementare în domeniul Energiei analizează și soluționează eventualele contestații cu privire la:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 60,
+      "question": "Neînțelegerile privind racordarea utilizatorilor la rețelele electrice de interes public, dintre operatorii de distribuție și solicitanți, se soluționează:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 61,
+      "question": "ANRE poate aplica sancțiuni contravenționale unui electrician autorizat pentru:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 62,
+      "question": "Autorizarea electricienilor se realizează în urma:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 63,
+      "question": "Calitatea de electrician autorizat Grad III AB permite:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 64,
+      "question": "Electricianul autorizat pentru gradul II, tip A+B are competențe:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 65,
+      "question": "Electricianul autorizat pentru gradul IV, tip A+B are competențe:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 66,
+      "question": "Autorizația pentru proiectare de instalații electrice este de tip:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 67,
+      "question": "Este interzis electricianului autorizat:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 68,
+      "question": "Este interzis electricianului autorizat:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 69,
+      "question": "În vederea autorizării pentru ambele tipuri (A și B), electricienii:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 70,
+      "question": "Adeverința de electrician autorizat gradul IIIB conferă competențe titularului:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 71,
+      "question": "Regulamentul de autorizare definește următoarele tipuri de autorizări:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 72,
+      "question": "Sancțiunile contravenționale aplicate de ANRE pot fi:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 73,
+      "question": "Un electrician autorizat care execută lucrări de instalații electrice:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 74,
+      "question": "Una dintre obligațiile electricianului autorizat care execută lucrări este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 75,
+      "question": "Una dintre obligațiile electricianului autorizat de tip A este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 76,
+      "question": "Una dintre obligațiile electricianului autorizat de tip B este:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 77,
+      "question": "Client final este:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 78,
+      "question": "Conform legii, noțiunea de 'client final' și 'consumator' sunt:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 79,
+      "question": "ANRE poate suspenda atestatul unui operator economic dacă:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 80,
+      "question": "ANRE poate suspenda atestatul unui operator economic dacă:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 81,
+      "question": "Atestatele emise de ANRE pentru desfășurarea activităților fără atestat:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 82,
+      "question": "Conform RED, operatorii de distribuție:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 83,
+      "question": "Codul tehnic RED este administrat de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 84,
+      "question": "Indicatorul de continuitate în rețelele de distribuție (Codul RED):",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 85,
+      "question": "OD asigură serviciul de intervenție în regim de urgență în:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 86,
+      "question": "Printre activitățile desfășurate de operatorul de distribuție se numără:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 87,
+      "question": "Obiectivele Codului tehnic RED sunt:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 88,
+      "question": "Prevederile standardului de performanță nu se aplică în situații de:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 89,
+      "question": "Prevederile standardului de performanță nu se aplică în situații de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 90,
+      "question": "Utilizatorul trebuie să îndeplinească următoarele condiții:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 91,
+      "question": "Utilizatorul trebuie să îndeplinească următoarele condiții:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 92,
+      "question": "Standardul de performanță vizează:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 93,
+      "question": "Standardul de performanță vizează:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 94,
+      "question": "Standardul de performanță vizează:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 95,
+      "question": "Termenul de soluționare a cererii de racordare prin fișă de soluție:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 96,
+      "question": "Verificarea documentației de către operatorul de distribuție se face conform:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 97,
+      "question": "Codul tehnic al rețelelor de distribuție (Codul RED) se aplică:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 98,
+      "question": "Operatorul de transport și de sistem (OTS) are rolul de:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 99,
+      "question": "Autoritatea care are calitatea de administrator al Codului tehnic RED:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 100,
+      "question": "Producătorii cu putere instalată de până la 50 MW inclusiv se adresează:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 101,
+      "question": "Avizul tehnic de racordare (ATR) se emite de către:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 102,
+      "question": "În calitate de persoană fizică autorizată (PFA), un electrician grad I:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 103,
+      "question": "Serviciul de sistem tehnologic este realizat de către:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 104,
+      "question": "Serviciul de sistem este în responsabilitatea OTS:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 105,
+      "question": "Termenul de preaviz pentru rezilierea contractului de furnizare de către client:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 106,
+      "question": "Contractul de distribuție se poate încheia între:",
+      "expectedAnswer": "B",
+      "systemAnswer": "A",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 107,
+      "question": "Convenția de exploatare este un act juridic care precizează:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 108,
+      "question": "Convenția de exploatare se încheie între:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 109,
+      "question": "Furnizarea energiei electrice se desfășoară:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 110,
+      "question": "În cazul facturării întârziate, furnizorul are obligația:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 111,
+      "question": "Furnizarea către clienții noncasnici include și:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 112,
+      "question": "Nerespectarea de către client a contractului de furnizare poate duce la:",
+      "expectedAnswer": "B",
+      "systemAnswer": "B",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 113,
+      "question": "Avizul tehnic de racordare constituie:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 114,
+      "question": "Avizul tehnic de racordare este valabil:",
+      "expectedAnswer": "C",
+      "systemAnswer": "C",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 115,
+      "question": "Cererea pentru racordare trebuie să fie semnată de:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 116,
+      "question": "Cererea pentru racordare și documentația anexă:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    },
+    {
+      "questionId": 117,
+      "question": "Documentația pentru racordare, în cazul construcțiilor noi, cuprinde:",
+      "expectedAnswer": "B",
+      "systemAnswer": "C",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 118,
+      "question": "În cazul utilizatorilor clienți casnici, finanțarea branșamentelor:",
+      "expectedAnswer": "A",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 119,
+      "question": "În cazul utilizatorilor noncasnici, costurile pentru racordare:",
+      "expectedAnswer": "C",
+      "systemAnswer": "B",
+      "isCorrect": false,
+      "confidence": 85
+    },
+    {
+      "questionId": 120,
+      "question": "Lucrările de întreținere a instalațiilor de racordare se execută:",
+      "expectedAnswer": "A",
+      "systemAnswer": "A",
+      "isCorrect": true,
+      "confidence": 85
+    }
+  ],
+  "timestamp": "2026-03-12T09:15:43.059Z"
+}

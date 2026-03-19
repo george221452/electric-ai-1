@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "question": "Sistem de măsurare inteligentă a energiei electrice este:",
+    "varianta_a": "un sistem de măsurare a energiei electrice care permite transmiterea bidirecţională securizată a datelor de măsurare, în conformitate cu reglementările în vigoare",
+    "varianta_b": "un sistem de măsurare a energiei electrice care permite transmiterea unidirecţională securizată a datelor de măsurare, în conformitate cu reglementările în vigoare",
+    "varianta_c": "un sistem de măsurare a energiei electrice care permite înregistrarea şi stocarea multiplă a datelor, fără transmitere, cu posibilităţi de descărcare locală, utilizând exclusiv contoare electronice",
+    "correct": "a"
+  },
+  {
+    "id": 2,
+    "question": "Încadrarea punctelor de măsurare aferente locurilor de consum în una dintre categoriile A, B, C, se face în funcţie de:",
+    "varianta_a": "energia electrică consumată în ultimele 12 luni, pentru locurile de consum existente",
+    "varianta_b": "puterea aprobată prin avizul tehnic de racordare / certificatul de racordare",
+    "varianta_c": "energia electrică anuală contractată, pentru locurile de consum noi",
+    "correct": "b"
+  },
+  {
+    "id": 3,
+    "question": "Operatorul de măsurare a energiei electrice pe piaţa angro de energie electrică din România:",
+    "varianta_a": "poate fi oricare operator de distribuție concesionar",
+    "varianta_b": "este unic, respectiv operatorul de transport și de sistem prin structura internă dispecerizată a SOMEPA",
+    "varianta_c": "poate fi oricare producător",
+    "correct": "b"
+  },
+  {
+    "id": 4,
+    "question": "În reţelele electrice trifazate, măsurarea energiei electrice se efectuează:",
+    "varianta_a": "utilizând tensiunea şi curentul electric de pe toate cele trei faze în cazul reţelelor de 20 kV",
+    "varianta_b": "tensiunile şi curenţii de pe toate cele trei faze, la joasă, medie şi înaltă tensiune",
+    "varianta_c": "În cazul reţelelor electrice la care nu au acces persoane neautorizate, se admite măsurarea utilizând curenţii electrici de pe două faze şi tensiunea dintre faze",
+    "correct": "c"
+  },
+  {
+    "id": 5,
+    "question": "Înfăşurările secundare ale transformatoarelor de curent şi tensiune pentru măsurare:",
+    "varianta_a": "se utilizează exclusiv pentru conectarea contoarelor de decontare",
+    "varianta_b": "se utilizează numai pentru conectarea contoarelor, inclusiv a celor martor",
+    "varianta_c": "se utilizează pentru conectarea tuturor aparatelor de măsurare, cu dimensionarea corespunzătoare a conductoarelor",
+    "correct": "b"
+  },
+  {
+    "id": 9,
+    "question": "ANRE este:",
+    "varianta_a": "Agenţie naţională de reglementare în domeniul energiei termice",
+    "varianta_b": "Autoritatea Naționala de Reglementare pentru Serviciile Publice de Gospodărie Comunală",
+    "varianta_c": "Autoritatea Naționala de Reglementare in domeniul Energiei",
+    "correct": "c"
+  },
+  {
+    "id": 10,
+    "question": "Asupra terenurilor aflate in proprietatea terților, cuprinse in zonele de protecţie si de siguranţa ale capacităţilor energetice, se stabileşte pentru deţinătorul capacităţilor energetice:",
+    "varianta_a": "drept de utilizare gratuită",
+    "varianta_b": "drept de proprietate",
+    "varianta_c": "drept de servitute legală",
+    "correct": "c"
+  },
+  {
+    "id": 14,
+    "question": "Furnizorul de energie electrică este îndreptăţit să rezilieze contractul de furnizare a energiei electrice în caz de:",
+    "varianta_a": "neplata abonamentului radio-tv",
+    "varianta_b": "sustragerea de energie electrică constatată prin hotărâre judecătorească definitivă",
+    "varianta_c": "neplata unei facturi la termenul scadent",
+    "correct": "b"
+  },
+  {
+    "id": 18,
+    "question": "Tarifele de racordare la reţea sunt:",
+    "varianta_a": "stabilite de operatorii de reţea",
+    "varianta_b": "negociate cu solicitantul",
+    "varianta_c": "reglementate de ANRE",
+    "correct": "c"
+  },
+  {
+    "id": 19,
+    "question": "ANRE poate aplica sancţiuni contravenţionale în cazul în care un electrician:",
+    "varianta_a": "deține adeverință de electrician autorizat și comite o faptă prevăzută în Regulamentul de autorizare ca fiind permisă",
+    "varianta_b": "desfăşoară activităţi de realizare de instalații electrice, pe cont propriu, în calitate de PFA",
+    "varianta_c": "deține adeverință/legitimație de electrician autorizat și desfăşoară activităţi de realizare de instalații electrice într-o formă care nu este prevăzută în regulamentul de autorizare",
+    "correct": "c"
+  },
+  {
+    "id": 22,
+    "question": "ANRE - Autoritatea Națională de Reglementare în domeniul Energiei este abilitată prin lege să constate și să sancționeze:",
+    "varianta_a": "executarea unor lucrări de proastă calitate",
+    "varianta_b": "încălcarea de către tehnicieni/persoane fizice a reglementărilor emise de ANRE",
+    "varianta_c": "încălcarea prevederilor legislației muncii",
+    "correct": "b"
+  },
+  {
+    "id": 27,
+    "question": "Calitatea de autoritate contractantă pentru concesionarea bunurilor proprietate publică sau privată a statului din domeniul energetic, precum şi pentru activităţile sau serviciile publice de interes naţional și general din domeniul energiei electrice o are:",
+    "varianta_a": "Ministerul de resort",
+    "varianta_b": "ANRE - Autoritatea Națională de Reglementare în domeniul Energiei",
+    "varianta_c": "ANRSC - Autoritatea Națională de Reglementare in domeniul Serviciilor Comunale",
+    "correct": "a"
+  }
+]

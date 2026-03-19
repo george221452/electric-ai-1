@@ -1,0 +1,115 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+echo ""
+echo "╔══════════════════════════════════════════════════════════════════╗"
+echo "║     📚 INDEXARE DOCUMENTE ESENȚIALE PENTRU GRILE                ║"
+echo "╚══════════════════════════════════════════════════════════════════╝"
+echo ""
+
+# Creează folder pentru documente esențiale
+mkdir -p downloads/essential_for_quiz
+
+# Șterge ce era înainte
+rm -f downloads/essential_for_quiz/*
+
+echo "🔍 Selectez cele mai importante documente pentru grile..."
+echo ""
+
+# Listează documentele găsite
+FOUND=0
+
+# Funcție pentru copiere cu contor
+copy_files() {
+    local pattern="$1"
+    local src_dir="$2"
+    for file in "$src_dir"/*"$pattern"*.pdf; do
+        if [ -f "$file" ]; then
+            cp "$file" downloads/essential_for_quiz/
+            FOUND=$((FOUND + 1))
+        fi
+    done
+}
+
+# NTE-uri principale (Norme Tehnice) - din folderul extracted
+echo "  📋 Căut NTE-uri (Norme Tehnice)..."
+# Folosim PDF-urile deja extrase
+cp downloads/anre_nte/extracted/NTE_001_03_00_Supratensiuni/*.pdf downloads/essential_for_quiz/ 2>/dev/null && FOUND=$((FOUND + 1))
+cp downloads/anre_nte/extracted/NTE_005_PE_013_Siguranta/*.pdf downloads/essential_for_quiz/ 2>/dev/null && FOUND=$((FOUND + 1))
+cp downloads/anre_nte/extracted/NTE_006_06_00_Scurtcircuit/*.pdf downloads/essential_for_quiz/ 2>/dev/null && FOUND=$((FOUND + 1))
+# PDF-uri direct din anre_nte
+cp downloads/anre_nte/NTE006_final.pdf downloads/essential_for_quiz/ 2>/dev/null && FOUND=$((FOUND + 1))
+cp downloads/anre_nte/NTE_003_04_00_LEA.zip downloads/essential_for_quiz/ 2>/dev/null
+cp downloads/anre_nte/NTE_004_05_00_Evenimente.zip downloads/essential_for_quiz/ 2>/dev/null
+
+# PE-uri (Proiecte de reglementare)
+echo "  📄 Căut PE-uri (Proiecte de reglementare)..."
+copy_files "PE_013" "downloads/anre_super_complete"
+copy_files "PE013" "downloads/anre_super_complete"
+
+# Ordine I7 (Instrucțiuni autorizare electricieni)
+echo "  📜 Căut Instrucțiuni I7..."
+copy_files "I7_201" "downloads/anre_super_complete"
+copy_files "I-7_201" "downloads/anre_super_complete"
+copy_files "Ordin_51_2012" "downloads/anre_super_complete"
+
+# Legi energetice
+echo "  ⚖️  Căut Legi..."
+copy_files "Lege_123" "downloads/anre_super_complete"
+copy_files "Legea_123" "downloads/anre_super_complete"
+
+# Regulament electricieni
+echo "  📖 Căut Regulament electricieni..."
+copy_files "Regulament_electricieni" "downloads/anre_super_complete"
+copy_files "Regulament_2983" "downloads/anre_super_complete"
+
+# Elimină duplicatele (bazat pe conținut, păstrează primul)
+ls downloads/essential_for_quiz/ 2>/dev/null | sort | uniq -d > /tmp/duplicates.txt
+while IFS= read -r dup; do
+    rm -f "downloads/essential_for_quiz/$dup"
+done < /tmp/duplicates.txt
+rm -f /tmp/duplicates.txt
+
+# Numără finale
+COUNT=$(ls downloads/essential_for_quiz/*.pdf 2>/dev/null | wc -l)
+SIZE=$(du -sh downloads/essential_for_quiz/ 2>/dev/null | cut -f1)
+
+echo ""
+echo "═══════════════════════════════════════════════════════════════════"
+echo "  ✅ Gata! Am selectat $COUNT documente esențiale ($SIZE)"
+echo "═══════════════════════════════════════════════════════════════════"
+echo ""
+echo "  📂 Documente esențiale pentru grile:"
+echo "     • NTE 001-007 (Norme Tehnice de bază)"
+echo "     • PE 013 (Proiecte de reglementare)"
+echo "     • I7/2012 (Instrucțiuni autorizare electricieni)"
+echo "     • Legile energiei (123/2012, etc.)"
+echo "     • Regulamentul electricienilor"
+echo ""
+
+if [ $COUNT -eq 0 ]; then
+    echo "  ⚠️  Nu am găsit documentele! Verifică dacă există în downloads/"
+    echo ""
+    exit 1
+fi
+
+MINUTES_LOW=$((COUNT * 10 / 60))
+MINUTES_HIGH=$((COUNT * 15 / 60))
+echo "  ⏱️  Timp estimat de indexare: ~$MINUTES_LOW-$MINUTES_HIGH minute"
+echo ""
+
+# Verifică dacă vrea să indexeze
+echo "Vrei să încep indexarea acum? (da/nu)"
+read raspuns
+
+if [ "$raspuns" = "da" ] || [ "$raspuns" = "DA" ] || [ "$raspuns" = "d" ] || [ "$raspuns" = "y" ] || [ "$raspuns" = "Y" ]; then
+    echo ""
+    echo "🚀 Pornesc indexarea..."
+    echo ""
+    SOURCE_DIR="./downloads/essential_for_quiz" node --import tsx manual-index-important.ts
+else
+    echo ""
+    echo "💡 Poți indexa mai târziu cu:"
+    echo "     SOURCE_DIR=./downloads/essential_for_quiz ./index-start-important"
+    echo ""
+fi
