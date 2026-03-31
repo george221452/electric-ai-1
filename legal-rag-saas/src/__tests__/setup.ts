@@ -5,6 +5,7 @@ import 'reflect-metadata';
 process.env.DATABASE_URL = 'postgresql://test:test@localhost:5432/test';
 process.env.NEXTAUTH_SECRET = 'test-secret';
 process.env.OPENAI_API_KEY = 'test-api-key';
+process.env.NEXTAUTH_URL = 'http://localhost:3003';
 
 // Global test timeout
 jest.setTimeout(30000);
@@ -13,3 +14,10 @@ jest.setTimeout(30000);
 afterEach(() => {
   jest.clearAllMocks();
 });
+
+// Suppress console errors during tests (optional)
+// global.console = {
+//   ...console,
+//   error: jest.fn(),
+//   warn: jest.fn(),
+// };

@@ -1,0 +1,304 @@
+{
+  "testQuestions": [
+    {
+      "id": 1,
+      "question": "Ce înălțime minimă trebuie să aibă prizele de curent montate în școli?",
+      "expectedKeywords": ["2,0 m", "2.0 m", "2m", "școli", "clase"],
+      "category": "instalatii"
+    },
+    {
+      "id": 2,
+      "question": "Ce secțiune minimă trebuie să aibă conductorul de fază pentru circuite de prize monofazate în interiorul clădirilor?",
+      "expectedKeywords": ["2,5 mm", "2.5 mm", "cupo", "fază"],
+      "category": "conductoare"
+    },
+    {
+      "id": 3,
+      "question": "Ce este priza de pământ conform I7-2011?",
+      "expectedKeywords": ["priză de pământ", "conductor", "încorporată", "sol"],
+      "category": "definitii"
+    },
+    {
+      "id": 4,
+      "question": "La ce distanță trebuie montate prizele în camerele de copii din creșe?",
+      "expectedKeywords": ["1,5 m", "1.5 m", "creșe", "copii", "gradinițe"],
+      "category": "instalatii"
+    },
+    {
+      "id": 5,
+      "question": "Ce înălțime trebuie să aibă prizele montate în locuințe obișnuite?",
+      "expectedKeywords": ["0,1 m", "0.1 m", "10 cm", "cm", "pardoseală"],
+      "category": "instalatii"
+    },
+    {
+      "id": 6,
+      "question": "Ce culoare trebuie să aibă conductorul de protecție PE?",
+      "expectedKeywords": ["verde-galben", "galben", "verde", "PE", "protecție"],
+      "category": "conductoare"
+    },
+    {
+      "id": 7,
+      "question": "Ce culoare trebuie să aibă conductorul neutru N?",
+      "expectedKeywords": ["bleu", "albastru", "neutru", "N"],
+      "category": "conductoare"
+    },
+    {
+      "id": 8,
+      "question": "Ce secțiune minimă trebuie să aibă conductoarele de cupru pentru iluminat?",
+      "expectedKeywords": ["1,5 mm", "1.5 mm", "cupru", "iluminat"],
+      "category": "conductoare"
+    },
+    {
+      "id": 9,
+      "question": "Cât trebuie să fie rezistența prizei de pământ pentru protecția împotriva șocurilor electrice?",
+      "expectedKeywords": ["10", "ohm", "Ω", "rezistență", "maxim"],
+      "category": "priza de pamant"
+    },
+    {
+      "id": 10,
+      "question": "Ce distanță trebuie să existe între conductoarele de fază și cele de protecție la prize?",
+      "expectedKeywords": ["separare", "distanță", "protecție", "fază"],
+      "category": "instalatii"
+    },
+    {
+      "id": 11,
+      "question": "Ce tip de protecție se folosește pentru prizele din baie?",
+      "expectedKeywords": ["diferențial", "DDR", "30 mA", "residual"],
+      "category": "protectie"
+    },
+    {
+      "id": 12,
+      "question": "Ce se înțelege prin legare la pământ?",
+      "expectedKeywords": ["legare", "pământ", "conexiune", "electrod"],
+      "category": "definitii"
+    },
+    {
+      "id": 13,
+      "question": "Ce secțiune trebuie să aibă conductorul PEN?",
+      "expectedKeywords": ["PEN", "egală", "fază", "secțiune"],
+      "category": "conductoare"
+    },
+    {
+      "id": 14,
+      "question": "Ce tip de tuburi se folosesc pentru protecția conductoarelor îngropate în zid?",
+      "expectedKeywords": [ "PVC", "tub", "zid", "protecție" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 15,
+      "question": "La ce înălțime trebuie montate dozele de derivatie?",
+      "expectedKeywords": [ "verticală", "doze", "derivatie", "suprafață" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 16,
+      "question": "Ce putere maximă poate avea un motor care pornește direct din post de transformare propriu?",
+      "expectedKeywords": [ "10%", "10 %", "transformator", "putere", "motor" ],
+      "category": "motoare"
+    },
+    {
+      "id": 17,
+      "question": "Ce tip de identificare se folosește pentru conductorii de fază?",
+      "expectedKeywords": [ "culoare", "marcare", "identificare", "fază" ],
+      "category": "conductoare"
+    },
+    {
+      "id": 18,
+      "question": "Ce distanță minimă trebuie să existe între conductoarele electrice și conductele de gaze?",
+      "expectedKeywords": [ "distanță", "gaze", "conducte", "separare" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 19,
+      "question": "Ce tip de protecție trebuie folosită pentru prizele exterioare?",
+      "expectedKeywords": [ "IP", "protecție", "exterior", "umiditate" ],
+      "category": "protectie"
+    },
+    {
+      "id": 20,
+      "question": "Ce înseamnă codul IP44 pentru aparate electrice?",
+      "expectedKeywords": [ "IP44", "solid", "lichid", "protecție", "corpuri" ],
+      "category": "protectie"
+    },
+    {
+      "id": 21,
+      "question": "Ce curent nominal trebuie să aibă siguranțele pentru protecția circuitelor de prize?",
+      "expectedKeywords": [ "16A", "10A", "siguranță", "circuit", "priză" ],
+      "category": "protectie"
+    },
+    {
+      "id": 22,
+      "question": "Ce înălțime trebuie să aibă tablourile electrice montate pe perete?",
+      "expectedKeywords": [ "1,4 m", "1.4 m", "tablou", "înălțime", "priza" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 23,
+      "question": "Ce tip de cablu se folosește pentru instalațiile subterane?",
+      "expectedKeywords": [ "cămin", "subteran", "cablu", "conductor" ],
+      "category": "conductoare"
+    },
+    {
+      "id": 24,
+      "question": "Ce se înțelege prin contact direct în instalațiile electrice?",
+      "expectedKeywords": [ "contact", "direct", "parte activă", "atingere" ],
+      "category": "definitii"
+    },
+    {
+      "id": 25,
+      "question": "Ce se înțelege prin contact indirect în instalațiile electrice?",
+      "expectedKeywords": [ "contact", "indirect", "masă", "defect", "tensiune" ],
+      "category": "definitii"
+    },
+    {
+      "id": 26,
+      "question": "Ce înseamnă tensiune de contact?",
+      "expectedKeywords": [ "tensiune", "contact", "corp", "umane", "atins" ],
+      "category": "definitii"
+    },
+    {
+      "id": 27,
+      "question": "Ce înseamnă tensiune de pas?",
+      "expectedKeywords": [ "tensiune", "pas", "sol", "picioare", "distanță" ],
+      "category": "definitii"
+    },
+    {
+      "id": 28,
+      "question": "Ce înălțime trebuie să aibă lămpile de iluminat în încăperi cu tavan normal?",
+      "expectedKeywords": [ "2,5 m", "2.5 m", "lampă", "iluminat", "tavan" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 29,
+      "question": "Ce distanță trebuie să existe între corpurile de iluminat și materialele combustibile?",
+      "expectedKeywords": [ "distanță", "combustibil", "materiale", "incendiu" ],
+      "category": "siguranta"
+    },
+    {
+      "id": 30,
+      "question": "Ce tip de întrerupător diferențial se folosește pentru protecția generală?",
+      "expectedKeywords": [ "300 mA", "diferențial", "general", "protecție" ],
+      "category": "protectie"
+    },
+    {
+      "id": 31,
+      "question": "Ce secțiune trebuie să aibă conductorul de egalizare potențiale?",
+      "expectedKeywords": [ "egalizare", "potențiale", "secțiune", "conductor" ],
+      "category": "conductoare"
+    },
+    {
+      "id": 32,
+      "question": "Ce înseamnă zona de protecție LPS pentru paratrăsnet?",
+      "expectedKeywords": [ "LPS", "zonă", "protecție", "paratrăsnet", "unghi" ],
+      "category": "paratrasnet"
+    },
+    {
+      "id": 33,
+      "question": "Ce tip de paratrăsnet se folosește pentru clădiri înalte?",
+      "expectedKeywords": [ "captare", "paratrăsnet", "clădiri", "inalte", "dispozitiv" ],
+      "category": "paratrasnet"
+    },
+    {
+      "id": 34,
+      "question": "Ce înălțime trebuie să aibă electrodul de captare al paratrăsnetului?",
+      "expectedKeywords": [ "captare", "electrod", "paratrăsnet", "inaltime" ],
+      "category": "paratrasnet"
+    },
+    {
+      "id": 35,
+      "question": "Ce număr de prize trebuie prevăzut pentru o cameră de locuit?",
+      "expectedKeywords": [ "număr", "prize", "camere", "locuințe", "minim" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 36,
+      "question": "Ce circuit separat trebuie prevăzut pentru aparatele de încălzire?",
+      "expectedKeywords": [ "circuit", "separat", "încălzire", "aparate", "propriu" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 37,
+      "question": "Ce protecție trebuie pentru circuitele de iluminat exterioare?",
+      "expectedKeywords": [ "iluminat", "exterior", "protecție", "IP", "diferențial" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 38,
+      "question": "Ce tip de doze se folosesc pentru instalațiile încastrate?",
+      "expectedKeywords": [ "doze", "încastrate", "îngrupare", "derivatie", "aparat" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 39,
+      "question": "Ce distanță trebuie să existe între tabloul electric și conductele de apă?",
+      "expectedKeywords": [ "distanță", "tablou", "apă", "conducte", "umiditate" ],
+      "category": "instalatii"
+    },
+    {
+      "id": 40,
+      "question": "Ce înseamnă factorul de putere cos φ?",
+      "expectedKeywords": [ "putere", "cos φ", "factor", "activă", "reactivă" ],
+      "category": "definitii"
+    },
+    {
+      "id": 41,
+      "question": "Ce curent de defect trebuie să poată întrerupe un disjunctor?",
+      "expectedKeywords": [ "curent", "defect", "disjunctor", "scurtcircuit", "putere" ],
+      "category": "protectie"
+    },
+    {
+      "id": 42,
+      "question": "Ce înseamnă curentul de defect presupus?",
+      "expectedKeywords": [ "curent", "defect", "presupus", "calcul", "scurtcircuit" ],
+      "category": "definitii"
+    },
+    {
+      "id": 43,
+      "question": "Ce înseamnă impedanța de buclă de defect?",
+      "expectedKeywords": [ "impedanță", "buclă", "defect", "circuit", "scurt" ],
+      "category": "definitii"
+    },
+    {
+      "id": 44,
+      "question": "Ce tip de protecție se folosește pentru motoarele electrice?",
+      "expectedKeywords": [ "motor", "protecție", "releu", "termetic", "suprasarcină" ],
+      "category": "motoare"
+    },
+    {
+      "id": 45,
+      "question": "Ce înseamnă pornirea directă a unui motor?",
+      "expectedKeywords": [ "pornire", "directă", "motor", "stea", "triunghi" ],
+      "category": "motoare"
+    },
+    {
+      "id": 46,
+      "question": "Ce tip de pornire se folosește pentru motoarele mari?",
+      "expectedKeywords": [ "stea-triunghi", "pornire", "moale", "autotransformator", "motor" ],
+      "category": "motoare"
+    },
+    {
+      "id": 47,
+      "question": "Ce înseamnă regimul de funcționare S1 pentru motoare?",
+      "expectedKeywords": [ "S1", "continuu", "funcționare", "regim", "motor" ],
+      "category": "motoare"
+    },
+    {
+      "id": 48,
+      "question": "Ce temperatură maximă trebuie să aibă conductoarele în funcționare normală?",
+      "expectedKeywords": [ "temperatură", "conductoare", "izolație", "PVC", "70" ],
+      "category": "conductoare"
+    },
+    {
+      "id": 49,
+      "question": "Ce înseamnă căderea de tensiune admisibilă în instalații?",
+      "expectedKeywords": [ "cădere", "tensiune", "admisibilă", "procent", "normativ" ],
+      "category": "definitii"
+    },
+    {
+      "id": 50,
+      "question": "Ce distanță trebuie să existe între barele electrice și pereții tabloului?",
+      "expectedKeywords": [ "distanță", "bare", "tablou", "perete", "izolație" ],
+      "category": "instalatii"
+    }
+  ]
+}

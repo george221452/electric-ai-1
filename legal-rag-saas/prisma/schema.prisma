@@ -43,6 +43,8 @@ model User {
   email         String    @unique
   emailVerified DateTime? @map("email_verified")
   image         String?
+  password      String?   // Adăugat pentru credentials auth
+  isAdmin       Boolean   @default(false) @map("is_admin")
   accounts      Account[]
   sessions      Session[]
   
@@ -125,6 +127,7 @@ model Document {
   citations     Citation[]
   processingError String?    @map("processing_error")
   metadata      Json         @default("{}")
+  indexedAt     DateTime?    @map("indexed_at")
   createdAt     DateTime     @default(now()) @map("created_at")
   updatedAt     DateTime     @updatedAt @map("updated_at")
 
@@ -139,6 +142,7 @@ enum DocumentStatus {
   PROCESSING
   COMPLETED
   FAILED
+  INDEXED
 }
 
 model Paragraph {
@@ -321,4 +325,110 @@ model Feedback {
   @@index([rating])
   @@index([createdAt])
   @@map("feedback")
+}
+
+// Setări pentru arhitectura RAG
+model RagArchitectureSettings {
+  id    String @id @default("global")
+  
+  // Arhitectura activă
+  activeArchitecture String @default("legacy") @map("active_architecture")
+  
+  // Chunking settings
+  chunkMaxSize                Int     @default(1500) @map("chunk_max_size")
+  chunkMinSize                Int     @default(200) @map("chunk_min_size")
+  chunkOverlap                Int     @default(100) @map("chunk_overlap")
+  preserveParagraphBoundaries Boolean @default(true) @map("preserve_paragraph_boundaries")
+  preserveSentenceBoundaries  Boolean @default(true) @map("preserve_sentence_boundaries")
+  cleanDiacritics             Boolean @default(true) @map("clean_diacritics")
+  removeExtraWhitespace       Boolean @default(true) @map("remove_extra_whitespace")
+  fixHyphenatedWords          Boolean @default(true) @map("fix_hyphenated_words")
+  
+  // Embedding settings
+  embeddingModel      String @default("text-embedding-3-small") @map("embedding_model")
+  embeddingDimensions Int    @default(1536) @map("embedding_dimensions")
+  embeddingBatchSize  Int    @default(100) @map("embedding_batch_size")
+  
+  // Legacy settings
+  legacyUseKeywordSearch  Boolean @default(true) @map("legacy_use_keyword_search")
+  legacyUseVectorSearch   Boolean @default(true) @map("legacy_use_vector_search")
+  legacyMinScoreThreshold Float   @default(0.40) @map("legacy_min_score_threshold")
+  legacyMaxResults        Int     @default(10) @map("legacy_max_results")
+  legacyFinalResults      Int     @default(3) @map("legacy_final_results")
+  legacySearchStrategy    String  @default("parallel") @map("legacy_search_strategy")
+  legacyCombineMethod     String  @default("merge") @map("legacy_combine_method")
+  legacyOpenaiModel       String  @default("gpt-4o-mini") @map("legacy_openai_model")
+  legacyMaxTokens         Int     @default(500) @map("legacy_max_tokens")
+  legacyTemperature       Float   @default(0.2) @map("legacy_temperature")
+  legacySystemPrompt      String  @default("Esti un asistent specializat in normative electrice romanesti.") @map("legacy_system_prompt")
+  legacyPromptTemplate    String  @default("standard") @map("legacy_prompt_template")
+  legacyIncludeCitations  Boolean @default(true) @map("legacy_include_citations")
+  legacyRequireCitations  Boolean @default(true) @map("legacy_require_citations")
+  
+  // Hybrid settings
+  hybridUseKeywordSearch         Boolean @default(true) @map("hybrid_use_keyword_search")
+  hybridUseVectorSearch          Boolean @default(true) @map("hybrid_use_vector_search")
+  hybridUseSynonymExpansion      Boolean @default(false) @map("hybrid_use_synonym_expansion")
+  hybridSynonymMaxVariants       Int     @default(3) @map("hybrid_synonym_max_variants")
+  hybridUseNumericalBoost        Boolean @default(false) @map("hybrid_use_numerical_boost")
+  hybridNumericalBoostWeight     Float   @default(0.3) @map("hybrid_numerical_boost_weight")
+  hybridUseSmartRouter           Boolean @default(false) @map("hybrid_use_smart_router")
+  hybridSmartRouterQuizThreshold Float   @default(0.75) @map("hybrid_smart_router_quiz_threshold")
+  hybridSmartRouterNormalThreshold Float @default(0.5) @map("hybrid_smart_router_normal_threshold")
+  hybridSmartRouterMaxRetries    Int     @default(2) @map("hybrid_smart_router_max_retries")
+  hybridUseConfidenceOptimizer   Boolean @default(false) @map("hybrid_use_confidence_optimizer")
+  hybridUseQueryUnderstanding    Boolean @default(false) @map("hybrid_use_query_understanding")
+  hybridUseIntentDetection       Boolean @default(false) @map("hybrid_use_intent_detection")
+  hybridMinScoreThreshold        Float   @default(0.40) @map("hybrid_min_score_threshold")
+  hybridMaxResults               Int     @default(10) @map("hybrid_max_results")
+  hybridFinalResults             Int     @default(3) @map("hybrid_final_results")
+  hybridRerankEnabled            Boolean @default(false) @map("hybrid_rerank_enabled")
+  hybridRerankMethod             String  @default("score") @map("hybrid_rerank_method")
+  hybridOpenaiModel              String  @default("gpt-4o-mini") @map("hybrid_openai_model")
+  hybridMaxTokens                Int     @default(600) @map("hybrid_max_tokens")
+  hybridTemperature              Float   @default(0.2) @map("hybrid_temperature")
+  hybridSystemPrompt             String  @default("Esti un asistent specializat in normative electrice romanesti.") @map("hybrid_system_prompt")
+  hybridPromptTemplate           String  @default("adaptive") @map("hybrid_prompt_template")
+  hybridIncludeCitations         Boolean @default(true) @map("hybrid_include_citations")
+  hybridRequireCitations         Boolean @default(true) @map("hybrid_require_citations")
+  hybridQuizEnabled              Boolean @default(true) @map("hybrid_quiz_enabled")
+  hybridQuizStrictMode           Boolean @default(false) @map("hybrid_quiz_strict_mode")
+  hybridQuizConfidenceThreshold  Int     @default(70) @map("hybrid_quiz_confidence_threshold")
+  
+  // Cache settings
+  enableQueryCache       Boolean @default(true) @map("enable_query_cache")
+  cacheTtlSeconds        Int     @default(3600) @map("cache_ttl_seconds")
+  enableResultCache      Boolean @default(false) @map("enable_result_cache")
+  resultCacheTtlSeconds  Int     @default(86400) @map("result_cache_ttl_seconds")
+  
+  // Debug settings
+  showDebugInfo          Boolean @default(false) @map("show_debug_info")
+  logQueries             Boolean @default(true) @map("log_queries")
+  logPerformanceMetrics  Boolean @default(false) @map("log_performance_metrics")
+  enableQueryTracing     Boolean @default(false) @map("enable_query_tracing")
+  
+  // Formatting settings
+  answerFormat           String @default("markdown") @map("answer_format")
+  includeSources         Boolean @default(true) @map("include_sources")
+  includeConfidenceScore Boolean @default(true) @map("include_confidence_score")
+  includeExecutionTime   Boolean @default(false) @map("include_execution_time")
+  addDocumentBanner      Boolean @default(false) @map("add_document_banner")
+  
+  // Fallback settings
+  fallbackOnLowConfidence      Boolean @default(true) @map("fallback_on_low_confidence")
+  fallbackConfidenceThreshold  Int @default(40) @map("fallback_confidence_threshold")
+  fallbackToGeneralKnowledge   Boolean @default(false) @map("fallback_to_general_knowledge")
+  showClarificationOnNoResults Boolean @default(true) @map("show_clarification_on_no_results")
+  
+  // Document processing settings
+  extractMetadata      Boolean @default(true) @map("extract_metadata")
+  extractArticleNumbers Boolean @default(true) @map("extract_article_numbers")
+  extractKeywords      Boolean @default(true) @map("extract_keywords")
+  classifyParagraphs   Boolean @default(false) @map("classify_paragraphs")
+  
+  // Timestamps
+  updatedAt DateTime @updatedAt @map("updated_at")
+  updatedBy String?  @map("updated_by")
+
+  @@map("rag_architecture_settings")
 }
