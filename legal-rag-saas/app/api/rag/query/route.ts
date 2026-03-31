@@ -12,6 +12,7 @@ import { createSearchVariants, hasExpandableTerms } from '@/lib/search/synonyms'
 import { detectQuizQuestion, buildQuizPrompt, parseQuizAnswer, formatQuizResponse } from '@/lib/quiz/quiz-handler';
 import AdvancedQuizHandler from '@/lib/quiz/advanced-quiz-handler';
 import { SmartAnswerRouter } from '@/lib/quiz/smart-answer-router';
+import { getArchitectureSettings } from '@/lib/rag-architectures/settings-service';
 
 const QuerySchema = z.object({
   query: z.string().min(3, 'Query must be at least 3 characters'),
@@ -20,18 +21,6 @@ const QuerySchema = z.object({
   options: z.object({
     maxParagraphs: z.number().min(1).max(20).optional(),
   }).optional(),
-});
-
-// STRICT CONFIDENCE THRESHOLD - Only answer with high confidence
-const MIN_CONFIDENCE_THRESHOLD = 40; // 40% minimum confidence for OpenAI embeddings
-const MIN_SCORE_THRESHOLD = 0.40; // Minimum similarity score 0.40 for OpenAI
-
-// Initialize Smart Router for dual-mode handling
-const smartRouter = new SmartAnswerRouter({
-  minConfidenceQuiz: 0.75,
-  minConfidenceNormal: 0.5,
-  enableNumericVerification: true,
-  maxRetries: 2
 });
 
 export async function POST(req: NextRequest) {
@@ -53,8 +42,43 @@ export async function POST(req: NextRequest) {
     const prisma = new PrismaClient();
     const embeddingService = new OpenAIEmbeddingService();
 
+    // Load RAG Architecture Settings from Admin
+    const settings = await getArchitectureSettings();
+    const isHybrid = settings.activeArchitecture === 'hybrid';
+    
+    // Use settings from Admin (fallback to defaults if not set)
+    const MIN_CONFIDENCE_THRESHOLD = settings.fallbackConfidenceThreshold || 40;
+    const MIN_SCORE_THRESHOLD = isHybrid 
+      ? (settings.hybridMinScoreThreshold || 0.40)
+      : (settings.legacyMinScoreThreshold || 0.40);
+    const SEARCH_LIMIT = isHybrid 
+      ? (settings.hybridMaxResults || 10)
+      : (settings.legacyMaxResults || 10);
+    const FINAL_RESULTS = isHybrid
+      ? (settings.hybridFinalResults || 3)
+      : (settings.legacyFinalResults || 3);
+    
+    // Feature flags from settings
+    const enableSynonymExpansion = isHybrid && settings.hybridUseSynonymExpansion;
+    const enableNumericalBoost = isHybrid && settings.hybridUseNumericalBoost;
+    const enableSmartRouter = isHybrid && settings.hybridUseSmartRouter;
+    const enableConfidenceOptimizer = isHybrid && settings.hybridUseConfidenceOptimizer;
+    const enableQueryCache = settings.enableQueryCache !== false; // default true
+    const showDebugInfo = settings.showDebugInfo || false;
+    
+    // Initialize Smart Router with settings
+    const smartRouter = new SmartAnswerRouter({
+      minConfidenceQuiz: settings.hybridSmartRouterQuizThreshold || 0.75,
+      minConfidenceNormal: settings.hybridSmartRouterNormalThreshold || 0.5,
+      enableNumericVerification: true,
+      maxRetries: settings.hybridSmartRouterMaxRetries || 2
+    });
+
     console.log(`[RAG API] Query: "${query}"`);
     console.log(`[RAG API] WorkspaceId: ${workspaceId}`);
+    console.log(`[RAG API] Architecture: ${settings.activeArchitecture}`);
+    console.log(`[RAG API] Thresholds: confidence=${MIN_CONFIDENCE_THRESHOLD}%, score=${MIN_SCORE_THRESHOLD}`);
+    console.log(`[RAG API] Features: synonyms=${enableSynonymExpansion}, numerical=${enableNumericalBoost}, router=${enableSmartRouter}`);
 
     // Detectăm dacă e o grilă (întrebare cu variante)
     const quizQuestion = detectQuizQuestion(query);
@@ -63,27 +87,32 @@ export async function POST(req: NextRequest) {
       console.log(`[RAG API] Options: ${quizQuestion.options.map(o => o.letter).join(', ')}`);
     }
 
-    // CHECK CACHE FIRST
-    const cached = await queryCache.get(query, workspaceId);
-    if (cached) {
-      console.log(`[RAG API] CACHE HIT! Returning cached answer (hits: ${cached.hitCount})`);
-      return NextResponse.json({
-        success: true,
-        data: {
-          answer: cached.answer,
-          citations: cached.citations,
-          confidence: cached.confidence,
-          queryIntent: detectIntent(query),
-          resultsCount: cached.citations.length,
-          disclaimer: 'Răspuns din cache (întrebare frecventă). Text citat ad-literam din documente.',
-          needsClarification: false,
-          fromCache: true,
-          cacheHits: cached.hitCount,
-          answerSource: 'documents', // cache only stores document-based answers
-        },
-      });
+    // CHECK CACHE FIRST (if enabled in settings)
+    if (enableQueryCache) {
+      const cached = await queryCache.get(query, workspaceId);
+      if (cached) {
+        console.log(`[RAG API] CACHE HIT! Returning cached answer (hits: ${cached.hitCount})`);
+        return NextResponse.json({
+          success: true,
+          data: {
+            answer: cached.answer,
+            citations: cached.citations,
+            confidence: cached.confidence,
+            queryIntent: detectIntent(query),
+            resultsCount: cached.citations.length,
+            disclaimer: 'Răspuns din cache (întrebare frecventă). Text citat ad-literam din documente.',
+            needsClarification: false,
+            fromCache: true,
+            cacheHits: cached.hitCount,
+            answerSource: 'documents', // cache only stores document-based answers
+            ...(showDebugInfo && { debug: { fromCache: true, architecture: settings.activeArchitecture } }),
+          },
+        });
+      }
+      console.log(`[RAG API] Cache miss - processing query...`);
+    } else {
+      console.log(`[RAG API] Query cache disabled in settings`);
     }
-    console.log(`[RAG API] Cache miss - processing query...`);
 
     // Check if collection exists and has data
     let pointsCount = 0;
@@ -123,17 +152,19 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // SYNONYM EXPANSION - Create search variants
+    // SYNONYM EXPANSION - Create search variants (if enabled in settings)
     let searchQueries = [query];
     let usedSynonyms = false;
     
-    if (hasExpandableTerms(query)) {
-      const variants = createSearchVariants(query);
+    if (enableSynonymExpansion && hasExpandableTerms(query)) {
+      const variants = createSearchVariants(query, settings.hybridSynonymMaxVariants || 3);
       if (variants.length > 1) {
         searchQueries = variants;
         usedSynonyms = true;
         console.log(`[RAG API] Query expanded with synonyms: ${variants.join(' | ')}`);
       }
+    } else if (enableSynonymExpansion) {
+      console.log(`[RAG API] Synonym expansion enabled but no expandable terms found`);
     }
 
     // Generate embeddings for all query variants
@@ -146,8 +177,8 @@ export async function POST(req: NextRequest) {
     const isProhibitionQuery = queryNormalized.includes('interdicti') || queryNormalized.includes('interzis') || 
                                queryNormalized.includes('obligatii') || queryNormalized.includes('obligatoriu');
     
-    // Use more results for prohibition/obligation queries
-    const searchLimit = isProhibitionQuery ? 30 : 10;
+    // Use more results for prohibition/obligation queries (or settings from admin)
+    const searchLimit = isProhibitionQuery ? Math.max(SEARCH_LIMIT, 30) : SEARCH_LIMIT;
 
     // Search in Qdrant with all query variants
     const allSearchResults: any[] = [];
@@ -247,9 +278,9 @@ export async function POST(req: NextRequest) {
     const documentMap = new Map(documents.map(d => [d.id, d.name]));
 
     // Build citations with strict filtering
-    // Use more citations for prohibition/obligation queries
-    const citationLimit = isProhibitionQuery ? 10 : 3;
-    const citations = combinedResults
+    // Use settings from admin (FINAL_RESULTS)
+    const citationLimit = isProhibitionQuery ? Math.max(FINAL_RESULTS, 10) : FINAL_RESULTS;
+    let citations = combinedResults
       .filter((r: any) => r.score >= MIN_SCORE_THRESHOLD)
       .slice(0, citationLimit)
       .map((r: any, idx: number) => ({
@@ -265,12 +296,12 @@ export async function POST(req: NextRequest) {
         confidence: Math.round(r.score * 100),
       }));
 
-    // ENHANCE WITH NUMERICAL SEARCH
+    // ENHANCE WITH NUMERICAL SEARCH (if enabled in settings)
     // Check if query contains numerical values and boost matching citations
-    const numericalQuery = parseNumericalQuery(query);
-    const measurementIntent = extractMeasurementIntent(query);
+    const numericalQuery = enableNumericalBoost ? parseNumericalQuery(query) : null;
+    const measurementIntent = enableNumericalBoost ? extractMeasurementIntent(query) : null;
     
-    if (numericalQuery || measurementIntent) {
+    if ((numericalQuery || measurementIntent) && enableNumericalBoost) {
       console.log(`[RAG API] Numerical query detected:`, numericalQuery, measurementIntent);
       
       // Score and re-rank citations based on numerical matches
@@ -305,12 +336,12 @@ export async function POST(req: NextRequest) {
       console.log(`[RAG API] Re-ranked ${citations.length} citations with numerical enhancement`);
     }
 
-    // OPTIMIZE CONFIDENCE FOR PRACTICAL SCENARIOS
-    const scenario = detectPracticalScenario(query);
+    // OPTIMIZE CONFIDENCE FOR PRACTICAL SCENARIOS (if enabled in settings)
+    const scenario = enableConfidenceOptimizer ? detectPracticalScenario(query) : { isPractical: false };
     let finalConfidence: number;
     let confidenceOptimization: any = null;
     
-    if (scenario.isPractical) {
+    if (enableConfidenceOptimizer && scenario.isPractical) {
       console.log(`[RAG API] Practical scenario detected: ${scenario.scenarioType} (complexity: ${scenario.complexity})`);
       
       // Use optimized citation selection
@@ -348,6 +379,10 @@ export async function POST(req: NextRequest) {
       // Calculate standard confidence
       const avgScore = citations.reduce((sum, c) => sum + c.score, 0) / citations.length;
       finalConfidence = Math.round(avgScore * 100);
+      
+      if (enableConfidenceOptimizer) {
+        console.log(`[RAG API] Confidence optimizer enabled but no practical scenario detected`);
+      }
     }
 
     console.log(`[RAG API] Final Confidence: ${finalConfidence}%`);
@@ -393,51 +428,64 @@ export async function POST(req: NextRequest) {
         }))
       : citations;
     
-    // Use new dual-mode Smart Router for answer generation
+    // Use Smart Router for answer generation (if enabled in settings and hybrid mode)
     // It automatically detects quiz vs normal questions and handles accordingly
     let answer: string | null;
     let answerType: 'quiz' | 'normal' = 'normal';
     
     try {
-      const smartResult = await smartRouter.generateAnswer(query, allResultsForAnswer.map((r: any) => ({
-        paragraphId: r.paragraphId,
-        documentId: r.documentId,
-        content: r.text,
-        score: r.score,
-        metadata: {
-          pageNumber: r.pageNumber,
-          articleNumber: r.articleNumber,
-          paragraphLetter: r.paragraphLetter,
+      if (isHybrid && enableSmartRouter) {
+        // Use Smart Router (hybrid mode with smart routing)
+        const smartResult = await smartRouter.generateAnswer(query, allResultsForAnswer.map((r: any) => ({
+          paragraphId: r.paragraphId,
+          documentId: r.documentId,
+          content: r.text,
+          score: r.score,
+          metadata: {
+            pageNumber: r.pageNumber,
+            articleNumber: r.articleNumber,
+            paragraphLetter: r.paragraphLetter,
+          }
+        })));
+        
+        answer = smartResult.answer;
+        answerType = smartResult.type;
+        
+        // Update confidence with router's confidence
+        finalConfidence = smartResult.confidence;
+        
+        console.log(`[RAG API] Smart Router result: type=${smartResult.type}, confidence=${smartResult.confidence}%`);
+        
+        // If the router detected this is a quiz but gave normal answer, wrap it
+        if (smartResult.type === 'normal' && quizQuestion.isQuiz && smartResult.metadata.needsClarification) {
+          answer = `⚠️ **Clarificare necesară:**\n\n${answer}`;
         }
-      })));
-      
-      answer = smartResult.answer;
-      answerType = smartResult.type;
-      
-      // Update confidence with router's confidence
-      finalConfidence = smartResult.confidence;
-      
-      console.log(`[RAG API] Smart Router result: type=${smartResult.type}, confidence=${smartResult.confidence}%`);
-      
-      // If the router detected this is a quiz but gave normal answer, wrap it
-      if (smartResult.type === 'normal' && quizQuestion.isQuiz && smartResult.metadata.needsClarification) {
-        answer = `⚠️ **Clarificare necesară:**\n\n${answer}`;
+      } else {
+        // Legacy mode - use traditional handlers
+        console.log(`[RAG API] Using legacy answer generation (Smart Router disabled or Legacy mode)`);
+        if (quizQuestion.isQuiz) {
+          answer = await buildQuizAnswer(quizQuestion, allResultsForAnswer, finalConfidence, settings);
+          answerType = 'quiz';
+        } else {
+          answer = await buildStrictAnswer(query, allResultsForAnswer, finalConfidence, settings);
+          answerType = 'normal';
+        }
       }
     } catch (routerError) {
       console.error('[RAG API] Smart Router error, falling back:', routerError);
       // Fallback to legacy handlers
       if (quizQuestion.isQuiz) {
-        answer = await buildQuizAnswer(quizQuestion, allResultsForAnswer, finalConfidence);
+        answer = await buildQuizAnswer(quizQuestion, allResultsForAnswer, finalConfidence, settings);
         answerType = 'quiz';
       } else {
-        answer = await buildStrictAnswer(query, allResultsForAnswer, finalConfidence);
+        answer = await buildStrictAnswer(query, allResultsForAnswer, finalConfidence, settings);
         answerType = 'normal';
       }
     }
 
     await prisma.$disconnect();
 
-    // STORE IN CACHE
+    // STORE IN CACHE (if enabled)
     const responseCitations = citations.map(c => ({
       index: c.index,
       paragraphId: c.paragraphId,
@@ -450,16 +498,17 @@ export async function POST(req: NextRequest) {
       confidence: c.confidence,
     }));
 
-    await queryCache.set(query, workspaceId, {
-      answer: answer || '',
-      citations: responseCitations,
-      confidence: finalConfidence,
-    });
+    if (enableQueryCache) {
+      await queryCache.set(query, workspaceId, {
+        answer: answer || '',
+        citations: responseCitations,
+        confidence: finalConfidence,
+      });
+      console.log(`[RAG API] Response cached. Cache stats:`, await queryCache.getStats());
+    }
 
-    console.log(`[RAG API] Response cached. Cache stats:`, await queryCache.getStats());
-
-    // BANNER pentru răspuns din documente
-    const documentBanner = `🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\n`;
+    // BANNER pentru răspuns din documente (if enabled in settings)
+    const documentBanner = settings.addDocumentBanner ? `🟢 ════════════════════════════════════════════════════════════════\n📄 RĂSPUNS BAZAT PE DOCUMENTE NORMATIVE\n🟢 ════════════════════════════════════════════════════════════════\n\n✅ Acest răspuns conține citate din documentele încărcate în sistem.\n✅ Fiecare informație este însoțită de referință la pagină și document.\n✅ Verificați întotdeauna sursa originală pentru detalii complete.\n\n──────────────────────────────────────────────────────────────────\n\n` : '';
     
     const finalAnswerWithBanner = answer ? `${documentBanner}${answer}` : answer;
 
@@ -486,6 +535,26 @@ export async function POST(req: NextRequest) {
           complexity: scenario.complexity,
           optimization: confidenceOptimization,
         } : undefined,
+        ...(showDebugInfo && {
+          debug: {
+            architecture: settings.activeArchitecture,
+            thresholds: {
+              minConfidence: MIN_CONFIDENCE_THRESHOLD,
+              minScore: MIN_SCORE_THRESHOLD,
+            },
+            features: {
+              synonymExpansion: enableSynonymExpansion,
+              numericalBoost: enableNumericalBoost,
+              smartRouter: enableSmartRouter,
+              confidenceOptimizer: enableConfidenceOptimizer,
+              queryCache: enableQueryCache,
+            },
+            limits: {
+              searchLimit,
+              citationLimit: FINAL_RESULTS,
+            },
+          },
+        }),
       },
     });
 
@@ -502,7 +571,12 @@ export async function POST(req: NextRequest) {
   }
 }
 
-async function buildStrictAnswer(query: string, citations: any[], overallConfidence: number): Promise<string | null> {
+async function buildStrictAnswer(
+  query: string, 
+  citations: any[], 
+  overallConfidence: number,
+  settings?: any
+): Promise<string | null> {
   if (citations.length === 0) return null;
 
   // Sort by score
@@ -513,12 +587,30 @@ async function buildStrictAnswer(query: string, citations: any[], overallConfide
     return `[${idx + 1}] Pagina ${c.pageNumber}:\n${c.text}`;
   }).join('\n\n---\n\n');
 
+  // Use settings from admin or fallback to defaults
+  const isHybrid = settings?.activeArchitecture === 'hybrid';
+  const openaiModel = isHybrid 
+    ? (settings?.hybridOpenaiModel || 'gpt-4o-mini')
+    : (settings?.legacyOpenaiModel || 'gpt-4o-mini');
+  const maxTokens = isHybrid
+    ? (settings?.hybridMaxTokens || 600)
+    : (settings?.legacyMaxTokens || 500);
+  const temperature = isHybrid
+    ? (settings?.hybridTemperature || 0.2)
+    : (settings?.legacyTemperature || 0.2);
+  const systemPromptText = isHybrid
+    ? (settings?.hybridSystemPrompt || 'Ești un asistent specializat în normative electrice românești.')
+    : (settings?.legacySystemPrompt || 'Ești un asistent specializat în normative electrice românești.');
+
   try {
     const openaiClient = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const systemPrompt = `Ești un ASISTENT LEGAL-TEHNIC SPECIALIZAT în interpretarea normativelor electrotehnice românești (I7/2011, I6, etc.).
+    const systemPrompt = `${systemPromptText}
+
+## SARCINA PRIMARĂ
+Răspunde la întrebarea utilizatorului EXCLUSIV pe baza PARAGRAFELOR furnizate din normativ. Nu adăuga informații din cunoștințele generale.
 
 ## SARCINA PRIMARĂ
 Răspunde la întrebarea utilizatorului EXCLUSIV pe baza PARAGRAFELOR furnizate din normativ. Nu adăuga informații din cunoștințele generale.
@@ -615,13 +707,13 @@ ${query}
 Generează răspunsul conform formatului obligatoriu de mai sus. Verifică checklist-ul înainte de a răspunde.`;
 
     const completion = await openaiClient.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: openaiModel,
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      max_tokens: 500,
-      temperature: 0.2,
+      max_tokens: maxTokens,
+      temperature: temperature,
     });
 
     const answer = completion.choices[0]?.message?.content?.trim();
@@ -891,7 +983,8 @@ ${pageNumbers.length > 0 ? `• Paginile: ${pageNumbers.slice(0, 5).join(', ')}`
 async function buildQuizAnswer(
   quiz: import('@/lib/quiz/quiz-handler').QuizQuestion,
   citations: any[],
-  overallConfidence: number
+  overallConfidence: number,
+  settings?: any
 ): Promise<string | null> {
   if (citations.length === 0) return null;
 
@@ -900,6 +993,18 @@ async function buildQuizAnswer(
   
   // Ia primele 5 citări pentru context
   const topCitations = citations.slice(0, 5);
+  
+  // Use settings from admin or fallback to defaults
+  const isHybrid = settings?.activeArchitecture === 'hybrid';
+  const openaiModel = isHybrid 
+    ? (settings?.hybridOpenaiModel || 'gpt-4o-mini')
+    : (settings?.legacyOpenaiModel || 'gpt-4o-mini');
+  const maxTokens = isHybrid
+    ? (settings?.hybridMaxTokens || 800)
+    : (settings?.legacyMaxTokens || 800);
+  const temperature = isHybrid
+    ? (settings?.hybridTemperature || 0.1)
+    : (settings?.legacyTemperature || 0.1);
   
   try {
     const openaiClient = new OpenAI({
@@ -910,13 +1015,13 @@ async function buildQuizAnswer(
     const { systemPrompt, userPrompt } = buildQuizPrompt(quiz, topCitations);
 
     const completion = await openaiClient.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: openaiModel,
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
       ],
-      max_tokens: 800,
-      temperature: 0.1, // Mai puțin creativ, mai precis
+      max_tokens: maxTokens,
+      temperature: temperature,
     });
 
     const aiResponse = completion.choices[0]?.message?.content?.trim();
